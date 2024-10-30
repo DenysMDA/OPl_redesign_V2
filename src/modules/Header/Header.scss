@@ -1,0 +1,15 @@
+
+
+.header{
+    height: 50px;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 5fr 17fr 2fr 2fr;
+    gap: 10px;
+    
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

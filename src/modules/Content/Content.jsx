@@ -23,6 +23,8 @@ import { RiAdminFill } from "react-icons/ri";
 import { RiAdminLine } from "react-icons/ri";
 import { GrUserAdmin } from "react-icons/gr";
 
+import NavMenuBlock from './cmps/NavMenuBlock'
+import IconButton from './cmps/IconButton';
 
 export const menu = {
     "Operator Settings": {
@@ -86,15 +88,25 @@ export const menu = {
             { title: "SLA & KPI dashboard" }
         ]
     },
-    "Support": {}
+    "Support": {
+        subMenu: [
+            { title: "Please submit customer and engineering related issues to the Microsoft ticketing system" },
+        ]
+    }
 };
 
 const Content = () => {
     const [selectedMenus, setSelectedMenus] = useState([]);
+    const [isShowMenu, setIsShowMenu] = useState(true); // Новое состояние
+    const [hoveredMenu, setHoveredMenu] = useState(null); // Состояние для отслеживания наведенной иконки
 
     useEffect(() => {
-        console.log(selectedMenus)
-    }, [selectedMenus])
+        // console.log(isShowMenu)
+    }, [isShowMenu])
+
+    const toggleShowMenu = () => {
+        setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
+    };
 
     // Функция для переключения отображения меню
     const toggleMenu = (menuTitle) => {
@@ -106,145 +118,92 @@ const Content = () => {
     };
 
     return (
-        <main className='main-wrapper'>
+        <main className='main-wrapper'>      
             <div className='icon-nav-block'>
+                {/* Кнопка для отображения/скрытия меню */}
                 <div
-                    className={`icon-wrapper ${selectedMenus.includes("") ? 'active' : ''}`}
+                    className={`icon-wrapper ${isShowMenu ? 'active' : ''}`}
+                    onClick={toggleShowMenu}
                 >
-                    <RiMenuUnfoldFill className='icon' />
-                </div>
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Operator Settings") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Operator Settings")}
-                >
-                    <MdManageAccounts className='icon' />
+                    {!isShowMenu ? <RiMenuUnfoldFill className='icon' /> : <RiMenuFoldFill className='icon' />}
                 </div>
 
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Number Management") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Number Management")}
-                >
-                    <FaHashtag className='icon' />
-                </div>
+                {/* Использование IconButton для каждого пункта меню */}
+                <IconButton
+                    icon={MdManageAccounts}
+                    menuTitle="Operator Settings"
+                    isActive={selectedMenus.includes("Operator Settings")}
+                    onClick={toggleMenu}
+                />
 
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Number Management History") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Number Management History")}
-                >
-                    <BsColumnsGap className='icon' />
-                </div>
+                <IconButton
+                    icon={FaHashtag}
+                    menuTitle="Number Management"
+                    isActive={selectedMenus.includes("Number Management")}
+                    onClick={toggleMenu}
+                />
 
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Migrations") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Migrations")}
-                >
-                    <RiFileTransferLine className='icon' />
-                </div>
+                <IconButton
+                    icon={BsColumnsGap}
+                    menuTitle="Number Management History"
+                    isActive={selectedMenus.includes("Number Management History")}
+                    onClick={toggleMenu}
+                />
 
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Administration") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Administration")}
-                >
-                    <GrUserAdmin className='icon' />
-                </div>
+                <IconButton
+                    icon={RiFileTransferLine}
+                    menuTitle="Migrations"
+                    isActive={selectedMenus.includes("Migrations")}
+                    onClick={toggleMenu}
+                />
 
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Trunks & Calling Profiles") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Trunks & Calling Profiles")}
-                >
-                    <BsTelephone className='icon' />
-                </div>
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Tools") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Tools")}
-                >
-                    <FaTools className='icon' />
-                </div>
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Dashboard and data") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Dashboard and data")}
-                >
-                    <BsGraphUpArrow className='icon' />
-                </div>
-                <div
-                    className={`icon-wrapper ${selectedMenus.includes("Support") ? 'active' : ''}`}
-                    onClick={() => toggleMenu("Support")}
-                >
-                    <MdOutlineContactSupport className='icon' />
-                </div>
+                <IconButton
+                    icon={GrUserAdmin}
+                    menuTitle="Administration"
+                    isActive={selectedMenus.includes("Administration")}
+                    onClick={toggleMenu}
+                />
 
+                <IconButton
+                    icon={BsTelephone}
+                    menuTitle="Trunks & Calling Profiles"
+                    isActive={selectedMenus.includes("Trunks & Calling Profiles")}
+                    onClick={toggleMenu}
+                />
+
+                <IconButton
+                    icon={FaTools}
+                    menuTitle="Tools"
+                    isActive={selectedMenus.includes("Tools")}
+                    onClick={toggleMenu}
+                />
+
+                <IconButton
+                    icon={BsGraphUpArrow}
+                    menuTitle="Dashboard and data"
+                    isActive={selectedMenus.includes("Dashboard and data")}
+                    onClick={toggleMenu}
+                />
+
+                <IconButton
+                    icon={MdOutlineContactSupport}
+                    menuTitle="Support"
+                    isActive={selectedMenus.includes("Support")}
+                    onClick={toggleMenu}
+                />
             </div>
 
             <div className='main-content'>
-                <div className="menu-block">
-                    {selectedMenus.map((menuTitle) => (
-                        <div key={menuTitle} className="menu-section">
-                            <h3>{menuTitle}</h3>
-                            {menu[menuTitle].subMenu && (
-                                <ul>
-                                    {menu[menuTitle].subMenu.map((subItem) => (
-                                        <li key={subItem.title}>{subItem.title}</li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    ))}
-                </div>
-
+                {isShowMenu && (
+                    <div className="menu-block">
+                        {selectedMenus.map((menuTitle) => (
+                            <NavMenuBlock key={menuTitle} menuTitle={menuTitle} menu={menu} />
+                        ))}
+                    </div>
+                )}
             </div>
         </main>
     );
 };
-
-// const Content = () => {
-//     const [selectedMenus, setSelectedMenus] = useState([]);
-
-//     return (
-//         <main className='main-wrapper'>
-//             <div className='icon-nav-block'>
-//                 <div className="icon-wrapper">
-//                     <RiMenuUnfoldFill className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <MdManageAccounts className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <FaHashtag className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <BsTelephoneFill className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <FaTools className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <BsGraphUpArrow className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <MdOutlineContactSupport className='icon' />
-//                 </div>
-//                 <div className="icon-wrapper">
-//                     <IoDocumentText className='icon' />
-//                 </div>
-
-//             </div>
-//             <div className='main-content'>
-//                 {Object.keys(menu).map((mainTitle) => (
-//                     <div key={mainTitle} className="menu-section">
-//                         <h3>{mainTitle}</h3>
-//                         {menu[mainTitle].subMenu && (
-//                             <ul>
-//                                 {menu[mainTitle].subMenu.map((subItem) => (
-//                                     <li key={subItem.title}>{subItem.title}</li>
-//                                 ))}
-//                             </ul>
-//                         )}
-//                     </div>
-//                 ))}
-//             </div>
-//             <div></div>
-//         </main>
-//     )
-// }
 
 export default Content

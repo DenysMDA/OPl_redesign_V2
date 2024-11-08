@@ -1,38 +1,81 @@
 .main-wrapper {
     display: flex;
-    // height: 100vh;
     width: 100%;
-    // border:1px solid red;
-
-
-    div {
-        // border:1px solid red;
-    }
 
     .icon-nav-block {
         height: auto;
-        width: 35px;
+        width: 35px; // Исходная ширина для свернутого состояния
         display: flex;
         flex-direction: column;
         gap: 6px;
         padding: 10px;
+        position: relative;
+        // transition: width 0.3s ease;
 
-        .icon-wrapper {
-            width: 30px;
-            height: 30px;
-            border: 1px solid gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-
-            .icon {
-                font-size: 21px;
-            }
+        &.expanded {
+            width: 250px; // Ширина при развернутом состоянии
         }
 
-        .active {
+        &.collapsed {
+            width: 33px; // Ширина при свернутом состоянии
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
             border: 1px solid red;
+            border-radius: 5px;
+
+            .menu-header {
+                display: flex;
+                align-items: center;
+                padding-left: 0;
+                padding-right: 0;
+                cursor: pointer;
+                // border: 1px solid red !important;
+                box-sizing: border-box;
+                background: rgb(180, 230, 243);
+
+                .menu-icon {
+                    width: 30px !important; // Фиксированная ширина иконок
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    // margin-right: 10px; // Отступ для иконки
+                    font-size: 20px; // Размер иконки
+                    // border: 1px solid red !important;
+                    flex-shrink: 0; // Запрет уменьшения иконки
+                    box-sizing: content-box; // Обеспечивает, что padding и border не уменьшают ширину
+                }
+
+                .menu-title {
+                    font-size: 14px;
+                    display: inline-block;
+                }
+            }
+
+            .sub-menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                ul{
+                    padding: 0;
+                }
+
+                li {
+                    text-align: left;
+                    padding: 5px 5px;
+                    // border: 1px solid red;
+
+                    &:hover {
+                        background: rgb(226, 226, 226);
+                    }
+                }
+            }
         }
     }
 
@@ -43,23 +86,49 @@
         grid-template-columns: 250px 1fr;
 
         .menu-block {
+            border: 1px solid red;
 
             .menu-section {
                 border: 1px solid red;
                 margin-bottom: 10px;
+                border-radius: 5px;
+                overflow: hidden;
+
+                h3 {
+                    margin: 0;
+                    border: 1px solid red;
+                    padding: 5px 0;
+                    background: lightblue;
+                }
 
                 ul {
                     list-style: none;
                     padding: 0;
                     margin: 0;
-                    padding: 10px;
                 }
 
                 li {
-                    text-align: left; 
-                    padding-left: 0; 
-                  }
+                    text-align: left;
+                    padding-left: 0;
+                    padding: 10px 5px;
+                    border: 1px solid red;
+
+                    &:hover {
+                        background: rgb(226, 226, 226);
+                    }
+                }
             }
         }
+    }
+}
+
+
+.table{
+    border: 1px solid red;
+    margin-top: 35px;
+    padding: 10px;
+
+    h2{
+        margin: 0;
     }
 }

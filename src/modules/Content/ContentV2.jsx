@@ -198,22 +198,22 @@ const ContentV2 = () => {
             </div>
 
             <div>
-            <KeyContactsTable
-                title="First Key Contacts"
-                columns={columns1}
-                data={data1}
-                actions={actions}
-                isActive={activeTable === 1} // Проверка, активна ли эта таблица
-                onTableFocus={() => handleTableFocus(1)} // Обработчик для установки активной таблицы
-            />
-            <KeyContactsTable
-                title="Second Key Contacts"
-                columns={columns2}
-                data={data2}
-                actions={actions}
-                isActive={activeTable === 2} // Проверка, активна ли эта таблица
-                onTableFocus={() => handleTableFocus(2)} // Обработчик для установки активной таблицы
-            />
+                <KeyContactsTable
+                    title="First Key Contacts"
+                    columns={columns1}
+                    data={data1}
+                    actions={actions}
+                    isActive={activeTable === 1}
+                    onTableFocus={() => handleTableFocus(1)}
+                />
+                <KeyContactsTable
+                    title="Second Key Contacts"
+                    columns={columns2}
+                    data={data2}
+                    actions={actions}
+                    isActive={activeTable === 2}
+                    onTableFocus={() => handleTableFocus(2)}
+                />
             </div>
         </main>
     );

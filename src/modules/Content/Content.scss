@@ -1,138 +1,243 @@
 .main-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Первый элемент занимает свою ширину, второй занимает оставшееся пространство */
+  width: 100%;
+  //   height: 100vh; /* Высота на весь экран */
+
+  .icon-nav-block {
+    height: auto;
+    width: 35px; // Исходная ширина для свернутого состояния
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    position: relative;
+    // transition: width 0.3s ease;
 
-    .icon-nav-block {
-        height: auto;
-        width: 35px; // Исходная ширина для свернутого состояния
+    &.expanded {
+      width: 250px; // Ширина при развернутом состоянии
+    }
+
+    &.collapsed {
+      width: 33px; // Ширина при свернутом состоянии
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      border: 1px solid red;
+      border-radius: 5px;
+
+      .menu-header {
         display: flex;
-        flex-direction: column;
-        gap: 6px;
-        padding: 10px;
-        position: relative;
-        // transition: width 0.3s ease;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        cursor: pointer;
+        // border: 1px solid red !important;
+        box-sizing: border-box;
+        background: rgb(180, 230, 243);
 
-        &.expanded {
-            width: 250px; // Ширина при развернутом состоянии
+        .menu-icon {
+          width: 30px !important; // Фиксированная ширина иконок
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          // margin-right: 10px; // Отступ для иконки
+          font-size: 20px; // Размер иконки
+          // border: 1px solid red !important;
+          flex-shrink: 0; // Запрет уменьшения иконки
+          box-sizing: content-box; // Обеспечивает, что padding и border не уменьшают ширину
         }
 
-        &.collapsed {
-            width: 33px; // Ширина при свернутом состоянии
+        .menu-title {
+          font-size: 14px;
+          display: inline-block;
+        }
+      }
+
+      .sub-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        ul {
+          padding: 0;
         }
 
-        .menu-item {
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            border: 1px solid red;
-            border-radius: 5px;
+        li {
+          text-align: left;
+          padding: 5px 5px;
+          // border: 1px solid red;
 
-            .menu-header {
-                display: flex;
-                align-items: center;
-                padding-left: 0;
-                padding-right: 0;
-                cursor: pointer;
-                // border: 1px solid red !important;
-                box-sizing: border-box;
-                background: rgb(180, 230, 243);
-
-                .menu-icon {
-                    width: 30px !important; // Фиксированная ширина иконок
-                    height: 30px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 5px;
-                    // margin-right: 10px; // Отступ для иконки
-                    font-size: 20px; // Размер иконки
-                    // border: 1px solid red !important;
-                    flex-shrink: 0; // Запрет уменьшения иконки
-                    box-sizing: content-box; // Обеспечивает, что padding и border не уменьшают ширину
-                }
-
-                .menu-title {
-                    font-size: 14px;
-                    display: inline-block;
-                }
-            }
-
-            .sub-menu {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-
-                ul{
-                    padding: 0;
-                }
-
-                li {
-                    text-align: left;
-                    padding: 5px 5px;
-                    // border: 1px solid red;
-
-                    &:hover {
-                        background: rgb(226, 226, 226);
-                    }
-                }
-            }
+          &:hover {
+            background: rgb(226, 226, 226);
+          }
         }
+      }
     }
+  }
 
-    .main-content {
-        width: 100%;
+  .main-content {
+    width: 100%;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+
+    .menu-block {
+      border: 1px solid red;
+
+      .menu-section {
         border: 1px solid red;
-        display: grid;
-        grid-template-columns: 250px 1fr;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
 
-        .menu-block {
-            border: 1px solid red;
-
-            .menu-section {
-                border: 1px solid red;
-                margin-bottom: 10px;
-                border-radius: 5px;
-                overflow: hidden;
-
-                h3 {
-                    margin: 0;
-                    border: 1px solid red;
-                    padding: 5px 0;
-                    background: lightblue;
-                }
-
-                ul {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                li {
-                    text-align: left;
-                    padding-left: 0;
-                    padding: 10px 5px;
-                    border: 1px solid red;
-
-                    &:hover {
-                        background: rgb(226, 226, 226);
-                    }
-                }
-            }
+        h3 {
+          margin: 0;
+          border: 1px solid red;
+          padding: 5px 0;
+          background: lightblue;
         }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        li {
+          text-align: left;
+          padding-left: 0;
+          padding: 10px 5px;
+          border: 1px solid red;
+
+          &:hover {
+            background: rgb(226, 226, 226);
+          }
+        }
+      }
     }
+  }
 }
 
+.content-wrapper {
+  overflow: hidden;
 
-.table{
-    border: 1px solid red;
+  .table-wrapper {
+    overflow: auto;
+  }
+
+  .table {
     margin-top: 35px;
-    padding: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 10px;
 
-    h2{
-        margin: 0;
+    h2 {
+      margin: 0;
     }
 
     .selected-row {
-        background-color: #f0f8ff; /* Светло-голубой фон для выделенной строки */
-      }
+      background-color: #f0f8ff;
+    }
+
+    .table-hader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: lightgrey;
+      padding: 5px 15px;
+    }
+
+    .action-buttons {
+      padding: 10px;
+    }
+
+    .separator {
+      width: 100%;
+      height: 2px;
+      background: lightgray;
+      margin-bottom: 10px;
+    }
+
+    .radio-cell {
+      width: 25px;
+      text-align: center;
+      border-right: 1px solid transparent;
+      padding: 8px !important;
+    }
+
+    .radio-cell-header {
+      width: 25px;
+      border-right: 1px solid transparent;
+      padding: 8px !important;
+    }
+
+    tbody tr:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    /* Основные стили для таблицы */
+    table {
+      //   width: 100%; /* Таблица занимает всю ширину контейнера */
+      border-collapse: collapse; /* Убираем пробелы между ячейками */
+      table-layout: fixed; /* Фиксированная компоновка таблицы */
+    }
+
+    /* Стили для заголовков колонок */
+    th {
+      text-align: left;
+      padding: 8px;
+      white-space: nowrap;
+      overflow: hidden; /* Скрываем переполнение */
+      text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
+      border-right: 2px solid lightgrey;
+    }
+
+    /* Стили для ячеек */
+    td {
+      padding: 8px;
+      white-space: nowrap;
+      overflow: hidden; /* Скрываем переполнение */
+      text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
+      border-right: 2px solid lightgrey;
+    }
+
+    .react-table {
+      //   width: 100%;
+      border-collapse: collapse;
+      table-layout: auto; /* Автоматическое распределение ширины колонок */
+      margin-bottom: 10px;
+    }
+
+    th,
+    td {
+      padding: 8px 15px;
+      white-space: nowrap; /* Предотвращает перенос текста */
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .resizer {
+      display: inline-block;
+      width: 5px;
+      height: 100%;
+      background-color: transparent;
+      cursor: col-resize;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      user-select: none;
+      touch-action: none;
+    }
+  }
 }

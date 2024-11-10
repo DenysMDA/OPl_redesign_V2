@@ -1,0 +1,119 @@
+
+.table-wrapper {
+  overflow: auto;
+  //margin: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 8px;
+}
+
+.table {
+  margin-top: 35px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow-x: auto;
+
+  h2 {
+    margin: 0;
+  }
+
+  .selected-row {
+    background-color: #f0f8ff;
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightgrey;
+    padding: 5px 15px;
+  }
+
+  .action-buttons {
+    padding: 10px;
+  }
+
+  .separator {
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    margin-bottom: 10px;
+  }
+
+  .radio-cell {
+    width: 25px;
+    text-align: center;
+    border-right: 1px solid transparent;
+    padding: 8px !important;
+  }
+
+  .radio-cell-header {
+    width: 25px;
+    border-right: 1px solid transparent;
+    padding: 8px !important;
+  }
+
+  tbody tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+
+  /* Основные стили для таблицы */
+  table {
+    //   width: 100%; /* Таблица занимает всю ширину контейнера */
+    border-collapse: collapse; /* Убираем пробелы между ячейками */
+    table-layout: fixed; /* Фиксированная компоновка таблицы */
+  }
+
+  /* Стили для заголовков колонок */
+  th {
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden; /* Скрываем переполнение */
+    text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
+    border-right: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    border-top: 2px solid lightgrey;
+
+  }
+
+  /* Стили для ячеек */
+  td {
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden; /* Скрываем переполнение */
+    text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
+    border-right: 2px solid lightgrey;
+  }
+
+  .react-table {
+    //   width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Автоматическое распределение ширины колонок */
+  }
+
+  th,
+  td {
+    padding: 8px 15px;
+    white-space: nowrap; /* Предотвращает перенос текста */
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .resizer {
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    cursor: col-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    user-select: none;
+    touch-action: none;
+  }
+}

@@ -1,0 +1,76 @@
+.icon-nav-block {
+  height: auto;
+  width: 35px; // Исходная ширина для свернутого состояния
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  position: relative;
+  // transition: width 0.3s ease;
+
+  &.expanded {
+    width: 250px; // Ширина при развернутом состоянии
+  }
+
+  &.collapsed {
+    width: 33px; // Ширина при свернутом состоянии
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    .menu-header {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      padding-right: 0;
+      cursor: pointer;
+      // border: 1px solid red !important;
+      box-sizing: border-box;
+      background: rgb(241 241 241);
+
+      .menu-icon {
+        width: 30px !important; // Фиксированная ширина иконок
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        // margin-right: 10px; // Отступ для иконки
+        font-size: 20px; // Размер иконки
+        // border: 1px solid red !important;
+        flex-shrink: 0; // Запрет уменьшения иконки
+        box-sizing: content-box; // Обеспечивает, что padding и border не уменьшают ширину
+      }
+
+      .menu-title {
+        font-size: 14px;
+        display: inline-block;
+      }
+    }
+
+    .sub-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        text-align: left;
+        padding: 5px 5px;
+        // border: 1px solid red;
+
+        &:hover {
+          background: rgb(226, 226, 226);
+        }
+      }
+    }
+  }
+}

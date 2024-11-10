@@ -1,5 +1,5 @@
-// DropdownMenu.jsx
 import React, { useState } from "react";
+import "./DropdownMenu.scss";
 
 const DropdownMenu = ({ options, placeholder }) => {
     const [isOpen, setIsOpen] = useState(false);

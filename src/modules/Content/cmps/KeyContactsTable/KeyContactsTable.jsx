@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useTable, useResizeColumns, useFlexLayout } from "react-table";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import "./KeyContactsTable.scss";
 
 const KeyContactsTable = ({
                               title,

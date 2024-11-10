@@ -1,0 +1,206 @@
+// Стили для панели
+.panel {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  background-color: white;
+  border-left: 1px solid #ddd;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  overflow-y: auto;
+  z-index: 1001;
+  box-sizing: border-box;
+  transition: right 0.5s ease;
+
+  &.visible {
+    right: 0;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  .radio-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-right: 5px;
+    }
+  }
+
+  .send-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+// Стиль для затемняющего оверлея
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Стили для модального окна
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2001;
+  animation: fadeIn 0.3s ease;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .submit-btn,
+    .cancel-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100px;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .spinner-icon {
+      font-size: 24px;
+      animation: spin 1s linear infinite;
+    }
+
+    .cancel-btn {
+      background-color: #ff4d4f;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+  }
+
+  .success-message {
+    p {
+      margin-bottom: 20px;
+    }
+
+    .ok-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+}
+
+// Анимация для появления модального окна
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Анимация для спиннера
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

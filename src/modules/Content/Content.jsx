@@ -23,7 +23,7 @@ import { RiAdminFill } from "react-icons/ri";
 import { RiAdminLine } from "react-icons/ri";
 import { GrUserAdmin } from "react-icons/gr";
 
-import NavMenuBlock from './cmps/NavMenuBlock'
+import NavMenuBlock from './cmps/NavMenuBlock/NavMenuBlock'
 import IconButton from './cmps/IconButton';
 
 export const menu = {

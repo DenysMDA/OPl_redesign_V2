@@ -23,11 +23,11 @@ import {RiAdminFill} from "react-icons/ri";
 import {RiAdminLine} from "react-icons/ri";
 import {GrUserAdmin} from "react-icons/gr";
 
-import NavMenuBlock from "./cmps/NavMenuBlock";
+import NavMenuBlock from "./cmps/NavMenuBlock/NavMenuBlock";
 import IconButton from "./cmps/IconButton";
-import KeyContactsTable from "./cmps/KeyContactsTable";
-import EntityDetail from "./cmps/EntityDetail";
-import Panel from "./cmps/Panel";
+import KeyContactsTable from "./cmps/KeyContactsTable/KeyContactsTable";
+import EntityDetail from "./cmps/EntityDetail/EntityDetail";
+import Panel from "./cmps/Panel/Panel";
 
 export const menu = {
     "Operator Settings": {

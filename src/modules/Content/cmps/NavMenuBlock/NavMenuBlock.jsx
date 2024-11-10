@@ -1,3 +1,4 @@
+import './NavMenuBlock.scss'
 
 const NavMenuBlock = ({ menuTitle, menu }) => {
     if (!menuTitle || !menu[menuTitle]) {

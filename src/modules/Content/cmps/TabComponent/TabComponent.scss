@@ -1,0 +1,52 @@
+.tab-container {
+  position: relative;
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 35px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white; // Убедитесь, что блок имеет белый фон
+
+  .tabs {
+    position: relative; // Оставляем position: relative, чтобы вкладки не исчезали
+    display: flex;
+    border-top: 1px solid transparent;
+
+  }
+
+  .tab {
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 16px 16px 0 0; // Закругляем верхние углы
+    background-color: #f0f0f0;
+    color: #000;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: #007bff;
+      color: white;
+      border-bottom: 1px solid white; // Убираем нижнюю границу у активной вкладки
+    }
+
+    &:not(.active):hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  .tab-content {
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #ddd; // Добавляем верхнюю границу для контента
+    border-top-right-radius: 10px; // Задайте нужный радиус
+
+    .content {
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+}

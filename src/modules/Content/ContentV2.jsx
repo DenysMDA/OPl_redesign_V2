@@ -28,6 +28,7 @@ import IconButton from "./cmps/IconButton";
 import KeyContactsTable from "./cmps/KeyContactsTable/KeyContactsTable";
 import EntityDetail from "./cmps/EntityDetail/EntityDetail";
 import Panel from "./cmps/Panel/Panel";
+import TabComponent from "./cmps/TabComponent/TabComponent";
 
 export const menu = {
     "Operator Settings": {
@@ -240,6 +241,8 @@ const ContentV2 = () => {
             <div className="content-wrapper">
 
                 <EntityDetail/>
+
+                <TabComponent/>
 
                 <KeyContactsTable
                     title="First Key Contacts"

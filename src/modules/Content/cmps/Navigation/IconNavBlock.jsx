@@ -61,7 +61,7 @@ export const menu = {
         icon: <FaTools/>,
         subMenu: [{title: "TNI Number Search"}],
     },
-    "Trunks & Calling Profiles": {
+    "Trunks & Calling": {
         icon: <BsTelephone/>,
         subMenu: [
             {title: "Calling Profile Management"},
@@ -85,89 +85,6 @@ export const menu = {
         ],
     },
 };
-//
-// const IconNavBlock = ({isShowMenu, toggleShowMenu}) => {
-//     const [expandedMenus, setExpandedMenus] = useState([]);
-//     const [hoveredMenu, setHoveredMenu] = useState(null);
-//
-//     const toggleMenu = (menuTitle) => {
-//         if (isShowMenu) {
-//             setExpandedMenus((prevExpandedMenus) =>
-//                 prevExpandedMenus.includes(menuTitle)
-//                     ? prevExpandedMenus.filter((title) => title !== menuTitle)
-//                     : [...prevExpandedMenus, menuTitle]
-//             );
-//         }
-//     };
-//
-//     return (
-//         <div className='icon-nav-block-wrapper'>
-//             <div className={`icon-nav-block ${isShowMenu ? "expanded" : "collapsed"}`}>
-//
-//                 <div className="icon-collapse">
-//                     <div
-//                         className={`icon`}
-//                         onClick={toggleShowMenu}
-//                     >
-//                         <div className={`menu-icon ${isShowMenu ? "active" : ""}`}>
-//                             {!isShowMenu ? <RiMenuUnfoldFill className="icon"/> : <RiMenuFoldFill className="icon"/>}
-//                         </div>
-//                     </div>
-//                 </div>
-//
-//
-//                 {Object.keys(menu).map((menuTitle, index) => (
-//                     <div
-//                         key={index}
-//                         className="menu-item"
-//                         onMouseEnter={() => !isShowMenu && setHoveredMenu(menuTitle)}
-//                         onMouseLeave={() => !isShowMenu && setHoveredMenu(null)}
-//                     >
-//                         <div className={`menu-header`} onClick={() => toggleMenu(menuTitle)}>
-//                             <div className='icon'>
-//                                 <div className="menu-icon">{menu[menuTitle].icon}</div>
-//                             </div>
-//                             {isShowMenu && <div className={`menu-title menu-title__${isShowMenu ? "active" : ""}`}>
-//                                 {menuTitle}
-//                             </div>}
-//                             <div className={`menu-expand-icon`}>
-//                                 {expandedMenus.includes(menuTitle) ? <HiOutlineMinusSm/> : <HiOutlinePlusSm/>}
-//                             </div>
-//                         </div>
-//
-//                         {isShowMenu && expandedMenus.includes(menuTitle) && (
-//                             <ul className="sub-menu">
-//                                 {menu[menuTitle].subMenu.map((subItem, subIndex) => (
-//                                     <li key={subIndex} className={`submenu-list`}>
-//                                         <div className={`icon-tree-direction-wrapper`}>
-//                                             <div className={`icon-tree-direction`}/>
-//                                         </div>
-//                                         <div className={`sub-menu-item`}>
-//                                             {subItem.title}
-//                                         </div>
-//                                     </li>
-//                                 ))}
-//                             </ul>
-//                         )}
-//
-//                         {!isShowMenu && hoveredMenu === menuTitle && (
-//                             <div className="hover-menu">
-//                                 <ul className="sub-menu">
-//                                 {menu[menuTitle].subMenu.map((subItem, subIndex) => (
-//                                         <li key={subIndex} >
-//
-//                                             {subItem.title}
-//                                         </li>
-//                                     ))}
-//                                 </ul>
-//                             </div>
-//                         )}
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// };
 
 const IconNavBlock = ({ isShowMenu, toggleShowMenu }) => {
     const [expandedMenus, setExpandedMenus] = useState([]);
@@ -192,13 +109,13 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu }) => {
     return (
         <div className="icon-nav-block-wrapper">
             <div className={`icon-nav-block ${isShowMenu ? "expanded" : "collapsed"}`}>
-                <div className="icon-collapse">
-                    <div className="icon" onClick={toggleShowMenu}>
+                <div className="icon" >
+                    <div className="icon-collapse" onClick={toggleShowMenu}>
                         <div className={`menu-icon ${isShowMenu ? "active" : ""}`}>
                             {!isShowMenu ? (
-                                <RiMenuUnfoldFill className="icon" />
+                                <RiMenuUnfoldFill className="icon"/>
                             ) : (
-                                <RiMenuFoldFill className="icon" />
+                                <RiMenuFoldFill className="icon"/>
                             )}
                         </div>
                     </div>
@@ -222,9 +139,9 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu }) => {
                             )}
                             <div className="menu-expand-icon">
                                 {expandedMenus.includes(menuTitle) ? (
-                                    <HiOutlineMinusSm />
+                                    <HiOutlineMinusSm/>
                                 ) : (
-                                    <HiOutlinePlusSm />
+                                    <HiOutlinePlusSm/>
                                 )}
                             </div>
                         </div>
@@ -234,7 +151,7 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu }) => {
                                 {menu[menuTitle].subMenu.map((subItem, subIndex) => (
                                     <li key={subIndex} className="submenu-list">
                                         <div className="icon-tree-direction-wrapper">
-                                            <div className="icon-tree-direction" />
+                                            <div className="icon-tree-direction"/>
                                         </div>
                                         <div
                                             className={`sub-menu-item ${
@@ -272,4 +189,5 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu }) => {
             </div>
         </div>
     );
-};export default IconNavBlock;
+};
+export default IconNavBlock;

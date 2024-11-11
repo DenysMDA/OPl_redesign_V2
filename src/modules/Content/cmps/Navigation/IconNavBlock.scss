@@ -65,6 +65,17 @@
       //border: 2px solid var(--dark-gray-color);
       box-sizing: border-box;
       background: var(--background-main-color);
+      cursor: pointer;
+      transition: .3s;
+
+      .menu-icon{
+        height: 18px;
+      }
+
+      &:hover {
+        background: var( --dark-gray-color);
+        color: var(--background-light-color);
+      }
 
       .icon {
         width: 18px;
@@ -158,7 +169,7 @@
               box-sizing: border-box;
             }
 
-            &:hover{
+            &:hover {
               border: 1px solid var(--background-main-color);
             }
           }
@@ -184,9 +195,9 @@
 
         .submenu-list:first-child {
 
-           .icon-tree-direction-wrapper {
+          .icon-tree-direction-wrapper {
 
-            .icon-tree-direction{
+            .icon-tree-direction {
               height: 70%;
               top: -20%;
             }

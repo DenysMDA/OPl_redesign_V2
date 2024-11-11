@@ -59,7 +59,7 @@
         height: $button-primary-height;
 
         .search-icon {
-          border: 2px solid var(--background-middle-color);
+          border: 2px solid var(--background-main-color);
           height: $button-primary-height;
           width: $button-primary-height;
           display: flex;
@@ -81,7 +81,7 @@
           height: $button-primary-height;
           border-bottom-right-radius: $border-primary-radius;
           border-top-right-radius: $border-primary-radius;
-          border: 2px solid var(--background-middle-color);
+          border: 2px solid var(--background-main-color);
           width: 220px;
           border-left: none;
           box-sizing: border-box;
@@ -101,7 +101,7 @@
       button {
         cursor: pointer;
         background: var(--background-light-color);
-        border: 2px solid var(--background-middle-color);
+        border: 2px solid var(--background-main-color);
         border-radius: $border-primary-radius;
         padding: 5px 15px;
         box-sizing: border-box;

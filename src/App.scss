@@ -1,9 +1,18 @@
 @import "./theme";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .App {
   text-align: start;
   background: var(--background-main-color);
+  font-family: 'Roboto', sans-serif;
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
 }
+
+
 
 .App-logo {
   height: 40vmin;

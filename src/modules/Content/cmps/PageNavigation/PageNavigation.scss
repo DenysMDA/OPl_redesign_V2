@@ -1,0 +1,28 @@
+.page-navigation {
+  display: flex;
+  gap: 15px;
+  //padding: 10px 20px;
+  background-color: #f4f4f4; // Light background for the navigation bar
+  border-bottom: 2px solid #ddd; // Bottom border for a subtle separation
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  .nav-button {
+    //background-color: #007bff; // Primary color for the buttons
+    color: #fff; // White text
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.3s ease; // Smooth transition for hover effect
+    border: 1px solid red;
+    color: black;
+
+    &:hover {
+      background-color: #0056b3; // Darker shade on hover
+    }
+  }
+}

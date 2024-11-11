@@ -1,209 +1,165 @@
-import React, { useEffect, useState } from 'react'
-import './Content.scss'
-import { RiMenuUnfoldFill } from "react-icons/ri";
-import { RiMenuFoldFill } from "react-icons/ri";
-import { GrUserManager } from "react-icons/gr";
-import { MdOutlineManageAccounts } from "react-icons/md";
-import { MdManageAccounts } from "react-icons/md";
-import { BsTelephoneFill } from "react-icons/bs";
-import { BsTelephone } from "react-icons/bs";
-import { FaTools } from "react-icons/fa";
-import { VscTools } from "react-icons/vsc";
-import { BsGraphUpArrow } from "react-icons/bs";
-import { MdOutlineContactSupport } from "react-icons/md";
-import { IoDocumentText } from "react-icons/io5";
-import { IoDocumentTextOutline } from "react-icons/io5";
-import { FaHashtag } from "react-icons/fa6";
-import { BsColumnsGap } from "react-icons/bs";
+import React, {useEffect, useState} from "react";
+import "./Content.scss";
+import {RiMenuUnfoldFill} from "react-icons/ri";
+import {RiMenuFoldFill} from "react-icons/ri";
+import {GrUserManager} from "react-icons/gr";
+import {MdOutlineManageAccounts} from "react-icons/md";
+import {MdManageAccounts} from "react-icons/md";
+import {BsTelephoneFill} from "react-icons/bs";
+import {BsTelephone} from "react-icons/bs";
+import {FaTools} from "react-icons/fa";
+import {VscTools} from "react-icons/vsc";
+import {BsGraphUpArrow} from "react-icons/bs";
+import {MdOutlineContactSupport} from "react-icons/md";
+import {IoDocumentText} from "react-icons/io5";
+import {IoDocumentTextOutline} from "react-icons/io5";
+import {FaHashtag} from "react-icons/fa6";
+import {BsColumnsGap} from "react-icons/bs";
 
-import { RiFileTransferFill } from "react-icons/ri";
-import { RiFileTransferLine } from "react-icons/ri";
+import {RiFileTransferFill} from "react-icons/ri";
+import {RiFileTransferLine} from "react-icons/ri";
 
-import { RiAdminFill } from "react-icons/ri";
-import { RiAdminLine } from "react-icons/ri";
-import { GrUserAdmin } from "react-icons/gr";
+import {RiAdminFill} from "react-icons/ri";
+import {RiAdminLine} from "react-icons/ri";
+import {GrUserAdmin} from "react-icons/gr";
 
-import NavMenuBlock from './cmps/NavMenuBlock/NavMenuBlock'
-import IconButton from './cmps/IconButton';
+import NavMenuBlock from "./cmps/PageNavigation/PageNavigation";
+import IconButton from "./cmps/IconButton";
+import KeyContactsTable from "./cmps/KeyContactsTable/KeyContactsTable";
+import EntityDetail from "./cmps/EntityDetail/EntityDetail";
+import Panel from "./cmps/Panel/Panel";
+import TabComponent from "./cmps/TabComponent/TabComponent";
+import IconNavBlock from "./cmps/Navigation/IconNavBlock";
+import PageNavigation from "./cmps/PageNavigation/PageNavigation";
 
-export const menu = {
-    "Operator Settings": {
-        subMenu: [
-            { title: "Operator Configuration" },
-            { title: "Customer Consents" }
-        ]
-    },
-    "Number Management": {
-        subMenu: [
-            { title: "Manage by Tenant" },
-            { title: "Manage by Number" },
-            { title: "SenderId Management" }
-        ]
-    },
-    "Number Management History": {
-        subMenu: [
-            { title: "Released from Tenant" },
-            { title: "Upload to Tenant" },
-            { title: "Upload to Stock" },
-            { title: "Live Search Orders" },
-            { title: "Number Capabilities Updates" },
-            { title: "SMS Capable Updates" },
-            { title: "Port In Orders" },
-            { title: "Port Out Orders" },
-            { title: "Program Brief" },
-            { title: "Campaign Brief" },
-            { title: "10DLC Brand Briefs" },
-            { title: "10DLC Campaign Briefs" },
-            { title: "SenderId Order Details" },
-            { title: "Inter Tenant Transfer Orders" }
-        ]
-    },
-    "Migrations": {
-        subMenu: [
-            { title: "Telco Migrations" }
-        ]
-    },
-    "Administration": {
-        subMenu: [
-            { title: "Calling Profiles" },
-            { title: "Number Profiles" },
-            { title: "Operator Management" },
-            { title: "Port-In Plans" }
-        ]
-    },
-    "Tools": {
-        subMenu: [
-            { title: "TNI Number Search" }
-        ]
-    },
-    "Trunks & Calling Profiles": {
-        subMenu: [
-            { title: "Calling Profile Management" },
-            { title: "Trunk Management" }
-        ]
-    },
-    "Dashboard and data": {
-        subMenu: [
-            { title: "CDR & CQD download" },
-            { title: "SLA & KPI dashboard" }
-        ]
-    },
-    "Support": {
-        subMenu: [
-            { title: "Please submit customer and engineering related issues to the Microsoft ticketing system" },
-        ]
-    }
-};
 
 const Content = () => {
-    const [selectedMenus, setSelectedMenus] = useState([]);
-    const [isShowMenu, setIsShowMenu] = useState(true); // Новое состояние
-    const [hoveredMenu, setHoveredMenu] = useState(null); // Состояние для отслеживания наведенной иконки
+    const [expandedMenus, setExpandedMenus] = useState([]);
+    const [isShowMenu, setIsShowMenu] = useState(false);
+    const [isPanelVisible, setIsPanelVisible] = useState(false);
+    // const [theme, setTheme] = useState('light');
 
-    useEffect(() => {
-        // console.log(isShowMenu)
-    }, [isShowMenu])
+    const [activeTable, setActiveTable] = useState(null); // Состояние для отслеживания активной таблицы
+    const handleButtonClick = (buttonName) => {
+        console.log(`${buttonName} button clicked`);
+        // Handle the button action here
+    };
+    const columns1 = [
+        {Header: "Type", accessor: "Type", minWidth: 200},
+        {Header: "Display Name", accessor: "Display Name", minWidth: 200},
+        {Header: "First Name", accessor: "First Name", minWidth: 200},
+        {Header: "Last Name", accessor: "Last Name", minWidth: 200},
+        {Header: "Title", accessor: "Title", minWidth: 200},
+        {Header: "Phone Number", accessor: "Phone Number", minWidth: 200},
+        {
+            Header: "Alternative Number",
+            accessor: "Alternative Number",
+            minWidth: 200,
+        },
+    ];
+    const data1 = [
+        {
+            Type: "ServiceManager",
+            "Display Name": "SM-DisplayName",
+            "First Name": "SM-FirstName",
+            "Last Name": "SM-LastName",
+            Title: "SM-Title",
+            "Phone Number": "SM-Phone",
+            "Alternative Number": "SM-AnotherPhone",
+        },
+        {
+            Type: "OperationsCenter",
+            "Display Name": "Ops-DisplayName",
+            "First Name": "Ops-FirstName",
+            "Last Name": "Ops-LastName",
+            Title: "Ops-Title",
+            "Phone Number": "Ops-Phone",
+            "Alternative Number": "Ops-AnotherPhone",
+        },
+    ];
+    const columns2 = [
+        {Header: "Type", accessor: "Type", minWidth: 200},
+        {Header: "Display Name", accessor: "Display Name", minWidth: 200},
+        {Header: "First Name", accessor: "First Name", minWidth: 200},
+        {Header: "Last Name", accessor: "Last Name", minWidth: 200},
+    ];
+    const data2 = [
+        {
+            Type: "NetworkManager",
+            "Display Name": "Net-DisplayName",
+            "First Name": "Net-FirstName",
+            "Last Name": "Net-LastName",
+        },
+        {
+            Type: "SupportCenter",
+            "Display Name": "Support-DisplayName",
+            "First Name": "Support-FirstName",
+            "Last Name": "Support-LastName",
+        },
+    ];
+
+    const actions = [
+        {label: "Add", onClick: () => console.log("Add clicked")},
+        {label: "Edit", onClick: () => console.log("Edit clicked")},
+        {label: "Delete", onClick: () => console.log("Delete clicked")},
+    ];
+
+    // const toggleTheme = () => {
+    //     const newTheme = theme === 'light' ? 'dark' : 'light';
+    //     setTheme(newTheme);
+    //     document.documentElement.setAttribute('data-theme', newTheme);
+    // };
 
     const toggleShowMenu = () => {
         setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
+        if (!isShowMenu) {
+            setExpandedMenus([]); // Закрыть все меню при сворачивании
+        }
     };
 
-    // Функция для переключения отображения меню
-    const toggleMenu = (menuTitle) => {
-        setSelectedMenus((prevSelectedMenus) =>
-            prevSelectedMenus.includes(menuTitle)
-                ? prevSelectedMenus.filter((title) => title !== menuTitle)
-                : [...prevSelectedMenus, menuTitle]
-        );
+    const handleTableFocus = (tableId) => {
+        setActiveTable(tableId); // Устанавливаем активную таблицу
+    };
+
+    const togglePanelVisibility = () => {
+        setIsPanelVisible((prev) => !prev);
     };
 
     return (
-        <main className='main-wrapper'>      
-            <div className='icon-nav-block'>
-                {/* Кнопка для отображения/скрытия меню */}
-                <div
-                    className={`icon-wrapper ${isShowMenu ? 'active' : ''}`}
-                    onClick={toggleShowMenu}
-                >
-                    {!isShowMenu ? <RiMenuUnfoldFill className='icon' /> : <RiMenuFoldFill className='icon' />}
-                </div>
+        <main className="main-wrapper">
 
-                {/* Использование IconButton для каждого пункта меню */}
-                <IconButton
-                    icon={MdManageAccounts}
-                    menuTitle="Operator Settings"
-                    isActive={selectedMenus.includes("Operator Settings")}
-                    onClick={toggleMenu}
+            <IconNavBlock isShowMenu={isShowMenu} toggleShowMenu={toggleShowMenu}/>
+
+
+            <div className="content-wrapper">
+                <PageNavigation onButtonClick={handleButtonClick}/>
+
+                <EntityDetail/>
+
+                <TabComponent/>
+
+                <KeyContactsTable
+                    title="First Key Contacts"
+                    columns={columns1}
+                    data={data1}
+                    actions={actions}
+                    isActive={activeTable === 1}
+                    onTableFocus={() => handleTableFocus(1)}
                 />
-
-                <IconButton
-                    icon={FaHashtag}
-                    menuTitle="Number Management"
-                    isActive={selectedMenus.includes("Number Management")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={BsColumnsGap}
-                    menuTitle="Number Management History"
-                    isActive={selectedMenus.includes("Number Management History")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={RiFileTransferLine}
-                    menuTitle="Migrations"
-                    isActive={selectedMenus.includes("Migrations")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={GrUserAdmin}
-                    menuTitle="Administration"
-                    isActive={selectedMenus.includes("Administration")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={BsTelephone}
-                    menuTitle="Trunks & Calling Profiles"
-                    isActive={selectedMenus.includes("Trunks & Calling Profiles")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={FaTools}
-                    menuTitle="Tools"
-                    isActive={selectedMenus.includes("Tools")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={BsGraphUpArrow}
-                    menuTitle="Dashboard and data"
-                    isActive={selectedMenus.includes("Dashboard and data")}
-                    onClick={toggleMenu}
-                />
-
-                <IconButton
-                    icon={MdOutlineContactSupport}
-                    menuTitle="Support"
-                    isActive={selectedMenus.includes("Support")}
-                    onClick={toggleMenu}
+                <KeyContactsTable
+                    title="Second Key Contacts"
+                    columns={columns2}
+                    data={data2}
+                    actions={actions}
+                    isActive={activeTable === 2}
+                    onTableFocus={() => handleTableFocus(2)}
                 />
             </div>
+            <button style={{width: '10px'}} onClick={togglePanelVisibility}>O</button>
 
-            <div className='main-content'>
-                {isShowMenu && (
-                    <div className="menu-block">
-                        {selectedMenus.map((menuTitle) => (
-                            <NavMenuBlock key={menuTitle} menuTitle={menuTitle} menu={menu} />
-                        ))}
-                    </div>
-                )}
-            </div>
+            <Panel isVisible={isPanelVisible} onClose={togglePanelVisibility}/>
         </main>
     );
 };
 
-export default Content
+export default Content;

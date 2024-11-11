@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {menu} from '../Content'
 
 const IconButton = ({ icon: Icon, menuTitle, isActive, onClick }) => {
     const [isMenu, setIsMenu] = useState(false);

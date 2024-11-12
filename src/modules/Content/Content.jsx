@@ -132,6 +132,7 @@ const Content = () => {
 
 
             <div className="content-wrapper">
+
                 <PageNavigation onButtonClick={handleButtonClick}/>
 
                 <EntityDetail/>

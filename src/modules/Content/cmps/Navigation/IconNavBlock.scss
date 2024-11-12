@@ -89,6 +89,16 @@
       display: flex;
       flex-direction: column;
       border-radius: 5px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      //padding: 5px;
+      padding-right: 5px;
+
+      &:hover{
+        border: 1px solid var(--background-main-color);
+        scale: 1.02;
+        transition: .3s;
+      }
 
       .menu-header {
         display: flex;
@@ -155,6 +165,7 @@
           cursor: pointer;
           margin-left: 5px;
           box-sizing: border-box;
+          margin-top: 1px;
 
           .sub-menu-item {
             width: 100%;
@@ -163,6 +174,8 @@
             font-size: 12px;
             box-sizing: border-box;
             border: 1px solid transparent;
+            margin-right: 5px;
+            //margin-bottom: 5px;
 
             &.active {
               background-color: var(--background-middle-color); // Замените на цвет активного элемента
@@ -206,6 +219,19 @@
           .sub-menu-item {
           }
         }
+        .submenu-list:last-child {
+          // Styles for the last <li> element inside .sub-menu
+          .icon-tree-direction-wrapper {
+            // Custom styles for the icon-tree-direction-wrapper inside the last <li>
+          }
+
+          .sub-menu-item {
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      .hover-menu-wrapper{
       }
 
       .hover-menu {
@@ -223,12 +249,15 @@
         visibility: hidden;
         transform: translateX(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        border: 1px solid red;
       }
 
       &:hover .hover-menu {
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
+        left: 40px;
+        z-index: 1000;
       }
     }
   }

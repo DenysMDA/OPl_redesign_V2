@@ -1,0 +1,26 @@
+@import "src/theme";
+
+.content-header {
+  width: 100%;
+  background: var(--background-light-color);
+  box-sizing: border-box;
+  padding: 10px;
+  padding-left: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-radius: $border-primary-radius;
+
+  h1 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 38px;
+  }
+
+  // .content-header-nav {
+  //   border: 1px solid red;
+  //   display: flex;
+  //   justify-self: start;
+  // }
+}

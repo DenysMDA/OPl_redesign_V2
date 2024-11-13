@@ -1,11 +1,10 @@
+@import "src/theme";
+
 .main-wrapper {
   display: grid;
   grid-template-columns: auto 1fr; /* Первый элемент занимает свою ширину, второй занимает оставшееся пространство */
   width: 100%;
   //   height: 100vh; /* Высота на весь экран */
-
-
-
 
   .main-content {
     width: 100%;
@@ -49,14 +48,11 @@
   }
 }
 
-
 .content-wrapper {
   overflow: hidden;
   margin: 0;
 
-  border: 1px solid red;
+  // border: 1px solid red;
   margin-left: 15px;
   margin-right: 15px;
 }
-
-

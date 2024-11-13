@@ -187,20 +187,24 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
             {!isShowMenu && hoveredMenu === menuTitle && (
               <div className={`hover-menu-wrapper`}>
                 <div className="hover-menu">
-                  <ul className="sub-menu">
-                    {menu[menuTitle].subMenu.map((subItem, subIndex) => (
-                      <li key={subIndex} className="submenu-list">
-                        <div
-                          className={`sub-menu-item ${
-                            activeSubMenuItem === subItem.title ? "active" : ""
-                          }`}
-                          onClick={() => handleSubMenuClick(subItem.title)}
-                        >
-                          {subItem.title}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="sub-menu-wrapper">
+                    <ul className="sub-menu">
+                      {menu[menuTitle].subMenu.map((subItem, subIndex) => (
+                        <li key={subIndex} className="submenu-list">
+                          <div
+                            className={`sub-menu-item ${
+                              activeSubMenuItem === subItem.title
+                                ? "active"
+                                : ""
+                            }`}
+                            onClick={() => handleSubMenuClick(subItem.title)}
+                          >
+                            {subItem.title}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             )}

@@ -236,18 +236,22 @@
         position: absolute;
         top: 0;
         left: 100%;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
+        padding-left: 20px;
         z-index: 1000;
-        min-width: 200px;
+        min-width: 180px;
         opacity: 0;
         visibility: hidden;
-        transform: translateX(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-        border: 1px solid red;
+        margin-left: -18px;
+        // border: 1px solid red;
+
+        .sub-menu-wrapper {
+          background: var(--background-light-color);
+          z-index: 1000;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          border-radius: $border-primary-radius;
+          padding-top: 5px;
+        }
       }
 
       &:hover .hover-menu {

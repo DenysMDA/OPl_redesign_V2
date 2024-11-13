@@ -3,8 +3,9 @@
 $border-primary-radius: 5px;
 $button-primary-height: 30px;
 
+$light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 
-[data-theme='light'] {
+[data-theme="light"] {
   --primary-color: #19191a;
   --dark-gray-color: #424244;
   --light-gray-color: #a2a0aa;
@@ -13,14 +14,12 @@ $button-primary-height: 30px;
   --background-middle-color: #f3f4f6;
   --background-light-color: #ffffff;
 
-
-
   --text-color: #111926;
   --text-light-gray: #626975;
 }
 
 // Темная тема
-[data-theme='dark'] {
+[data-theme="dark"] {
   --primary-color: #ffffff;
   --dark-gray-color: #e6e6e8;
   --light-gray-color: #8a8a8b;
@@ -28,8 +27,6 @@ $button-primary-height: 30px;
   --background-main-color: #18171c;
   --background-middle-color: dark;
   --background-light-color: green;
-
-
 
   --text-color: #111926;
   --text-light-gray: #626975;

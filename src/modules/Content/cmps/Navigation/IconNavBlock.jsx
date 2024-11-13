@@ -190,7 +190,11 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
                   <div className="sub-menu-wrapper">
                     <ul className="sub-menu">
                       {menu[menuTitle].subMenu.map((subItem, subIndex) => (
-                        <li key={subIndex} className="submenu-list">
+                        <li
+                          key={subIndex}
+                          className="submenu-list"
+                          onClick={() => handleSubMenuClick(subItem.title)}
+                        >
                           <div
                             className={`sub-menu-item ${
                               activeSubMenuItem === subItem.title

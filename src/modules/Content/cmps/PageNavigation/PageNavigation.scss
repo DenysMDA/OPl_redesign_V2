@@ -5,7 +5,8 @@
   gap: 5px;
   justify-self: end;
   padding: 10px 20px;
-  background: var(--background-main-color);
+  align-items: center;
+  // background: var(--background-main-color);
   padding: 5px;
   box-sizing: border-box;
   border-radius: $border-primary-radius;
@@ -13,7 +14,7 @@
   .nav-button {
     background-color: var(--background-light-color);
     border: none;
-    padding: 4px 8px;
+    padding: 8px 10px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 10px;
@@ -34,6 +35,16 @@
     .icon {
       width: 15px;
       height: 15px;
+    }
+  }
+
+  .separator {
+    width: 2px;
+    height: 10px;
+    background: var(--text-light-gray);
+
+    &:last-child {
+      display: none;
     }
   }
 }

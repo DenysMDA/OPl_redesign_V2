@@ -5,7 +5,11 @@ import { MdContentPasteSearch } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import { BsFillSendCheckFill } from "react-icons/bs";
 
-const PageNavigation = ({ onButtonClick }) => {
+const PageNavigation = ({
+  onButtonClick,
+  collapseAllTables,
+  expandAllTables,
+}) => {
   const buttons = [
     {
       label: "Upload New Number",
@@ -20,22 +24,25 @@ const PageNavigation = ({ onButtonClick }) => {
     {
       label: "Deny",
       icon: <MdCancel className="icon" />,
-      action: () => onButtonClick("Deny"),
+      action: collapseAllTables,
     },
     {
       label: "Vetting",
       icon: <BsFillSendCheckFill className="icon" />,
-      action: () => onButtonClick("Vetting"),
+      action: expandAllTables,
     },
   ];
 
   return (
     <nav className="page-navigation">
       {buttons.map((button, index) => (
-        <button key={index} className="nav-button" onClick={button.action}>
-          {button.icon}
-          {button.label}
-        </button>
+        <>
+          <button key={index} className="nav-button" onClick={button.action}>
+            {button.icon}
+            {button.label}
+          </button>
+          <div className="separator"></div>
+        </>
       ))}
     </nav>
   );

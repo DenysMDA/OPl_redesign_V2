@@ -6,8 +6,10 @@
   box-sizing: border-box;
   margin-left: 15px;
   border-radius: $border-primary-radius;
+  position: relative;
+  z-index: 10000;
 
-  box-shadow: $light-box-shadow;
+  box-shadow: var(--light-box-shadow);
 
   .icon-nav-block {
     width: 35px;
@@ -223,6 +225,7 @@
           .sub-menu-item {
           }
         }
+
         .submenu-list:last-child {
           // Styles for the last <li> element inside .sub-menu
           .icon-tree-direction-wrapper {
@@ -270,3 +273,7 @@
     }
   }
 }
+
+// .icon-tree-direction__before-active {
+//   border-left: 2px solid black !important; // Черный левый бордер
+// }

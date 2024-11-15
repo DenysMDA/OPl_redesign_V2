@@ -166,21 +166,41 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
 
             {isShowMenu && expandedMenus.includes(menuTitle) && (
               <ul className="sub-menu">
-                {menu[menuTitle].subMenu.map((subItem, subIndex) => (
-                  <li key={subIndex} className="submenu-list">
-                    <div className="icon-tree-direction-wrapper">
-                      <div className="icon-tree-direction" />
-                    </div>
-                    <div
-                      className={`sub-menu-item ${
-                        activeSubMenuItem === subItem.title ? "active" : ""
-                      }`}
-                      onClick={() => handleSubMenuClick(subItem.title)}
-                    >
-                      {subItem.title}
-                    </div>
-                  </li>
-                ))}
+                {menu[menuTitle].subMenu.map((subItem, subIndex) => {
+                  // Проверяем, находится ли текущий элемент перед активным
+                  const isBeforeActive =
+                    menu[menuTitle].subMenu.findIndex(
+                      (item) => item.title === activeSubMenuItem
+                    ) > subIndex;
+
+                  return (
+                    <li key={subIndex} className="submenu-list">
+                      <div
+                        className={`icon-tree-direction-wrapper ${
+                          activeSubMenuItem === subItem.title
+                            ? "icon-tree-direction-wrapper__active"
+                            : ""
+                        }`}
+                      >
+                        <div
+                          className={`icon-tree-direction ${
+                            isBeforeActive
+                              ? "icon-tree-direction__before-active"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                      <div
+                        className={`sub-menu-item ${
+                          activeSubMenuItem === subItem.title ? "active" : ""
+                        }`}
+                        onClick={() => handleSubMenuClick(subItem.title)}
+                      >
+                        {subItem.title}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             )}
 

@@ -10,12 +10,16 @@ $light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   --dark-gray-color: #424244;
   --light-gray-color: #a2a0aa;
 
-  --background-main-color: #e6e7eb;
+  --background-dark-color: #111926;
+  --background-light-dark-color: #424244;
+  --background-main-color: #e3e4e6;
   --background-middle-color: #f3f4f6;
   --background-light-color: #ffffff;
 
   --text-color: #111926;
   --text-light-gray: #626975;
+
+  --light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 // Темная тема
@@ -24,10 +28,14 @@ $light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   --dark-gray-color: #e6e6e8;
   --light-gray-color: #8a8a8b;
 
+  --background-dark-color: #e6e6e8;
+  --background-light-dark-color: #424244;
   --background-main-color: #18171c;
   --background-middle-color: dark;
   --background-light-color: green;
 
   --text-color: #111926;
   --text-light-gray: #626975;
+
+  --light-box-shadow: $light-box-shadow;
 }

@@ -33,51 +33,184 @@ import IconNavBlock from "./cmps/Navigation/IconNavBlock";
 import PageNavigation from "./cmps/PageNavigation/PageNavigation";
 import ContentHeader from "./cmps/ContentHeader/ContentHeader";
 
+const columns1 = [
+  { Header: "Type", accessor: "Type", minWidth: 200 },
+  { Header: "Display Name", accessor: "Display Name", minWidth: 200 },
+  { Header: "First Name", accessor: "First Name", minWidth: 200 },
+  { Header: "Last Name", accessor: "Last Name", minWidth: 200 },
+  { Header: "Title", accessor: "Title", minWidth: 200 },
+  { Header: "Phone Number", accessor: "Phone Number", minWidth: 200 },
+  {
+    Header: "Alternative Number",
+    accessor: "Alternative Number",
+    minWidth: 200,
+  },
+  { Header: "Email", accessor: "Email", minWidth: 200 },
+  { Header: "Department", accessor: "Department", minWidth: 200 },
+  { Header: "Location", accessor: "Location", minWidth: 200 },
+  { Header: "Status", accessor: "Status", minWidth: 200 },
+];
+
+const data1 = [
+  {
+    Type: "ServiceManager",
+    "Display Name": "Alice Johnson",
+    "First Name": "Alice",
+    "Last Name": "Johnson",
+    Title: "Senior Service Manager",
+    "Phone Number": "123-456-7890",
+    "Alternative Number": "321-654-0987",
+    Email: "alice.johnson@example.com",
+    Department: "Service Management",
+    Location: "New York",
+    Status: "Active",
+  },
+  {
+    Type: "OperationsCenter",
+    "Display Name": "Bob Smith",
+    "First Name": "Bob",
+    "Last Name": "Smith",
+    Title: "Operations Supervisor",
+    "Phone Number": "234-567-8901",
+    "Alternative Number": "432-765-1098",
+    Email: "bob.smith@example.com",
+    Department: "Operations",
+    Location: "Chicago",
+    Status: "Active",
+  },
+  {
+    Type: "SupportTeam",
+    "Display Name": "Charlie Brown",
+    "First Name": "Charlie",
+    "Last Name": "Brown",
+    Title: "Support Specialist",
+    "Phone Number": "345-678-9012",
+    "Alternative Number": "543-876-2109",
+    Email: "charlie.brown@example.com",
+    Department: "Support",
+    Location: "San Francisco",
+    Status: "Active",
+  },
+  {
+    Type: "ProjectManager",
+    "Display Name": "Diana Prince",
+    "First Name": "Diana",
+    "Last Name": "Prince",
+    Title: "Project Manager",
+    "Phone Number": "456-789-0123",
+    "Alternative Number": "654-987-3210",
+    Email: "diana.prince@example.com",
+    Department: "Project Management",
+    Location: "Seattle",
+    Status: "On Leave",
+  },
+  {
+    Type: "ITAdmin",
+    "Display Name": "Edward King",
+    "First Name": "Edward",
+    "Last Name": "King",
+    Title: "IT Administrator",
+    "Phone Number": "567-890-1234",
+    "Alternative Number": "765-098-4321",
+    Email: "edward.king@example.com",
+    Department: "IT",
+    Location: "Boston",
+    Status: "Active",
+  },
+  {
+    Type: "HRManager",
+    "Display Name": "Fiona Clark",
+    "First Name": "Fiona",
+    "Last Name": "Clark",
+    Title: "HR Manager",
+    "Phone Number": "678-901-2345",
+    "Alternative Number": "876-210-5432",
+    Email: "fiona.clark@example.com",
+    Department: "Human Resources",
+    Location: "Denver",
+    Status: "Active",
+  },
+  {
+    Type: "MarketingLead",
+    "Display Name": "George Williams",
+    "First Name": "George",
+    "Last Name": "Williams",
+    Title: "Marketing Lead",
+    "Phone Number": "789-012-3456",
+    "Alternative Number": "987-321-6543",
+    Email: "george.williams@example.com",
+    Department: "Marketing",
+    Location: "Los Angeles",
+    Status: "Inactive",
+  },
+  {
+    Type: "FinanceOfficer",
+    "Display Name": "Hannah Lee",
+    "First Name": "Hannah",
+    "Last Name": "Lee",
+    Title: "Finance Officer",
+    "Phone Number": "890-123-4567",
+    "Alternative Number": "098-432-7654",
+    Email: "hannah.lee@example.com",
+    Department: "Finance",
+    Location: "Houston",
+    Status: "Active",
+  },
+  {
+    Type: "LegalAdvisor",
+    "Display Name": "Ian Roberts",
+    "First Name": "Ian",
+    "Last Name": "Roberts",
+    Title: "Legal Advisor",
+    "Phone Number": "901-234-5678",
+    "Alternative Number": "109-543-8765",
+    Email: "ian.roberts@example.com",
+    Department: "Legal",
+    Location: "Miami",
+    Status: "Active",
+  },
+  {
+    Type: "Procurement",
+    "Display Name": "Jane Adams",
+    "First Name": "Jane",
+    "Last Name": "Adams",
+    Title: "Procurement Officer",
+    "Phone Number": "012-345-6789",
+    "Alternative Number": "210-654-9876",
+    Email: "jane.adams@example.com",
+    Department: "Procurement",
+    Location: "Phoenix",
+    Status: "Active",
+  },
+  {
+    Type: "QualityAssurance",
+    "Display Name": "Kevin Scott",
+    "First Name": "Kevin",
+    "Last Name": "Scott",
+    Title: "QA Engineer",
+    "Phone Number": "123-456-7890",
+    "Alternative Number": "321-765-0987",
+    Email: "kevin.scott@example.com",
+    Department: "Quality Assurance",
+    Location: "San Diego",
+    Status: "Active",
+  },
+];
+
 const Content = () => {
   const [expandedMenus, setExpandedMenus] = useState([]);
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState("Operator Configuration");
   // const [theme, setTheme] = useState('light');
+  const [isCollapsedAll, setIsCollapsedAll] = useState(false); // Новое состояние
 
   const [activeTable, setActiveTable] = useState(null); // Состояние для отслеживания активной таблицы
   //   const handleButtonClick = (buttonName) => {
   //     console.log(`${buttonName} button clicked`);
   //     // Handle the button action here
   //   };
-  const columns1 = [
-    { Header: "Type", accessor: "Type", minWidth: 200 },
-    { Header: "Display Name", accessor: "Display Name", minWidth: 200 },
-    { Header: "First Name", accessor: "First Name", minWidth: 200 },
-    { Header: "Last Name", accessor: "Last Name", minWidth: 200 },
-    { Header: "Title", accessor: "Title", minWidth: 200 },
-    { Header: "Phone Number", accessor: "Phone Number", minWidth: 200 },
-    {
-      Header: "Alternative Number",
-      accessor: "Alternative Number",
-      minWidth: 200,
-    },
-  ];
-  const data1 = [
-    {
-      Type: "ServiceManager",
-      "Display Name": "SM-DisplayName",
-      "First Name": "SM-FirstName",
-      "Last Name": "SM-LastName",
-      Title: "SM-Title",
-      "Phone Number": "SM-Phone",
-      "Alternative Number": "SM-AnotherPhone",
-    },
-    {
-      Type: "OperationsCenter",
-      "Display Name": "Ops-DisplayName",
-      "First Name": "Ops-FirstName",
-      "Last Name": "Ops-LastName",
-      Title: "Ops-Title",
-      "Phone Number": "Ops-Phone",
-      "Alternative Number": "Ops-AnotherPhone",
-    },
-  ];
+
   const columns2 = [
     { Header: "Type", accessor: "Type", minWidth: 200 },
     { Header: "Display Name", accessor: "Display Name", minWidth: 200 },
@@ -111,12 +244,19 @@ const Content = () => {
   //     document.documentElement.setAttribute('data-theme', newTheme);
   // };
 
+  // const toggleShowMenu = () => {
+  //   setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
+  //   if (!isShowMenu) {
+  //     setExpandedMenus([]); // Закрыть все меню при сворачивании
+  //   }
+  // };
+
   const toggleShowMenu = () => {
     setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
-    if (!isShowMenu) {
-      setExpandedMenus([]); // Закрыть все меню при сворачивании
-    }
   };
+
+  const collapseAllTables = () => setIsCollapsedAll(true);
+  const expandAllTables = () => setIsCollapsedAll(false);
 
   const handleTableFocus = (tableId) => {
     setActiveTable(tableId); // Устанавливаем активную таблицу
@@ -137,25 +277,37 @@ const Content = () => {
       <div className="content-wrapper">
         <ContentHeader activeSubMenu={activeSubMenu} />
 
-        <EntityDetail />
+        {/* <EntityDetail />
 
-        <TabComponent />
+        <TabComponent /> */}
 
         <KeyContactsTable
-          title="First Key Contacts"
+          title="Partner Number Configuration"
           columns={columns1}
           data={data1}
           actions={actions}
           isActive={activeTable === 1}
           onTableFocus={() => handleTableFocus(1)}
+          isCollapsedAll={isCollapsedAll} // Передаем состояние
         />
         <KeyContactsTable
-          title="Second Key Contacts"
+          title="Applications IDS"
           columns={columns2}
           data={data2}
           actions={actions}
           isActive={activeTable === 2}
           onTableFocus={() => handleTableFocus(2)}
+          isCollapsedAll={isCollapsedAll} // Передаем состояние
+        />
+
+        <KeyContactsTable
+          title="Microsofts offers"
+          columns={columns1}
+          data={data1}
+          actions={actions}
+          isActive={activeTable === 3}
+          onTableFocus={() => handleTableFocus(3)}
+          isCollapsedAll={isCollapsedAll} // Передаем состояние
         />
       </div>
       <button style={{ width: "10px" }} onClick={togglePanelVisibility}>

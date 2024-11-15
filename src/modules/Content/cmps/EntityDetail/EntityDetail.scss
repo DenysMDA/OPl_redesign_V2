@@ -10,7 +10,7 @@
   background: var(--background-light-color);
   padding-left: 20px;
 
-  box-shadow: $light-box-shadow;
+  box-shadow: var(--light-box-shadow);
 
   h2 {
     font-size: 24px;

@@ -1,19 +1,14 @@
-
-.table-wrapper {
-  overflow: auto;
-  //margin: 10px;
-  border: 1px solid gray;
-  border-radius: 5px;
-  margin: 8px;
-}
+@import "src/theme";
 
 .table {
-  margin-top: 35px;
-  margin-left: 10px;
-  margin-right: 20px;
-  border: 1px solid gray;
+  margin-top: 15px;
   border-radius: 5px;
   overflow-x: auto;
+  padding: 15px 15px;
+  background: var(--background-light-color);
+  box-shadow: var(--light-box-shadow);
+
+  color: var(--primary-color);
 
   h2 {
     margin: 0;
@@ -27,12 +22,76 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: lightgrey;
-    padding: 5px 15px;
+
+    // background: var(--background-middle-color);
+
+    .header-title {
+      display: flex;
+      justify-self: start;
+      align-items: center;
+      gap: 10px;
+      // margin-bottom: 20px;
+
+      // .header-title-separator {
+      //   width: 2px;
+      //   border-radius: 5px;
+      //   height: 14px;
+      //   background: red;
+      //   background: var(--background-light-dark-color);
+      // }
+
+      h2 {
+        font-size: 16px;
+        border-bottom: 2px solid var(--background-light-dark-color);
+      }
+    }
   }
 
   .action-buttons {
-    padding: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 5px;
+
+    .action-buttons-separator {
+      width: 2px;
+      height: 10px;
+      background: var(--background-light-dark-color);
+      border-radius: $border-primary-radius;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    button {
+      border: none;
+      background: var(--background-light-color);
+      cursor: pointer;
+      padding: 6px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      transition: 0.3s;
+      border-radius: $border-primary-radius;
+      color: var(--dark-gray-color);
+
+      &:hover {
+        background: var(--background-main-color);
+      }
+
+      .action-icon {
+        font-size: 16px;
+      }
+
+      &:first-child {
+        // padding-left: 0;
+      }
+    }
   }
 
   .separator {
@@ -58,6 +117,14 @@
   tbody tr:hover {
     background-color: #f0f0f0;
     cursor: pointer;
+    transition: 0.3s;
+  }
+
+  tbody tr {
+    transition: 0.3s;
+    height: 32px;
+    font-size: 14px;
+    // background: rgba(199, 199, 255, 0.041);
   }
 
   /* Основные стили для таблицы */
@@ -74,10 +141,14 @@
     white-space: nowrap;
     overflow: hidden; /* Скрываем переполнение */
     text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
-    border-right: 2px solid lightgrey;
-    border-bottom: 2px solid lightgrey;
-    border-top: 2px solid lightgrey;
-
+    // border-right: 2px solid lightgrey;
+    // border-bottom: 2px solid lightgrey;
+    // border-top: 2px solid lightgrey;
+    // border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    font-size: 14px;
+    background: rgba(74, 40, 223, 0.247);
   }
 
   /* Стили для ячеек */
@@ -86,7 +157,7 @@
     white-space: nowrap;
     overflow: hidden; /* Скрываем переполнение */
     text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
-    border-right: 2px solid lightgrey;
+    // border-right: 1px solid lightgrey;
   }
 
   .react-table {
@@ -115,5 +186,12 @@
     z-index: 1;
     user-select: none;
     touch-action: none;
+  }
+
+  .table-wrapper {
+    overflow: auto;
+    //margin: 10px;
+    padding-left: 5px;
+    // border-top: 1px solid var(--background-main-color);
   }
 }

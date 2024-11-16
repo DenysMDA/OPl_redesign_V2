@@ -1,0 +1,29 @@
+@import "src/theme";
+
+.content-header {
+  width: 100%;
+  background: var(--background-light-color);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  padding-left: 15px;
+  color: var(--primary-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: $border-primary-radius;
+
+  box-shadow: var(--light-box-shadow);
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    // line-height: 48px;
+  }
+
+  // .content-header-nav {
+  //   border: 1px solid red;
+  //   display: flex;
+  //   justify-self: start;
+  // }
+}

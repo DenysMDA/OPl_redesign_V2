@@ -14,13 +14,13 @@ const KeyContactsTable = ({
   actions,
   isActive,
   onTableFocus,
-  isCollapsedAll,
+  areTablesCollapsed,
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsCollapsed((prev) => !prev);
   };
 
   const handleRowClick = (rowIndex) => {
@@ -28,15 +28,15 @@ const KeyContactsTable = ({
     setSelectedRow(rowIndex);
   };
 
-  //   useEffect(() => {
-  //     if (!isActive) {
-  //       setSelectedRow(null);
-  //     }
-  //   }, [isActive]);
+  useEffect(() => {
+    if (!isActive) {
+      setSelectedRow(null);
+    }
+  }, [isActive]);
 
   useEffect(() => {
-    setIsCollapsed(isCollapsedAll);
-  }, [isCollapsedAll]);
+    setIsCollapsed(areTablesCollapsed);
+  }, [areTablesCollapsed]);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable(

@@ -203,7 +203,7 @@ const Content = () => {
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState("Operator Configuration");
   // const [theme, setTheme] = useState('light');
-  const [isCollapsedAll, setIsCollapsedAll] = useState(false); // Новое состояние
+  const [areTablesCollapsed, setAreTablesCollapsed] = useState(false); // Новое состояние
 
   const [activeTable, setActiveTable] = useState(null); // Состояние для отслеживания активной таблицы
   //   const handleButtonClick = (buttonName) => {
@@ -244,19 +244,23 @@ const Content = () => {
   //     document.documentElement.setAttribute('data-theme', newTheme);
   // };
 
-  // const toggleShowMenu = () => {
-  //   setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
-  //   if (!isShowMenu) {
-  //     setExpandedMenus([]); // Закрыть все меню при сворачивании
-  //   }
-  // };
-
   const toggleShowMenu = () => {
     setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
+    if (!isShowMenu) {
+      setExpandedMenus([]); // Закрыть все меню при сворачивании
+    }
   };
 
-  const collapseAllTables = () => setIsCollapsedAll(true);
-  const expandAllTables = () => setIsCollapsedAll(false);
+  useEffect(() => {
+    console.log(areTablesCollapsed);
+  }, [areTablesCollapsed]);
+
+  // const toggleShowMenu = () => {
+  //   setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
+  // };
+
+  const collapseAllTables = () => setAreTablesCollapsed(true);
+  const expandAllTables = () => setAreTablesCollapsed(false);
 
   const handleTableFocus = (tableId) => {
     setActiveTable(tableId); // Устанавливаем активную таблицу
@@ -275,7 +279,11 @@ const Content = () => {
       />
 
       <div className="content-wrapper">
-        <ContentHeader activeSubMenu={activeSubMenu} />
+        <ContentHeader
+          activeSubMenu={activeSubMenu}
+          collapseAllTables={collapseAllTables}
+          expandAllTables={expandAllTables}
+        />
 
         {/* <EntityDetail />
 
@@ -288,7 +296,7 @@ const Content = () => {
           actions={actions}
           isActive={activeTable === 1}
           onTableFocus={() => handleTableFocus(1)}
-          isCollapsedAll={isCollapsedAll} // Передаем состояние
+          areTablesCollapsed={areTablesCollapsed} // Передаем состояние
         />
         <KeyContactsTable
           title="Applications IDS"
@@ -297,7 +305,7 @@ const Content = () => {
           actions={actions}
           isActive={activeTable === 2}
           onTableFocus={() => handleTableFocus(2)}
-          isCollapsedAll={isCollapsedAll} // Передаем состояние
+          areTablesCollapsed={areTablesCollapsed} // Передаем состояние
         />
 
         <KeyContactsTable
@@ -307,7 +315,7 @@ const Content = () => {
           actions={actions}
           isActive={activeTable === 3}
           onTableFocus={() => handleTableFocus(3)}
-          isCollapsedAll={isCollapsedAll} // Передаем состояние
+          areTablesCollapsed={areTablesCollapsed} // Передаем состояние
         />
       </div>
       <button style={{ width: "10px" }} onClick={togglePanelVisibility}>

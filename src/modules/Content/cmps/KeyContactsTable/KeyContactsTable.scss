@@ -30,6 +30,7 @@
       justify-self: start;
       align-items: center;
       gap: 10px;
+      // margin-bottom: 20px;
 
       // .header-title-separator {
       //   width: 2px;
@@ -52,6 +53,8 @@
     justify-content: start;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
+    margin-left: 5px;
 
     .action-buttons-separator {
       width: 2px;
@@ -121,6 +124,7 @@
     transition: 0.3s;
     height: 32px;
     font-size: 14px;
+    // background: rgba(199, 199, 255, 0.041);
   }
 
   /* Основные стили для таблицы */
@@ -144,6 +148,7 @@
     border-bottom: 1px solid lightgrey;
     border-top: 1px solid lightgrey;
     font-size: 14px;
+    background: rgba(74, 40, 223, 0.247);
   }
 
   /* Стили для ячеек */

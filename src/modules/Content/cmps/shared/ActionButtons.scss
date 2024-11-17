@@ -1,0 +1,114 @@
+@import "src/theme";
+
+.action-buttons {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+
+  .action-icon-block {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-sizing: border-box;
+    margin-left: 5px;
+
+    .action-icon-wrapper{
+      button {
+        color: var(--color-func-on);
+        border: 1px solid var(--color-func-on);
+
+        .action-icon{
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  //.action-buttons-separator {
+  //  width: 2px;
+  //  height: 10px;
+  //  background: var(--background-light-dark-color);
+  //}
+
+  button {
+    border: none;
+    background: var(--background-light-color);
+    cursor: pointer;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+    border-radius: $border-primary-radius;
+    color: var(--dark-gray-color);
+    box-sizing: border-box;
+
+    &:hover {
+      border: 1px solid var(--color-func-on);
+      background: var(--color-func-on);
+      color: white!important;
+    }
+
+    .action-icon {
+      font-size: 16px;
+      box-sizing: border-box;
+
+    }
+  }
+
+  .action-icon-block-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .search {
+      display: flex;
+      align-items: center;
+      width: 200px;
+
+      .search-icon {
+        border: 2px solid var(--background-main-color);
+        height: $button-primary-height;
+        width: $button-primary-height;
+        display: flex;
+        align-items: center;
+        border-radius: $border-primary-radius;
+        .icon {
+          color: var(--text-light-gray);
+        }
+      }
+
+      input {
+        height: $button-primary-height;
+        border-radius: $border-primary-radius;
+        border: 2px solid var(--background-main-color);
+        outline: none;
+        color: var(--text-light-gray);
+      }
+    }
+
+    .table-setting {
+      border: 2px solid var(--background-main-color);
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      border-radius: $border-primary-radius;
+      color: var(--text-light-gray);
+      cursor: pointer;
+    }
+  }
+}
+
+.action-icon-wrapper.disabled button{
+  opacity: 0.5; /* Пример стилизации для неактивной кнопки */
+  pointer-events: none; /* Отключение кликов */
+  color: var(--color-func-off)!important;
+}
+
+button:disabled {
+  cursor: not-allowed; /* Стилизация курсора для неактивной кнопки */
+  //color: red!important;
+}

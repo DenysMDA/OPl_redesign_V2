@@ -1,0 +1,43 @@
+@import "src/theme";
+
+.table-wrapper {
+  overflow: auto;
+  padding-left: 5px;
+
+  .react-table {
+    border-collapse: collapse;
+    table-layout: auto;
+  }
+
+  th,
+  td {
+    padding: 8px 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .radio-cell {
+    width: 25px;
+    text-align: center;
+    border-right: 1px solid transparent;
+    padding: 8px !important;
+  }
+
+  .radio-cell-header {
+    width: 25px;
+    border-right: 1px solid transparent;
+    padding: 8px !important;
+  }
+
+  .resizer {
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    user-select: none;
+  }
+}

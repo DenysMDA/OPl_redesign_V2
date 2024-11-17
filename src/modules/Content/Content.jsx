@@ -233,7 +233,7 @@ const Content = () => {
     ];
 
     const actions = [
-        {label: "Add", onClick: () => console.log("Add clicked")},
+        {label: "Add", onClick: () => console.log("Add clicked"), disabled: true},
         {label: "Edit", onClick: () => console.log("Edit clicked")},
         {label: "Delete", onClick: () => console.log("Delete clicked")},
     ];

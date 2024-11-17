@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./TabComponent.scss";
 import RoutingPermission from "./RoutingPermission/RoutingPermission";
+import SharedCalling from "./SharedCalling/SharedCalling";
 
 const TabComponent = () => {
     const [activeTab, setActiveTab] = useState("tab1");
@@ -34,8 +35,7 @@ const TabComponent = () => {
                 )}
                 {activeTab === "tab2" && (
                     <div className="content">
-                        <h3>Контент Вкладки 2</h3>
-                        <p>Здесь отображается контент для второй вкладки.</p>
+                        <SharedCalling/>
                     </div>
                 )}
             </div>

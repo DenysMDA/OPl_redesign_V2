@@ -10,6 +10,7 @@
   background: var(--background-main-color);
   border-top: none;
 
+
   .tabs {
     position: relative; // Оставляем position: relative, чтобы вкладки не исчезали
     //display: flex;
@@ -28,14 +29,14 @@
     transition: background-color 0.3s ease;
     border-bottom: none;
     display: inline-block;
-    position: relative;
-    z-index: 100;
+    //position: relative;
+    z-index: 10;
     cursor: pointer;
 
     &.active {
       background-color: var(--background-light-color);
       color: var(--primary-color);
-      z-index: 1000;
+      z-index: 100;
       //border-bottom: 1px solid var(--background-light-color); // Убираем нижнюю границу у активной вкладки
     }
 
@@ -59,6 +60,11 @@
       h3 {
         margin-top: 0;
       }
+    }
+
+    .action-buttons{
+      margin-top: 0;
+      padding-top: 0;
     }
   }
 }

@@ -2,8 +2,9 @@ import React from "react";
 import "./PageNavigation.scss";
 import { MdOutlineCloudUpload } from "react-icons/md";
 import { MdContentPasteSearch } from "react-icons/md";
-import { MdCancel } from "react-icons/md";
-import { BsFillSendCheckFill } from "react-icons/bs";
+
+import { VscCollapseAll } from "react-icons/vsc";
+import { VscExpandAll } from "react-icons/vsc";
 
 const PageNavigation = ({
   onButtonClick,
@@ -22,13 +23,13 @@ const PageNavigation = ({
       action: () => onButtonClick("Search Numbers"),
     },
     {
-      label: "Deny",
-      icon: <MdCancel className="icon" />,
+      label: "Collapse All",
+      icon: <VscCollapseAll className="icon" />,
       action: collapseAllTables,
     },
     {
-      label: "Vetting",
-      icon: <BsFillSendCheckFill className="icon" />,
+      label: "Expand All",
+      icon: <VscExpandAll className="icon" />,
       action: expandAllTables,
     },
   ];

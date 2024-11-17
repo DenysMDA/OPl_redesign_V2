@@ -32,7 +32,6 @@ const RoutingPermission = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

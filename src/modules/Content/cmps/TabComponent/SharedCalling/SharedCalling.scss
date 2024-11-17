@@ -1,0 +1,49 @@
+@import "src/theme";
+
+.radio-button-group-wrapper {
+  display: flex;
+  gap: 10px;
+  width: auto;
+}
+
+.radio-button-group{
+  border: 2px solid var(--background-main-color);
+  display: flex;
+  gap: 5px;
+  border-radius: var(--primary-radius);
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+.radio-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  color: var(--color-func-off);
+
+  &:hover {
+    //background-color: var(--color-func-on);
+    border: 2px solid var(--color-func-on);
+    color: var(--color-func-on);
+  }
+
+  &.active {
+    background-color: var(--color-func-on);
+    color: white;
+    border-color: var(--color-func-on);
+  }
+
+}
+.sc-row{
+
+  .status{
+    font-weight: bold;
+    color: var(--color-status-active);
+  }
+  .value{
+    color: var(--text-light-gray);
+  }
+}

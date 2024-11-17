@@ -12,8 +12,15 @@ import { FaTools } from "react-icons/fa";
 import "./IconNavBlock.scss";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { HiOutlineMinusSm } from "react-icons/hi";
+import { AiOutlineDashboard } from "react-icons/ai";
 
 export const menu = {
+  Dashboard: {
+    icon: <AiOutlineDashboard />,
+    subMenu: [
+      { title: "Dashboard" },
+    ],
+  },
   "Operator Settings": {
     icon: <MdManageAccounts />,
     subMenu: [

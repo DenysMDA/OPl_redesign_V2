@@ -114,7 +114,7 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
   };
 
   useEffect(() => {
-    console.log(activeSubMenuItem);
+    // console.log(activeSubMenuItem);
   }, [activeSubMenuItem]);
 
   return (

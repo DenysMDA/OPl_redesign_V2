@@ -29,6 +29,7 @@
 
       img {
         margin-left: 10px !important;
+        border-radius: 5px;
       }
 
       .logo-title {
@@ -39,20 +40,20 @@
         justify-content: start;
 
         .span-logo {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 700;
           color: var(--text-color);
         }
 
         .span-desc {
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 400;
           color: var(--text-light-gray);
         }
       }
 
       .search {
-        margin-left: 50px;
+        margin-left: 70px;
         box-sizing: border-box;
         display: flex;
         justify-content: start;
@@ -87,6 +88,7 @@
           border-left: none;
           box-sizing: border-box;
           outline: none;
+          color: var(--text-light-gray);
         }
       }
     }

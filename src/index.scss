@@ -1,9 +1,7 @@
 
-
-//:root {
-//  --text-color: #111926; // Ваш основной цвет текста
-//  --background-color: #ffffff; // Цвет фона
-//}
+html {
+  box-sizing: border-box;
+}
 
 
 body {
@@ -13,6 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background: var(--background-main-color);
 }
 
 code {

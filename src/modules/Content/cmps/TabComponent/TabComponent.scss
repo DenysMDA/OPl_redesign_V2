@@ -1,19 +1,20 @@
+@import "src/theme";
+
 .tab-container {
   position: relative;
   box-sizing: border-box;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 35px;
+  margin-top: var(--tob-gap);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: white; // Убедитесь, что блок имеет белый фон
+  background: var(--background-main-color);
+  border-top: none;
 
   .tabs {
     position: relative; // Оставляем position: relative, чтобы вкладки не исчезали
-    display: flex;
-    border-top: 1px solid transparent;
-
+    //display: flex;
+    //border-top: 1px solid var(--background-main-color);
+    background: var(--background-main-color);
   }
 
   .tab {
@@ -21,26 +22,37 @@
     text-align: center;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 16px 16px 0 0; // Закругляем верхние углы
-    background-color: #f0f0f0;
-    color: #000;
+    border-radius: var(--primary-radius) var(--primary-radius) 0 0; // Закругляем верхние углы
+    background-color: var(--background-middle-color);
+    color: var(--text-inactive);
     transition: background-color 0.3s ease;
+    border-bottom: none;
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
 
     &.active {
-      background-color: #007bff;
-      color: white;
-      border-bottom: 1px solid white; // Убираем нижнюю границу у активной вкладки
+      background-color: var(--background-light-color);
+      color: var(--primary-color);
+      z-index: 1000;
+      //border-bottom: 1px solid var(--background-light-color); // Убираем нижнюю границу у активной вкладки
     }
 
     &:not(.active):hover {
-      background-color: #e0e0e0;
+      //background-color: #e0e0e0;
+      color: var(--text-color);
+    }
+
+    &:last-child {
+      margin-left: -5px;
     }
   }
 
   .tab-content {
     padding: 20px;
     background-color: white;
-    border-top: 1px solid #ddd; // Добавляем верхнюю границу для контента
+    //border-top: 1px solid #ddd; // Добавляем верхнюю границу для контента
     border-top-right-radius: 10px; // Задайте нужный радиус
 
     .content {

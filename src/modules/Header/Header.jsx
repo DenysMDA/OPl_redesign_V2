@@ -11,7 +11,7 @@ const Header = () => {
         <header className='header-wrapper'>
             <div className='header'>
                 <div className="logo">
-                    <img src={mic_2} alt="" width={35} height={35}/>
+                    <img src={mic_2} alt="" width={30} height={30}/>
                     <div className='logo-title'>
                         <span className='span-logo'>Operator Connect</span>
                         <span className='span-desc'>Powered by Microsoft</span>

@@ -36,13 +36,13 @@ const PageNavigation = ({
   return (
     <nav className="page-navigation">
       {buttons.map((button, index) => (
-        <>
-          <button key={index} className="nav-button" onClick={button.action}>
+        <React.Fragment key={index}>
+          <button className="nav-button" onClick={button.action}>
             {button.icon}
             {button.label}
           </button>
           <div className="separator"></div>
-        </>
+        </React.Fragment>
       ))}
     </nav>
   );

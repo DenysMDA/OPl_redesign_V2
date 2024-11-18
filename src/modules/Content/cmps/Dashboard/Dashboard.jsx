@@ -59,6 +59,7 @@ const Dashboard = () => {
                             </div>
                         </DashTile>
                     </div>
+
                     <div key="statistics">
                         <DashTile title="Statistics" footerContent="">
                             <p>Content for Statistics</p>

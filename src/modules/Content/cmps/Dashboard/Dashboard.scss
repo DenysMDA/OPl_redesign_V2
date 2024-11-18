@@ -1,0 +1,44 @@
+@import "src/theme";
+
+.dashboard {
+  position: relative;
+
+  .content-header {
+    height: 55px !important;
+    padding: 5px 15px;
+
+    .icon-setting {
+      font-size: 20px;
+      margin-right: 5px;
+      color: var(--background-light-dark-color);
+      transition: .5s;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .dashboard-content {
+    //border: 1px solid red;
+    margin-top: 15px;
+    overflow: visible; // Убедитесь, что overflow установлено в visible
+    box-sizing: border-box;
+    margin-left: -10px!important;
+
+
+    .layout {
+      //border: 1px solid red;
+      position: relative;
+      box-sizing: border-box;
+      //height: 100vh!important;
+
+      .tile {
+        //border: 1px solid red;
+        //box-sizing: border-box;
+      }
+    }
+  }
+
+}

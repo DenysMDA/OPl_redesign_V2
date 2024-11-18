@@ -27,16 +27,21 @@
     background-color: var(--background-middle-color);
     color: var(--text-inactive);
     transition: background-color 0.3s ease;
-    border-bottom: none;
     display: inline-block;
     //position: relative;
     z-index: 10;
     cursor: pointer;
+    //border: 1px solid var(--border-color-light-gray);
+    border-bottom: none;
+    margin-bottom: -1px;
+
 
     &.active {
       background-color: var(--background-light-color);
       color: var(--primary-color);
       z-index: 100;
+      border: 1px solid var(--border-color-light-gray);
+      border-bottom: none;
       //border-bottom: 1px solid var(--background-light-color); // Убираем нижнюю границу у активной вкладки
     }
 
@@ -46,15 +51,15 @@
     }
 
     &:last-child {
-      margin-left: -5px;
+      //margin-left: -5px;
     }
   }
 
   .tab-content {
     padding: 20px;
     background-color: white;
-    //border-top: 1px solid #ddd; // Добавляем верхнюю границу для контента
     border-top-right-radius: 10px; // Задайте нужный радиус
+    border: 1px solid var(--border-color-light-gray);
 
     .content {
       h3 {

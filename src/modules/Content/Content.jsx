@@ -1,37 +1,11 @@
 import React, {useEffect, useState} from "react";
 import "./Content.scss";
-import {RiMenuUnfoldFill} from "react-icons/ri";
-import {RiMenuFoldFill} from "react-icons/ri";
-import {GrUserManager} from "react-icons/gr";
-import {MdOutlineManageAccounts} from "react-icons/md";
-import {MdManageAccounts} from "react-icons/md";
-import {BsTelephoneFill} from "react-icons/bs";
-import {BsTelephone} from "react-icons/bs";
-import {FaTools} from "react-icons/fa";
-import {VscTools} from "react-icons/vsc";
-import {BsGraphUpArrow} from "react-icons/bs";
-import {MdOutlineContactSupport} from "react-icons/md";
-import {IoDocumentText} from "react-icons/io5";
-import {IoDocumentTextOutline} from "react-icons/io5";
-import {FaHashtag} from "react-icons/fa6";
-import {BsColumnsGap} from "react-icons/bs";
-
-import {RiFileTransferFill} from "react-icons/ri";
-import {RiFileTransferLine} from "react-icons/ri";
-
-import {RiAdminFill} from "react-icons/ri";
-import {RiAdminLine} from "react-icons/ri";
-import {GrUserAdmin} from "react-icons/gr";
-
-import NavMenuBlock from "./cmps/PageNavigation/PageNavigation";
-import IconButton from "./cmps/IconButton";
 import KeyContactsTable from "./cmps/KeyContactsTable/KeyContactsTable";
-import EntityDetail from "./cmps/EntityDetail/EntityDetail";
 import Panel from "./cmps/Panel/Panel";
 import TabComponent from "./cmps/TabComponent/TabComponent";
 import IconNavBlock from "./cmps/Navigation/IconNavBlock";
-import PageNavigation from "./cmps/PageNavigation/PageNavigation";
 import ContentHeader from "./cmps/ContentHeader/ContentHeader";
+import Dashboard from "./cmps/Dashboard/Dashboard";
 
 const columns1 = [
     {Header: "Type", accessor: "Type", minWidth: 200},
@@ -201,7 +175,7 @@ const Content = () => {
     const [expandedMenus, setExpandedMenus] = useState([]);
     const [isShowMenu, setIsShowMenu] = useState(false);
     const [isPanelVisible, setIsPanelVisible] = useState(false);
-    const [activeSubMenu, setActiveSubMenu] = useState("Operator Configuration");
+    const [activeSubMenu, setActiveSubMenu] = useState("Dashboard");
     // const [theme, setTheme] = useState('light');
     const [areTablesCollapsed, setAreTablesCollapsed] = useState(false); // Новое состояние
 
@@ -237,11 +211,9 @@ const Content = () => {
         {label: "Edit", onClick: () => console.log("Edit clicked")},
         {label: "Delete", onClick: () => console.log("Delete clicked")},
     ];
-
     const actions2 = [
         {label: "Add", onClick: () => console.log("Add clicked")},
     ];
-
     const actions3 = [
         {label: "Add", onClick: () => console.log("Add clicked")},
         {label: "Edit", onClick: () => console.log("Edit clicked")},
@@ -261,12 +233,9 @@ const Content = () => {
     };
 
     useEffect(() => {
-        // console.log(areTablesCollapsed);
-    }, [areTablesCollapsed]);
+        console.log(activeSubMenu);
+    }, [activeSubMenu]);
 
-    // const toggleShowMenu = () => {
-    //   setIsShowMenu((prevIsShowMenu) => !prevIsShowMenu);
-    // };
 
     const collapseAllTables = () => setAreTablesCollapsed(true);
     const expandAllTables = () => setAreTablesCollapsed(false);
@@ -287,50 +256,54 @@ const Content = () => {
                 setActiveSubMenu={setActiveSubMenu}
             />
 
-            <div className="content-wrapper">
-                <ContentHeader
-                    activeSubMenu={activeSubMenu}
-                    collapseAllTables={collapseAllTables}
-                    expandAllTables={expandAllTables}
-                />
+            {
+                activeSubMenu !== 'Dashboard' ?
+                    <div className="content-wrapper">
+                        <ContentHeader
+                            activeSubMenu={activeSubMenu}
+                            collapseAllTables={collapseAllTables}
+                            expandAllTables={expandAllTables}
+                        />
 
-                {/*<EntityDetail />*/}
+                        {/*<EntityDetail />*/}
 
-                <TabComponent/>
+                        <TabComponent/>
 
-                <KeyContactsTable
-                    title="Partner Number Configuration"
-                    columns={columns1}
-                    data={data1}
-                    actions={actions}
-                    isActive={activeTable === 1}
-                    onTableFocus={() => handleTableFocus(1)}
-                    areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-                    isSearchable={true}
-                />
-                <KeyContactsTable
-                    title="Applications IDS"
-                    columns={columns2}
-                    data={data2}
-                    actions={actions2}
-                    isActive={activeTable === 2}
-                    onTableFocus={() => handleTableFocus(2)}
-                    areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-                />
+                        <KeyContactsTable
+                            title="Partner Number Configuration"
+                            columns={columns1}
+                            data={data1}
+                            actions={actions}
+                            isActive={activeTable === 1}
+                            onTableFocus={() => handleTableFocus(1)}
+                            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
+                            isSearchable={true}
+                        />
+                        <KeyContactsTable
+                            title="Applications IDS"
+                            columns={columns2}
+                            data={data2}
+                            actions={actions2}
+                            isActive={activeTable === 2}
+                            onTableFocus={() => handleTableFocus(2)}
+                            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
+                        />
 
-                <KeyContactsTable
-                    title="Microsofts offers"
-                    columns={columns1}
-                    data={data1}
-                    actions={actions3}
-                    isActive={activeTable === 3}
-                    onTableFocus={() => handleTableFocus(3)}
-                    areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-                    isSearchable={true}
-                />
-            </div>
-            <button style={{width: "10px"}} onClick={togglePanelVisibility}>
-                O
+                        <KeyContactsTable
+                            title="Microsofts offers"
+                            columns={columns1}
+                            data={data1}
+                            actions={actions3}
+                            isActive={activeTable === 3}
+                            onTableFocus={() => handleTableFocus(3)}
+                            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
+                            isSearchable={true}
+                        />
+                    </div> :
+                    <Dashboard/>
+            }
+            <button onClick={togglePanelVisibility}>
+                Panel
             </button>
 
             <Panel isVisible={isPanelVisible} onClose={togglePanelVisibility}/>

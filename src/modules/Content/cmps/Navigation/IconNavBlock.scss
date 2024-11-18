@@ -8,8 +8,8 @@
   border-radius: $border-primary-radius;
   position: relative;
   z-index: 100;
-
   box-shadow: var(--light-box-shadow);
+  border: 1px solid var(--border-color-light-gray);
 
   .icon-nav-block {
     width: 35px;
@@ -22,6 +22,7 @@
     position: relative;
     border-radius: $border-primary-radius;
     //transition: .5s;
+    //border: 1px solid var(--border-color-light-gray);
 
     .menu-expand-icon {
       //width: 35px;
@@ -52,7 +53,7 @@
 
     &.collapsed {
       width: 35px;
-      background: var(--background-middle-color);
+      //background: var(--background-middle-color);
 
       .menu-expand-icon {
         display: none;
@@ -68,7 +69,8 @@
       border-radius: $border-primary-radius;
       //border: 2px solid var(--dark-gray-color);
       box-sizing: border-box;
-      background: var(--background-main-color);
+      background: var(--border-color-light-gray);
+
       cursor: pointer;
       transition: 0.3s;
 
@@ -98,7 +100,7 @@
       padding-right: 5px;
 
       &:hover {
-        border: 1px solid var(--background-main-color);
+        border: 1px solid var(--border-color-light-gray);
 
         scale: 1.02;
       }
@@ -185,13 +187,13 @@
 
             &.active {
               background-color: var(
-                --background-middle-color
+                              --border-color-light-gray
               ); // Замените на цвет активного элемента
               box-sizing: border-box;
             }
 
             &:hover {
-              border: 1px solid var(--background-main-color);
+              border: 1px solid var(--border-color-light-gray);
             }
           }
 
@@ -206,9 +208,9 @@
               width: 80%;
               height: 120%;
               top: -70%;
-              left: 40%;
-              border-left: 2px solid var(--background-main-color);
-              border-bottom: 2px solid var(--background-main-color);
+              left: 38%;
+              border-left: 2px solid var(--border-color-light-gray);
+              border-bottom: 2px solid var(--border-color-light-gray);
               border-bottom-left-radius: $border-primary-radius;
             }
           }
@@ -252,7 +254,6 @@
         visibility: hidden;
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
         margin-left: -10px;
-        // border: 1px solid red;
 
         .sub-menu-wrapper {
           background: var(--background-light-color);
@@ -260,6 +261,7 @@
           box-shadow: $light-box-shadow;
           border-radius: $border-primary-radius;
           padding-top: 5px;
+          border: 1px solid var(--border-color-light-gray);;
         }
       }
 

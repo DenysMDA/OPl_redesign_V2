@@ -14,7 +14,7 @@
     .switch {
       width: 58px;
       height: 25px;
-      background-color: var(--background-main-color);
+      background-color: var(--border-color-light-gray);
       border-radius: var(--primary-radius);
       cursor: pointer;
       position: relative;
@@ -62,7 +62,7 @@
     height: 2px;
     width: 305px;
     margin-left: 5px;
-    background-color: var(--background-main-color);
+    background-color: var(--border-color-light-gray);
   }
 }
 

@@ -3,6 +3,8 @@ import ContentHeader from "../ContentHeader/ContentHeader";
 import GridLayout from 'react-grid-layout';
 import "./Dashboard.scss";
 import DashTile from "./DashTile/DashTile";
+import myImage from '../../../../assest/ATT.png';
+import { CiBookmarkCheck } from "react-icons/ci";
 
 const Dashboard = () => {
     const layout = [
@@ -28,7 +30,33 @@ const Dashboard = () => {
                 >
                     <div key="operatorDetails">
                         <DashTile title="Operator Details" footerContent="">
-                            <p>Content for Operator Details</p>
+                            <div className='logo-wrapper'>
+                                <div className='logo'>
+                                    <img src={myImage} alt="At&T"/>
+                                </div>
+                                {/*<div className="regions-desc">*/}
+                                {/*    <div className='regions-desc-title'>Served Regions:</div>*/}
+
+                                {/*</div>*/}
+                            </div>
+                            <p className='title'>AT&T Business</p>
+                            <div className='op-desc-wrapper'>
+                                <div className="left-desc">
+                                    <div className='left-desc-title'>Available products:</div>
+                                    <div className='left-desc-value'>
+                                        <CiBookmarkCheck className='icon'/>
+                                        <span>Teams Phone Calling</span>
+                                    </div>
+                                    <div className='left-desc-value'>
+                                        <CiBookmarkCheck className='icon'/>
+                                        <span>Audio Conference</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="right-desc">
+                                <div className='left-desc-title'>Served Regions:</div>
+                            </div>
                         </DashTile>
                     </div>
                     <div key="statistics">

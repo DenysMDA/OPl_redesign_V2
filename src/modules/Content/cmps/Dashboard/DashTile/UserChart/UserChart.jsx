@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -36,6 +36,7 @@ const UserChart = () => {
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
             },
+
             {
                 label: 'New Tenants (Last Year)',
                 data: [70, 100, 50, 110], // Независимые значения для прошлого года

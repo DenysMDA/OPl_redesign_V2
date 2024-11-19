@@ -26,17 +26,26 @@
       gap: 5px;
       font-size: 12px;
       transition: .3s;
+      box-sizing: border-box;
 
       &:hover {
         //background: var(--background-light-gray);
         color: var(--color-func-on);
         border: 2px solid var(--background-light-color);
-        border-bottom: 1px solid var(--color-func-on);
+        //border-bottom: 1px solid var(--color-func-on);
       }
 
       .icon {
         width: 15px;
         height: 15px;
+      }
+
+      .icon-config{
+        transition: .5s;
+        border: 1px solid transparent;
+        &:hover {
+          transform: rotate(90deg)!important;
+        }
       }
     }
 

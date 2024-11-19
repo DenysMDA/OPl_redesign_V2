@@ -2,6 +2,7 @@
 import React from "react";
 import { useTable, useFlexLayout, useResizeColumns } from "react-table";
 import "./TableWrapper.scss"; // Подключаем стили для компонента
+import { FaRegSquareCheck } from "react-icons/fa6";
 
 const TableWrapper = ({ columns, data, onRowClick, selectedRow, isActive }) => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -60,7 +61,8 @@ const TableWrapper = ({ columns, data, onRowClick, selectedRow, isActive }) => {
                         >
                             <td className="radio-cell">
                                 {isActive && selectedRow === rowIndex && (
-                                    <input type="radio" name="rowRadio" checked readOnly />
+                                    // <input type="radio" name="rowRadio" checked readOnly />
+                                    <FaRegSquareCheck className="radio-cell-icon"/>
                                 )}
                             </td>
                             {row.cells.map((cell) => {

@@ -1,0 +1,40 @@
+// ToggleSwitch.scss
+@import "src/theme";
+
+.switch {
+  width: 58px;
+  height: 25px;
+  background-color: var(--border-color-light-gray);
+  border-radius: var(--primary-radius);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  .slider {
+    width: 28px;
+    height: 21px;
+    border-radius: var(--primary-radius);
+    background-color: white;
+    position: absolute;
+    top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s;
+    color: white;
+    font-size: 10px;
+
+    &.on {
+      left: 27px;
+      background-color: var(--color-func-on); // Зеленый для "ON"
+    }
+
+    &.off {
+      left: 3px;
+      background-color: var(--color-func-off); // Красный для "OFF"
+    }
+  }
+}

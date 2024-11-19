@@ -1,4 +1,4 @@
-@import "src/theme";
+@import "../../../../../theme";
 
 .table-wrapper {
   overflow: auto;
@@ -40,4 +40,8 @@
     z-index: 1;
     user-select: none;
   }
+}
+
+.radio-cell-icon{
+  color: var(--color-func-on);
 }

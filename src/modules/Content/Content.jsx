@@ -233,8 +233,8 @@ const Content = () => {
     };
 
     useEffect(() => {
-        console.log(activeSubMenu);
-    }, [activeSubMenu]);
+        console.log();
+    }, []);
 
 
     const collapseAllTables = () => setAreTablesCollapsed(true);
@@ -260,9 +260,11 @@ const Content = () => {
                 activeSubMenu !== 'Dashboard' ?
                     <div className="content-wrapper">
                         <ContentHeader
+                            hello={'hello'}
                             activeSubMenu={activeSubMenu}
                             collapseAllTables={collapseAllTables}
                             expandAllTables={expandAllTables}
+                            togglePanelVisibility={togglePanelVisibility} // Передаем строку
                         />
 
                         {/*<EntityDetail />*/}

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './SharedCalling.scss';
-import ActionButtons from "../../shared/ActionButtons"; // Импортируем стили
+import ActionButtons from "../../shared/ActionButtons/ActionButtons"; // Импортируем стили
 
 const SharedCalling = () => {
     const actions = [

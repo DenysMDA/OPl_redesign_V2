@@ -25,7 +25,7 @@ const RoutingPermission = () => {
             </div>
             <div className="separator"/>
             <div className="routing-permission-row">
-                <p>Emergency Call Native Handler</p>
+                <p>Emergency Call Native Handoff</p>
                 <div className="switch" onClick={handleSwitch2Toggle}>
                     <div className={`slider ${isSwitch2On ? "on" : "off"}`}>
                         {isSwitch2On ? "ON" : "OFF"}

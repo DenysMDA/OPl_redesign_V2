@@ -15,7 +15,7 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   --background-dark-color: #111926;
   --background-light-dark-color: #424244;
-  //--background-main-color: #e3e4e6;
+  --background-light-gray-color: #595965;
   --background-main-color: #fafbfd;
   --background-middle-color: #f3f4f6;
   --background-light-color: #ffffff;
@@ -35,10 +35,12 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --color-func-on: #5c5fc9;
   --color-status-active: #208a38;
   --color-warning: #f5a623;
+  --color-error: #D32F2F;
 
   --light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --tob-gap: 15px;
-  --primary-radius: 5px
+  --primary-radius: 5px;
+  --primary-th-background: #c9b2ff38
 }
 
 // Темная тема
@@ -49,6 +51,7 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   --background-dark-color: #e6e6e8;
   --background-light-dark-color: #424244;
+  --background-light-gray-color: #a9a9af;
   --background-main-color: #18171c;
   --background-middle-color: dark;
   --background-light-color: green;
@@ -67,10 +70,12 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --color-func-off: #b7b7b7f5;
   --color-func-on: #5c5fc9;
   --color-warning: #f5a623;
+  --color-error: #D32F2F;
 
   --light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);;
   --tob-gap: 15px;
-  --primary-radius: 5px
+  --primary-radius: 5px;
+  --primary-th-background: #c9b2ff38
 }
 
 

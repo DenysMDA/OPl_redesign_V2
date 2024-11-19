@@ -25,7 +25,10 @@ const InputWithValidation = ({ label, type, regex, placeholder, errorMessage }) 
                 placeholder={placeholder}
                 className={isError ? "input-error" : ""}
             />
-            {isError && <p className="error-message">{errorMessage}</p>}
+            {/*{isError && <p className="error-message">{errorMessage}</p>}*/}
+            <p className="error-message" style={{color: isError ? 'red' : 'transparent'}}>
+                {errorMessage}
+            </p>
         </div>
     );
 };

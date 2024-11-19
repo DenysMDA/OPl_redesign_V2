@@ -3,6 +3,7 @@
 .table-wrapper {
   overflow: auto;
   padding-left: 5px;
+  transition: 0.3s;
 
   .react-table {
     border-collapse: collapse;
@@ -40,8 +41,31 @@
     z-index: 1;
     user-select: none;
   }
+
+  /* Для всех браузеров на основе WebKit (например, Chrome, Safari) */
+  &::-webkit-scrollbar {
+    transition: 0.3s;
+    width: 12px; /* Ширина вертикальной полосы прокрутки */
+    height: 12px; /* Высота горизонтальной полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    transition: 0.3s;
+    background: var(--scrol-bar-background); /* Цвет фона полосы прокрутки */
+    border-radius: 10px; /* Закругление трека */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    transition: 0.3s;
+    background: var(--scrol-bar-scroll); /* Цвет бегунка полосы прокрутки */
+    border-radius: 10px; /* Закругление бегунка */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--scrol-bar-hover); /* Цвет бегунка при наведении */
+  }
 }
 
-.radio-cell-icon{
+.radio-cell-icon {
   color: var(--color-func-on);
 }

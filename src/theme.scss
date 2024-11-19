@@ -7,7 +7,6 @@ $button-primary-height: 30px;
 $light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-
 [data-theme="light"] {
   --primary-color: #19191a;
   --dark-gray-color: #424244;
@@ -35,12 +34,16 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --color-func-on: #5c5fc9;
   --color-status-active: #208a38;
   --color-warning: #f5a623;
-  --color-error: #D32F2F;
+  --color-error: #d32f2f;
 
   --light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --tob-gap: 15px;
   --primary-radius: 5px;
-  --primary-th-background: #c9b2ff38
+  --primary-th-background: #c9b2ff38;
+
+  --scrol-bar-background: #f1f1f1;
+  --scrol-bar-scroll: #c9c4f3;
+  --scrol-bar-hover: #847ad9;
 }
 
 // Темная тема
@@ -70,14 +73,12 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --color-func-off: #b7b7b7f5;
   --color-func-on: #5c5fc9;
   --color-warning: #f5a623;
-  --color-error: #D32F2F;
+  --color-error: #d32f2f;
 
-  --light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);;
+  --light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   --tob-gap: 15px;
   --primary-radius: 5px;
-  --primary-th-background: #c9b2ff38
+  --primary-th-background: #c9b2ff38;
 }
 
-
 $background-blue-color: #f9f9f9;
-

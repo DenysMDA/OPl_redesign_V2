@@ -17,9 +17,7 @@ import { AiOutlineDashboard } from "react-icons/ai";
 export const menu = {
   Dashboard: {
     icon: <AiOutlineDashboard />,
-    subMenu: [
-      { title: "Dashboard" },
-    ],
+    subMenu: [{ title: "Dashboard" }],
   },
   "Operator Settings": {
     icon: <MdManageAccounts />,
@@ -100,9 +98,7 @@ export const menu = {
 const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
   const [expandedMenus, setExpandedMenus] = useState([]);
   const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [activeSubMenuItem, setActiveSubMenuItem] = useState(
-    "Operator Configuration"
-  );
+  const [activeSubMenuItem, setActiveSubMenuItem] = useState("Dashboard");
 
   const toggleMenu = (menuTitle) => {
     if (isShowMenu) {

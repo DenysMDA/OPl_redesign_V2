@@ -9,13 +9,22 @@
   box-shadow: var(--light-box-shadow);
   color: var(--primary-color);
   border: 1px solid var(--border-color-light-gray);
+  box-sizing: border-box;
 
   h2 {
     margin: 0;
   }
 
+  .row {
+    border-top: 1px solid transparent;
+    box-sizing: border-box;
+  }
+
   .selected-row {
     background-color: #f0f8ff;
+    border-top: 1px solid var(--color-func-on);
+    border-bottom: 1px solid var(--color-func-on);
+    box-sizing: border-box;
   }
 
   .table-header {
@@ -55,7 +64,6 @@
 
       .icon-container {
         padding: 3px;
-        //border: 1px solid var(--background-dark-color);
         border-radius: $border-primary-radius;
         box-sizing: border-box;
         display: flex;
@@ -170,34 +178,3 @@
     // border-top: 1px solid var(--background-main-color);
   }
 }
-
-
-//.radio-cell input[type="radio"] {
-//  appearance: none; /* Убираем стандартный стиль */
-//  -webkit-appearance: none; /* Для Safari */
-//  width: 16px;
-//  height: 16px;
-//  border: 2px solid #1a73e8; /* Цвет обводки */
-//  border-radius: 50%; /* Делаем круг */
-//  outline: none;
-//  cursor: pointer;
-//  position: relative;
-//}
-//
-//.radio-cell input[type="radio"]:checked {
-//  background-color: #1a73e8; /* Цвет заливки при выборе */
-//}
-//
-//.radio-cell input[type="radio"]:checked::after {
-//  content: "";
-//  width: 8px;
-//  height: 8px;
-//  background-color: white; /* Цвет внутреннего круга */
-//  border-radius: 50%;
-//  position: absolute;
-//  top: 50%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//}
-
-

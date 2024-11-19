@@ -5,7 +5,7 @@
   right: -100%;
   top: 0;
   width: 25%;
-  height: 100vh;
+  height: 100%;
   background-color: white;
   border-left: 1px solid #ddd;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -14,7 +14,7 @@
   z-index: 1001;
   box-sizing: border-box;
   transition: right 0.5s ease;
-
+  overflow-x: hidden;
 
   .title-separator {
     height: 2px;
@@ -36,7 +36,7 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       color: var(--color-error);
@@ -47,7 +47,7 @@
     margin-top: 0;
   }
 
-  .group-wrapper{
+  .group-wrapper {
     padding: 20px 20px;
     border: 1px solid var(--line-color-light-gray);
     border-radius: var(--primary-radius);
@@ -61,7 +61,6 @@
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
-
     }
 
     input,
@@ -91,8 +90,8 @@
       margin: 0;
       font-size: 12px;
       margin-top: 5px;
-      color: #D32F2F;
-      transition: .3s;
+      color: #d32f2f;
+      transition: 0.3s;
     }
   }
 
@@ -110,7 +109,6 @@
   }
 
   .toggle-group {
-
     .switch {
       margin-top: 5px;
       margin-bottom: 10px;
@@ -140,11 +138,12 @@
     width: 100px;
     margin-top: 50px;
     font-weight: bold;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       background-color: var(--color-func-on);
       color: var(--text-color-opposite);
+      border: 2px solid transparent;
     }
   }
 }
@@ -155,7 +154,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   opacity: 0;
@@ -222,22 +221,24 @@
       width: 100px;
       border: 2px solid var(--light-gray-color);
       color: var(--light-gray-color);
-      transition: .3s;
+      transition: 0.3s;
 
-      border: 2px solid var(--color-func-on);
-      color: var(--color-func-on);
+      border: 2px solid var(--background-light-gray-color);
+      color: var(--background-light-gray-color);
 
       &:hover {
+        border: 2px solid transparent;
         color: var(--text-color-opposite);
         background: var(--color-func-on);
       }
     }
 
     .cancel-btn {
-      border: 2px solid var(--color-error);
-      color: var(--color-error);
+      // border: 2px solid var(--color-error);
+      // color: var(--color-error);
 
       &:hover {
+        border: 2px solid transparent;
         background: var(--color-error);
         color: var(--text-color-opposite);
       }
@@ -266,7 +267,7 @@
       margin-top: 20px;
       border: 2px solid var(--color-error);
       color: var(--color-error);
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         background: var(--color-error);
@@ -277,9 +278,9 @@
 
   .success-message {
     height: 100%;
-    transition: .3s;
+    transition: 0.3s;
 
-     svg{
+    svg {
       font-size: 80px;
       margin-top: 30px;
       color: var(--color-status-active);

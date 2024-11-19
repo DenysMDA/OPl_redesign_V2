@@ -57,13 +57,13 @@ const latestUpdates = [
 
 const Dashboard = () => {
   const layout = [
-    { i: "operatorDetails", x: 0, y: 0, w: 3, h: 4 },
-    { i: "statistics", x: 3, y: 0, w: 6, h: 4 },
-    { i: "tenants", x: 9, y: 0, w: 3, h: 4 },
+    { i: "operatorDetails", x: 0, y: 0, w: 4, h: 4 },
+    { i: "statistics", x: 4, y: 0, w: 8, h: 4 },
+    { i: "tenants", x: 12, y: 0, w: 4, h: 4 },
     { i: "announcement", x: 0, y: 3, w: 4, h: 3 },
     { i: "latestUpdates", x: 4, y: 3, w: 4, h: 3 },
     { i: "notification", x: 8, y: 3, w: 4, h: 3 },
-    { i: "addNew", x: 0, y: 6, w: 4, h: 3 }, // Занимает всю ширину
+    { i: "addNew", x: 12, y: 3, w: 4, h: 3 },
   ];
 
   const regions = ["North America", "Europe", "Asia", "Australia"];
@@ -88,7 +88,7 @@ const Dashboard = () => {
           layout={layout}
           cols={16}
           rowHeight={100}
-          width={1600}
+          width={1570}
           // isResizable={false}
           // isDraggable={false}
           draggableHandle=".drag-handle"

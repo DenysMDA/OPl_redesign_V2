@@ -75,7 +75,6 @@
       height: 60%;
 
       .left-desc {
-
         .left-desc-title {
           text-align: left;
           margin-bottom: 7px;
@@ -105,7 +104,6 @@
         .regions-desc-title {
           text-align: start;
           color: var(--text-light-gray);
-
         }
 
         .regions {
@@ -120,7 +118,6 @@
           }
         }
       }
-
     }
   }
 
@@ -134,31 +131,44 @@
     align-items: center;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 
-    svg{
+    svg {
       font-size: 20px;
       margin-right: 5px;
+    }
+
+    span {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
-
 .diagram {
-  margin-top: 20px;
+  // margin-top: 20px;
   //border: 1px solid red;
   width: 100%;
-  height: 80%;
+  height: 88%;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border-color: var(--color-func-on);
+
+    margin: auto;
+  }
 
   .btn-block {
     width: 47%;
     margin: auto;
-    margin-top: 5px;
     display: flex;
     justify-content: space-between;
 
     button {
       box-sizing: border-box;
-      padding: 3px 5px;
+      padding: 5px 8px;
       border-radius: var(--primary-radius);
       background: none;
       border: 1px solid var(--text-light-gray);
@@ -170,14 +180,12 @@
         color: var(--color-func-on);
         border-color: var(--color-func-on);
       }
-
     }
 
     .active {
       background: var(--color-func-on);
       color: var(--text-color-opposite) !important;
     }
-
   }
 }
 
@@ -221,26 +229,26 @@
   }
 }
 
-.no-data{
-    text-align: center;
-    font-size: 20px;
-    color: var(--text-light-gray);
-    margin-top: 20px;
+.no-data {
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-light-gray);
+  margin-top: 20px;
 }
 
-.add-tile{
+.add-tile {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 
-  &:hover{
+  &:hover {
     background-color: var(--background-light-gray);
   }
 
-  svg{
+  svg {
     font-size: 40px;
     color: var(--color-func-on);
     cursor: pointer;

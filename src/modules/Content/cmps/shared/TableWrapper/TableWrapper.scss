@@ -52,13 +52,13 @@
   &::-webkit-scrollbar-track {
     transition: 0.3s;
     background: var(--scrol-bar-background); /* Цвет фона полосы прокрутки */
-    border-radius: 10px; /* Закругление трека */
+    border-radius: 3px; /* Закругление трека */
   }
 
   &::-webkit-scrollbar-thumb {
     transition: 0.3s;
     background: var(--scrol-bar-scroll); /* Цвет бегунка полосы прокрутки */
-    border-radius: 10px; /* Закругление бегунка */
+    border-radius: 3px; /* Закругление бегунка */
   }
 
   &::-webkit-scrollbar-thumb:hover {

@@ -185,6 +185,10 @@ const Content = () => {
   //     // Handle the button action here
   //   };
 
+  useEffect(() => {
+    console.log(expandedMenus);
+  }, [expandedMenus]);
+
   const columns2 = [
     { Header: "Type", accessor: "Type", minWidth: 200 },
     { Header: "Display Name", accessor: "Display Name", minWidth: 200 },

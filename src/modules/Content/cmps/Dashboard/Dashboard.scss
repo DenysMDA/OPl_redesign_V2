@@ -22,7 +22,7 @@
 
   .dashboard-content {
     //border: 1px solid red;
-    margin-top: 15px;
+    margin-top: 10px;
     overflow: visible; // Убедитесь, что overflow установлено в visible
     box-sizing: border-box;
     margin-left: -10px !important;
@@ -37,6 +37,12 @@
       .tile {
         //border: 1px solid red;
         //box-sizing: border-box;
+      }
+    }
+
+    .slider-dashboard{
+      .tile-content{
+        padding: 0;
       }
     }
   }

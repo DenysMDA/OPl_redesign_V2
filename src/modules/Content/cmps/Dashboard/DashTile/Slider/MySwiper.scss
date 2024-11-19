@@ -1,0 +1,63 @@
+@import "src/theme";
+
+/* Кастомизация стрелок */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000; /* Цвет стрелок */
+  font-size: 20px; /* Размер стрелок */
+}
+
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center; // Выровнять по центру горизонтально
+  align-items: center; // Центрируем точки вертикально
+  position: absolute;
+  bottom: 10px; // Расположить пагинацию внизу слайда
+  left: 0;
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 12px; // Ширина светлого квадрата
+  height: 12px; // Высота светлого квадрата
+  background-color: transparent; // Прозрачный фон
+  border: 1px solid #ddd; // Светлая граница для светлого квадрата
+  border-radius: 3px; // Квадратная форма с закруглёнными углами
+  opacity: 1; // Убираем прозрачность
+  cursor: pointer;
+  margin: 0 4px; // Расстояние между точками в ряду
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стили для активной точки */
+.swiper-pagination-bullet-active {
+  background-color: #fff; // Белый фон для активного светлого квадрата
+  border: 1px solid #000; // Тёмная граница для активного квадрата
+
+  &::after {
+    content: '';
+    width: 8px; // Ширина тёмного квадрата внутри
+    height: 8px; // Высота тёмного квадрата внутри
+    background-color: #000; // Цвет тёмного квадрата
+    display: block;
+
+  }
+}
+
+.slider-content{
+  box-sizing: border-box;
+
+  p{
+    font-weight: bold;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+  }
+
+  span{
+    font-size: 12px;
+    width: 50%;
+  }
+}

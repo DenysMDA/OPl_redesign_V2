@@ -84,7 +84,9 @@ const Dashboard = () => {
                     layout={layout}
                     cols={16}
                     rowHeight={100}
-                    width={window.innerWidth}
+                    width={1600}
+                    // isResizable={false}
+                    // isDraggable={false}
                     draggableHandle=".drag-handle"
                 >
                     <div key="operatorDetails">

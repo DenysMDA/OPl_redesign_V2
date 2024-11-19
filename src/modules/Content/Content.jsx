@@ -304,10 +304,6 @@ const Content = () => {
                     </div> :
                     <Dashboard/>
             }
-            <button onClick={togglePanelVisibility}>
-                Panel
-            </button>
-
             <Panel isVisible={isPanelVisible} onClose={togglePanelVisibility}/>
         </main>
     );

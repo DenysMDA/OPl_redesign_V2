@@ -21,7 +21,6 @@
   }
 
   .dashboard-content {
-    //border: 1px solid red;
     margin-top: 10px;
     overflow: visible; // Убедитесь, что overflow установлено в visible
     box-sizing: border-box;
@@ -29,7 +28,6 @@
 
 
     .layout {
-      //border: 1px solid red;
       position: relative;
       box-sizing: border-box;
       //height: 100vh!important;
@@ -45,6 +43,8 @@
         padding: 0;
       }
     }
+
+
   }
 
   .notification {

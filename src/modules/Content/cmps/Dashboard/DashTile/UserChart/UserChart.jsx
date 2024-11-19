@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  LineController,
 } from "chart.js";
 
 // Регистрируем компоненты
@@ -21,7 +22,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  LineController
 );
 
 const UserChart = () => {

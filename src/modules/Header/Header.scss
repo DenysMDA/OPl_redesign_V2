@@ -100,6 +100,8 @@
       align-items: center;
       padding-right: 10px;
       gap: 10px;
+      box-sizing: border-box;
+
       //width: 200px;
 
       button {
@@ -110,6 +112,8 @@
         padding: 5px 15px;
         box-sizing: border-box;
         transition: .3s;
+        font-weight: bold;
+        color: var(--text-light-gray);
 
         &:hover {
           //background: var(--background-middle-color);

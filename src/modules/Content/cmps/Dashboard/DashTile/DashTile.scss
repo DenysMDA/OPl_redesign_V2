@@ -182,7 +182,7 @@
   //margin-left: 70px;
   box-sizing: border-box;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   height: $button-primary-height;
 
@@ -225,6 +225,24 @@
     margin-top: 20px;
 }
 
+.add-tile{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover{
+    background-color: var(--background-light-gray);
+  }
+
+  svg{
+    font-size: 40px;
+    color: var(--color-func-on);
+    cursor: pointer;
+  }
+}
 
 //.layout {
 //  .react-grid-item {

@@ -25,11 +25,13 @@
       align-items: center;
       gap: 5px;
       font-size: 12px;
+      transition: .3s;
 
       &:hover {
-        background: var(--background-main-color);
-        color: var(--text-color);
+        //background: var(--background-light-gray);
+        color: var(--color-func-on);
         border: 2px solid var(--background-light-color);
+        border-bottom: 1px solid var(--color-func-on);
       }
 
       .icon {

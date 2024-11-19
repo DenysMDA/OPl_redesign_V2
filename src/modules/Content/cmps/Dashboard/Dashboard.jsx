@@ -9,6 +9,8 @@ import UserChart from "./DashTile/UserChart/UserChart";
 import {HiExternalLink} from "react-icons/hi";
 import {LuSearch} from "react-icons/lu";
 import MySwiper from "./DashTile/Slider/MySwiper";
+import { IoIosWarning } from "react-icons/io";
+import { IoMdAdd } from "react-icons/io";
 
 import image1 from '../../../../assest/1.png';
 import image2 from '../../../../assest/2.png';
@@ -159,12 +161,22 @@ const Dashboard = () => {
                     </div>
                     <div key="notification">
                         <DashTile title="Notification" footerContent="">
-                            <p>Content for Notification</p>
+                            <div className="notification">
+                                <div className="notification-icon">
+                                    <IoIosWarning/>
+                                    <div>Service unavailable</div>
+                                </div>
+                                <div className="notification-content">
+                                    <div className='notification-text'>
+                                        <span>Maintenance work is currently being carried out and is expected to be completed by 5:00 PM. The service will be available as soon as all issues are resolved. Thank you for your patience.</span>
+                                    </div>
+                                </div>
+                            </div>
                         </DashTile>
                     </div>
                     <div key="addNew">
                         <DashTile title="Add New" footerContent="">
-                            <p>Content for Add New</p>
+                            <div className='add-tile'><IoMdAdd /></div>
                         </DashTile>
                     </div>
                 </GridLayout>

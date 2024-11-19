@@ -16,7 +16,7 @@ const MySwiper = ({ slides }) => {
                 // navigation
                 pagination={{ clickable: true }}
                 style={{ height: '100%' }}
-                // autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={index}>

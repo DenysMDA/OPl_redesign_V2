@@ -236,10 +236,6 @@ const Content = () => {
     }
   };
 
-  useEffect(() => {
-    console.log();
-  }, []);
-
   const collapseAllTables = () => setAreTablesCollapsed(true);
   const expandAllTables = () => setAreTablesCollapsed(false);
 

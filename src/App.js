@@ -24,6 +24,7 @@ function App() {
           {/*<button onClick={toggleTheme}>*/}
           {/*    Switch to {theme === 'light' ? 'dark' : 'light'} theme*/}
           {/*</button>*/}
+          <button onClick={toggleTheme}></button>
           <Header/>
           <Content/>
       </div>

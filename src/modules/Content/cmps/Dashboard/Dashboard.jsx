@@ -101,12 +101,12 @@ const Dashboard = () => {
     ],
     sm: [
       { i: "operatorDetails", x: 0, y: 0, w: 3, h: 4 },
-      { i: "statistics", x: 5, y: 4, w: 6, h: 4 },
-      { i: "tenants", x: 0, y: 8, w: 3, h: 3 },
-      { i: "announcement", x: 3, y: 12, w: 3, h: 3 },
-      { i: "latestUpdates", x: 6, y: 15, w: 3, h: 3 },
-      { i: "notification", x: 0, y: 18, w: 3, h: 3 },
-      { i: "addNew", x: 3, y: 18, w: 3, h: 3 },
+      { i: "statistics", x: 0, y: 4, w: 9, h: 4 },
+      { i: "tenants", x: 3, y: 0, w: 3, h: 4 },
+      { i: "announcement", x: 0, y: 15, w: 3, h: 3 },
+      { i: "latestUpdates", x: 3, y: 15, w: 3, h: 3 },
+      { i: "notification", x: 6, y: 0, w: 3, h: 4 },
+      { i: "addNew", x: 6, y: 15, w: 3, h: 3 },
     ],
   };
 

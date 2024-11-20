@@ -4,7 +4,7 @@
   position: fixed;
   right: -100%;
   top: 0;
-  width: 25%;
+  width: 400px;
   height: 100%;
   background-color: white;
   border-left: 1px solid #ddd;
@@ -263,13 +263,14 @@
       border-radius: 4px;
       cursor: pointer;
       margin-top: 20px;
-      border: 2px solid var(--color-error);
-      color: var(--color-error);
+      // border: 2px solid var(--color-error);
+      // color: var(--color-error);
       transition: 0.3s;
 
       &:hover {
         background: var(--color-error);
         color: var(--text-color-opposite);
+        border: none;
       }
     }
   }

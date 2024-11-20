@@ -12,6 +12,7 @@ import { IoIosWarning } from "react-icons/io";
 import { IoMdAdd } from "react-icons/io";
 
 import image1 from "../../../../assest/1.png";
+import image2 from "../../../../assest/2.png";
 import image3 from "../../../../assest/3.png";
 import image4 from "../../../../assest/4.png";
 import image5 from "../../../../assest/5.png";
@@ -37,6 +38,11 @@ const announcement = [
     description:
       "New possibilities of artificial intelligence. Now you don't have to think how to solve a problem, everything has already been thought for you.",
     backgroundImage: image4,
+  },
+  {
+    title: "Denys & Arash",
+    description: "The Operator Connect will never be the same again)",
+    backgroundImage: image2,
   },
 ];
 

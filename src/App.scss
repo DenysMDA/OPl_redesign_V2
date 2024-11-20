@@ -6,7 +6,8 @@
   background: var(--background-main-color);
   font-family: "Roboto", sans-serif;
 
-  min-width: 1640px;
+  // min-width: 1640px;
+  min-width: auto;
   height: 100%;
 
   h1 {

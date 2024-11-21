@@ -173,7 +173,7 @@ const data1 = [
 
 const Content = () => {
   const [expandedMenus, setExpandedMenus] = useState([]);
-  const [isShowMenu, setIsShowMenu] = useState(false);
+  const [isShowMenu, setIsShowMenu] = useState(true);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState("Dashboard");
   // const [theme, setTheme] = useState('light');

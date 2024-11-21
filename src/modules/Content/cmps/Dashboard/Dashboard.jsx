@@ -131,7 +131,7 @@ const Dashboard = () => {
                   <img src={myImage} alt="AT&T" />
                 </div>
               </div>
-              <p className="title">AT&T Business</p>
+              <p className="title">AT-T Corp</p>
               <div className="op-desc-wrapper">
                 <div className="left-desc">
                   <div className="left-desc-title">Available products:</div>

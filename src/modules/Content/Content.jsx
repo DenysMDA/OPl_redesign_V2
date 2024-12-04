@@ -517,7 +517,7 @@ const data1 = [
 
 const Content = () => {
   const [expandedMenus, setExpandedMenus] = useState([]);
-  const [isShowMenu, setIsShowMenu] = useState(false);
+  const [isShowMenu, setIsShowMenu] = useState(true);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState("Operator Configuration");
   // const [theme, setTheme] = useState('light');

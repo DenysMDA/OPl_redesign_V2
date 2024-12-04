@@ -39,11 +39,6 @@ const announcement = [
       "New possibilities of artificial intelligence. Now you don't have to think how to solve a problem, everything has already been thought for you.",
     backgroundImage: image4,
   },
-  {
-    title: "Denys & Arash",
-    description: "The Operator Connect will never be the same again)",
-    backgroundImage: image2,
-  },
 ];
 
 const latestUpdates = [
@@ -131,7 +126,7 @@ const Dashboard = () => {
                   <img src={myImage} alt="AT&T" />
                 </div>
               </div>
-              <p className="title">AT&T Business</p>
+              <p className="title">AT-T Corp</p>
               <div className="op-desc-wrapper">
                 <div className="left-desc">
                   <div className="left-desc-title">Available products:</div>

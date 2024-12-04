@@ -1,34 +1,40 @@
 // ActionButtonsV2.js
 import React from "react";
-import "./ActionButtons.scss";
+import "./ActionButtonsV2.scss";
 import {LuSearch} from "react-icons/lu";
 import {FiSettings} from "react-icons/fi";
 import {TiEdit} from "react-icons/ti";
 import {RiDeleteBin6Line} from "react-icons/ri";
 import {MdLibraryAdd} from "react-icons/md"; // Подключаем стили для компонента
+import {CgMenuGridR} from "react-icons/cg";
+import { GiHamburgerMenu } from "react-icons/gi";
 
+const ActionButtonsV2 = ({actions, isSearchable}) => {
+    const iconMap = {
+        Add: MdLibraryAdd,
+        Edit: TiEdit,
+        Delete: RiDeleteBin6Line,
+        Row: GiHamburgerMenu,
+        Tiles: CgMenuGridR,
+    };
 
-const ActionButtons = ({ actions, isSearchable }) => {
     return (
         <div className="action-buttons">
             <div className="action-icon-block">
+                {isSearchable && (
+                    <div className="search">
+                        <div className="search-icon">
+                            <LuSearch className="icon"/>
+                        </div>
+                        <input placeholder="Search" type="text" className="search-input"/>
+                    </div>
+                )}
+            </div>
+            <div className="action-icon-block-right">
+                <div className="visualiser-separator"/>
                 {actions.map((action, index) => {
-                    let Icon;
-                    switch (action.label) {
-                        case "Add":
-                            Icon = MdLibraryAdd;
-                            break;
-                        case "Edit":
-                            Icon = TiEdit;
-                            break;
-                        case "Delete":
-                            Icon = RiDeleteBin6Line;
-                            break;
-                        default:
-                            Icon = null;
-                    }
+                    const Icon = iconMap[action.label] || null; // Получаем иконку из `iconMap`
 
-                    // Используем свойство `disabled` из объекта `action`
                     const isDisabled = action.disabled;
 
                     return (
@@ -37,31 +43,27 @@ const ActionButtons = ({ actions, isSearchable }) => {
                             className={`action-icon-wrapper ${isDisabled ? "disabled" : ""}`}
                         >
                             <button onClick={action.onClick} disabled={isDisabled}>
-                                {Icon && <Icon className="action-icon" />} {action.label}
+                                {Icon && <Icon className="action-icon"/>} {action.label}
                             </button>
-                            {/*<div className="action-buttons-separator"></div>*/}
                         </div>
                     );
                 })}
-            </div>
-            <div className="action-icon-block-right">
-                {isSearchable && (
-                    <div className="search">
-                        <div className="search-icon">
-                            <LuSearch className="icon" />
-                        </div>
-                        <input placeholder="Search" type="text" className="search-input" />
-                    </div>
-                )}
-                <div className="table-setting">
-                    <FiSettings />
+
+                <div className="visualiser-separator"/>
+                <div className='visualiser-btn'>
+                    <CgMenuGridR className="action-icon-visualiser"/>
                 </div>
+
+                <div className='visualiser-btn'>
+                    <GiHamburgerMenu className="action-icon-visualiser"/>
+                </div>
+
             </div>
         </div>
     );
 };
 
-export default ActionButtons;
+export default ActionButtonsV2;
 // const ActionButtonsV2 = ({ actions, isSearchable }) => {
 //     return (
 //         <div className="action-buttons">

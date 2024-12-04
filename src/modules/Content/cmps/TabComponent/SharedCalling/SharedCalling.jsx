@@ -76,7 +76,7 @@ const SharedCalling = () => {
 export default SharedCalling;
 
 // import "./SharedCalling.scss"
-// import ActionButtons from "../../shared/ActionButtons";
+// import ActionButtonsV2 from "../../shared/ActionButtonsV2";
 //
 // const SharedCalling = () => {
 //
@@ -88,7 +88,7 @@ export default SharedCalling;
 //     return (
 //         <div>
 //             <div className="header">
-//                 <ActionButtons actions={actions} isSearchable={false}/>
+//                 <ActionButtonsV2 actions={actions} isSearchable={false}/>
 //             </div>
 //         </div>
 //     );

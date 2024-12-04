@@ -224,7 +224,7 @@ const Dashboard = () => {
 export default Dashboard;
 
 // import React, { useState } from "react";
-// import ContentHeader from "../ContentHeader/ContentHeader";
+// import ContentHeaderV2 from "../ContentHeaderV2/ContentHeaderV2";
 // // import GridLayout from "react-grid-layout";
 // import "./Dashboard.scss";
 // import DashTile from "./DashTile/DashTile";
@@ -306,7 +306,7 @@ export default Dashboard;
 
 //   return (
 //     <div className="content-wrapper dashboard">
-//       <ContentHeader activeSubMenu="Dashboard" pageNavigation={false} />
+//       <ContentHeaderV2 activeSubMenu="Dashboard" pageNavigation={false} />
 
 //       <div className="dashboard-content">
 //         <GridLayout

@@ -4,7 +4,7 @@
   position: relative;
   box-sizing: border-box;
   margin-top: var(--tob-gap);
-  border-radius: 8px;
+  border-radius: $border-primary-radius;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background: var(--background-main-color);
@@ -58,7 +58,7 @@
   .tab-content {
     padding: 20px;
     background-color: white;
-    border-top-right-radius: 10px; // Задайте нужный радиус
+    border-top-right-radius: $border-primary-radius; // Задайте нужный радиус
     border: 1px solid var(--border-color-light-gray);
 
     .content {

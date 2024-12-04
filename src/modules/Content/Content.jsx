@@ -6,7 +6,9 @@ import TabComponent from "./cmps/TabComponent/TabComponent";
 import IconNavBlock from "./cmps/Navigation/IconNavBlock";
 import ContentHeader from "./cmps/ContentHeader/ContentHeader";
 import Dashboard from "./cmps/Dashboard/Dashboard";
-
+import ContentSection from "./ContentSections/ContentSection/ContentSection";
+import ContentSectionV2 from "./ContentSections/ContentSectionV2/ContentSectionV2";
+import { BsThreeDotsVertical } from "react-icons/bs";
 const columns1 = [
   { Header: "Type", accessor: "Type", minWidth: 200 },
   { Header: "Display Name", accessor: "Display Name", minWidth: 200 },
@@ -171,11 +173,353 @@ const data1 = [
   },
 ];
 
+// const columnsOperators = [
+//   { Header: "Operator", accessor: "Operator", minWidth: 200 },
+//   { Header: "Friendly Name", accessor: "FriendlyName", minWidth: 200 },
+//   { Header: "Website", accessor: "Website", minWidth: 200 },
+//   { Header: "State", accessor: "State", minWidth: 200 },
+//   { Header: "Audio Conference", accessor: "AudioConference", minWidth: 200 },
+//   { Header: "Calling", accessor: "Calling", minWidth: 200 },
+// ];
+//
+// const dataOperators = [
+//   {
+//     Operator: "Rogers Inc",
+//     FriendlyName: "Rogers",
+//     Website: "www.rogers.com",
+//     State: "Active",
+//     AudioConference: "Unavailable",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "AU, JP",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "CA",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Bell Canada",
+//     FriendlyName: "Bell",
+//     Website: "www.bell.ca",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "FR",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "US",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Telus",
+//     FriendlyName: "Telus",
+//     Website: "www.telus.com",
+//     State: "PrivatePreview",
+//     AudioConference: "Unavailable",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "UK, DE",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "AU",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Vodafone",
+//     FriendlyName: "Vodafone",
+//     Website: "www.vodafone.com",
+//     State: "Blocked",
+//     AudioConference: "Available",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "IN, SG",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "BR, ZA",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "AT&T",
+//     FriendlyName: "AT&T",
+//     Website: "www.att.com",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "US, MX",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "CA",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "T-Mobile",
+//     FriendlyName: "T-Mobile",
+//     Website: "www.t-mobile.com",
+//     State: "PrivatePreview",
+//     AudioConference: "Unavailable",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "AU, JP",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "DE, FR",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Orange",
+//     FriendlyName: "Orange",
+//     Website: "www.orange.com",
+//     State: "Active",
+//     AudioConference: "Unavailable",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "BlockedMarkets",
+//         markets: "AU, NZ",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Inactive",
+//         listType: "AllowedMarkets",
+//         markets: "FR, DE",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Deutsche Telekom",
+//     FriendlyName: "DT",
+//     Website: "www.telekom.com",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "IT, GR",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Inactive",
+//         listType: "AllowedMarkets",
+//         markets: "US, UK",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Verizon",
+//     FriendlyName: "Verizon",
+//     Website: "www.verizon.com",
+//     State: "Blocked",
+//     AudioConference: "Unavailable",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "AU, CA",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "MX, US",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "China Mobile",
+//     FriendlyName: "CMCC",
+//     Website: "www.chinamobile.com",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "CN",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "HK",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "SK Telecom",
+//     FriendlyName: "SKT",
+//     Website: "www.sktelecom.com",
+//     State: "PrivatePreview",
+//     AudioConference: "Unavailable",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "KR, JP",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "KR",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "BT Group",
+//     FriendlyName: "BT",
+//     Website: "www.bt.com",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "UK",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "FR",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "KPN",
+//     FriendlyName: "KPN",
+//     Website: "www.kpn.com",
+//     State: "Blocked",
+//     AudioConference: "Unavailable",
+//     Calling: "Unavailable",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Blocked",
+//         listType: "BlockedMarkets",
+//         markets: "NL, BE",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Inactive",
+//         listType: "BlockedMarkets",
+//         markets: "LU",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Telia",
+//     FriendlyName: "Telia",
+//     Website: "www.telia.com",
+//     State: "Active",
+//     AudioConference: "Available",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "SE, FI",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "NO",
+//       },
+//     },
+//   },
+//   {
+//     Operator: "Sprint",
+//     FriendlyName: "Sprint",
+//     Website: "www.sprint.com",
+//     State: "PrivatePreview",
+//     AudioConference: "Available",
+//     Calling: "Available",
+//     teamsOffers: {
+//       AudioConferencing: {
+//         type: "AudioConferencing",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "US",
+//       },
+//       Calling: {
+//         type: "Calling",
+//         status: "Active",
+//         listType: "AllowedMarkets",
+//         markets: "CA",
+//       },
+//     },
+//   },
+// ];
+
 const Content = () => {
   const [expandedMenus, setExpandedMenus] = useState([]);
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState("Dashboard");
+  const [activeSubMenu, setActiveSubMenu] = useState("Operator Configuration");
   // const [theme, setTheme] = useState('light');
   const [areTablesCollapsed, setAreTablesCollapsed] = useState(false); // Новое состояние
 
@@ -215,6 +559,7 @@ const Content = () => {
     { label: "Edit", onClick: () => console.log("Edit clicked") },
     { label: "Delete", onClick: () => console.log("Delete clicked") },
   ];
+
   const actions2 = [
     { label: "Add", onClick: () => console.log("Add clicked") },
   ];
@@ -256,50 +601,22 @@ const Content = () => {
       />
 
       {activeSubMenu !== "Dashboard" ? (
-        <div className="content-wrapper">
-          <ContentHeader
-            hello={"hello"}
-            activeSubMenu={activeSubMenu}
-            collapseAllTables={collapseAllTables}
-            expandAllTables={expandAllTables}
-            togglePanelVisibility={togglePanelVisibility} // Передаем строку
+          <ContentSectionV2
+              activeSubMenu={activeSubMenu}
+              collapseAllTables={collapseAllTables}
+              expandAllTables={expandAllTables}
+              togglePanelVisibility={togglePanelVisibility}
+              // columns1={columnsOperators}
+              // data1={dataOperators}
+              actions={actions}
+              columns2={columns2}
+              data2={data2}
+              actions2={actions2}
+              actions3={actions3}
+              activeTable={activeTable}
+              handleTableFocus={handleTableFocus}
+              areTablesCollapsed={areTablesCollapsed}
           />
-
-          {/*<EntityDetail />*/}
-
-          <TabComponent />
-
-          <KeyContactsTable
-            title="Partner Number Configuration"
-            columns={columns1}
-            data={data1}
-            actions={actions}
-            isActive={activeTable === 1}
-            onTableFocus={() => handleTableFocus(1)}
-            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-            isSearchable={true}
-          />
-          <KeyContactsTable
-            title="Applications IDS"
-            columns={columns2}
-            data={data2}
-            actions={actions2}
-            isActive={activeTable === 2}
-            onTableFocus={() => handleTableFocus(2)}
-            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-          />
-
-          <KeyContactsTable
-            title="Microsofts offers"
-            columns={columns1}
-            data={data1}
-            actions={actions3}
-            isActive={activeTable === 3}
-            onTableFocus={() => handleTableFocus(3)}
-            areTablesCollapsed={areTablesCollapsed} // Передаем состояние
-            isSearchable={true}
-          />
-        </div>
       ) : (
         <Dashboard />
       )}

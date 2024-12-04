@@ -1,7 +1,8 @@
 // Светлая тема
 
-$border-primary-radius: 5px;
+$border-primary-radius: 3px;
 $button-primary-height: 30px;
+$th-table-primary-color: #5a97f117;
 
 //$light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 $light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -22,7 +23,6 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --background-light-gray: #f0f0f0;
   --line-color-light-gray: #ddd;
 
-  --border-color-light-gray: #e2e8ee;
   --border-color-light-gray: #4e52d921;
 
   --text-blue-color: #007eab;
@@ -40,6 +40,54 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --tob-gap: 15px;
   --primary-radius: 5px;
+  --primary-th-background: #c9b2ff38;
+
+  --scrol-bar-background: #f1f1f1;
+  --scrol-bar-scroll: #d8d1ff8a;
+  --scrol-bar-hover: #847ad9;
+}
+
+[data-theme="lightV2"] {
+  --primary-color: #19191a;
+  --dark-gray-color: #424244;
+  --light-gray-color: #a2a0aa;
+
+  --background-dark-color: #111926;
+  --background-light-dark-color: #424244;
+  --background-light-gray-color: #595965;
+  --background-main-color: #fafbfd;
+  --background-middle-color: #f3f4f6;
+  --background-light-color: #ffffff;
+
+  --background-light-gray: #f0f0f0;
+  --line-color-light-gray: #ddd;
+
+  --border-color-light-gray: #e2e8ee;
+
+  --text-blue-color: #007eab;
+  --text-color: #111926;
+  --text-color-opposite: #ffffff;
+  --text-light-gray: #626975;
+  --text-inactive: #00000052;
+
+  --color-func-off: #b7b7b7f5;
+  --color-func-on: #5c5fc9;
+  --color-status-active: #208a38;
+  --color-warning: #f5a623;
+  --color-error: #d32f2f;
+
+  --color-func-offv2: #b7b7b7f5;
+  --color-func-onv2: #5a97f1;
+  --color-status-activev2: #7eb263;
+  --color-bg-status-activev2: #eaf3e7;
+  --color-warningv2: #e9b264;
+  --color-bg-warningv2: #f8efe2;
+  --color-errorv2: #ca625d;
+  --color-bg-errorv2: #f6e6e6;
+
+  --light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --tob-gap: 15px;
+  --primary-radius: 3px;
   --primary-th-background: #c9b2ff38;
 
   --scrol-bar-background: #f1f1f1;

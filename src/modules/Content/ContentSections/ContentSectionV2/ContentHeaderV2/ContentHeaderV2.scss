@@ -1,0 +1,36 @@
+@import "../../../../../theme";
+
+.content-wrapper-v2{
+
+  .content-header {
+    width: 100%;
+    background: var(--background-main-color);
+    box-sizing: border-box;
+    //padding: 5px 10px;
+    padding: 0;
+    padding-left: 15px;
+    color: var(--primary-color);
+    border: none;
+    height: 43px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: $border-primary-radius;
+    box-shadow: none;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      // line-height: 48px;
+    }
+
+    // .content-header-nav {
+    //   border: 1px solid red;
+    //   display: flex;
+    //   justify-self: start;
+    // }
+  }
+
+}

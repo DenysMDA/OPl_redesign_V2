@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {FaChevronDown, FaChevronUp} from "react-icons/fa";
-import "./KeyContactsTable.scss";
+import "./TableV2.scss";
 import ActionButtons from "../shared/ActionButtons/ActionButtons";
 import TableWrapper from "../shared/TableWrapper/TableWrapper";
 
-const KeyContactsTable = ({
+const TableV2 = ({
                               title,
                               columns,
                               data,
@@ -77,6 +77,6 @@ const KeyContactsTable = ({
     );
 };
 
-export default KeyContactsTable;
+export default TableV2;
 
 

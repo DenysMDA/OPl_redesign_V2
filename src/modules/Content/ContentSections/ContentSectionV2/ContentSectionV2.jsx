@@ -1,26 +1,43 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ContentHeaderV2 from "./ContentHeaderV2/ContentHeaderV2";
-import KeyContactsTableV2 from "./KeyContactsTableV2/KeyContactsTableV2";
-import { CgMenuGridR } from "react-icons/cg";
+import TableContentV2 from "./TableContentV2/TableContentV2";
+import {CgMenuGridR} from "react-icons/cg";
 
 
 const columnsOperators = [
-    { Header: "Operator", accessor: "Operator", },
-    { Header: "Friendly Name", accessor: "FriendlyName",},
-    { Header: "Website", accessor: "Website",  },
-    { Header: "State", accessor: "State",},
-    { Header: "Audio Conference", accessor: "AudioConference",  },
-    { Header: "Calling", accessor: "Calling",  },
+    {
+        Header: "Operator",
+        accessor: "Operator",
+    },
+    {
+        Header: "Friendly Name",
+        accessor: "FriendlyName",
+    },
+    {
+        Header: "State", // Перемещаем State
+        accessor: "State",
+    },
+    {
+        Header: "Website", // Перемещаем Website ниже State
+        accessor: "Website",
+    },
+    {
+        Header: "Audio Conference",
+        accessor: "AudioConference",
+    },
+    {
+        Header: "Calling",
+        accessor: "Calling",
+    },
 ];
-
 const dataOperators = [
     {
         Operator: "Rogers Inc",
         FriendlyName: "Rogers",
         Website: "www.rogers.com",
         State: "Active",
-        AudioConference: "Unavailable",
-        Calling: "Available",
+        AudioConference: false,
+        Calling: true,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -41,8 +58,8 @@ const dataOperators = [
         FriendlyName: "Bell",
         Website: "www.bell.ca",
         State: "Active",
-        AudioConference: "Available",
-        Calling: "Unavailable",
+        AudioConference: true,
+        Calling: false,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -63,8 +80,8 @@ const dataOperators = [
         FriendlyName: "Telus",
         Website: "www.telus.com",
         State: "PrivatePreview",
-        AudioConference: "Unavailable",
-        Calling: "Unavailable",
+        AudioConference: false,
+        Calling: false,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -85,8 +102,8 @@ const dataOperators = [
         FriendlyName: "Vodafone",
         Website: "www.vodafone.com",
         State: "Blocked",
-        AudioConference: "Available",
-        Calling: "Unavailable",
+        AudioConference: true,
+        Calling: false,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -107,8 +124,8 @@ const dataOperators = [
         FriendlyName: "AT&T",
         Website: "www.att.com",
         State: "Active",
-        AudioConference: "Available",
-        Calling: "Available",
+        AudioConference: true,
+        Calling: true,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -129,8 +146,8 @@ const dataOperators = [
         FriendlyName: "T-Mobile",
         Website: "www.t-mobile.com",
         State: "PrivatePreview",
-        AudioConference: "Unavailable",
-        Calling: "Available",
+        AudioConference: false,
+        Calling: true,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -151,8 +168,8 @@ const dataOperators = [
         FriendlyName: "Orange",
         Website: "www.orange.com",
         State: "Active",
-        AudioConference: "Unavailable",
-        Calling: "Available",
+        AudioConference: false,
+        Calling: true,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -173,8 +190,8 @@ const dataOperators = [
         FriendlyName: "DT",
         Website: "www.telekom.com",
         State: "Active",
-        AudioConference: "Available",
-        Calling: "Unavailable",
+        AudioConference: true,
+        Calling: false,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -195,8 +212,8 @@ const dataOperators = [
         FriendlyName: "Verizon",
         Website: "www.verizon.com",
         State: "Blocked",
-        AudioConference: "Unavailable",
-        Calling: "Unavailable",
+        AudioConference: false,
+        Calling: false,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -217,8 +234,8 @@ const dataOperators = [
         FriendlyName: "CMCC",
         Website: "www.chinamobile.com",
         State: "Active",
-        AudioConference: "Available",
-        Calling: "Available",
+        AudioConference: true,
+        Calling: true,
         teamsOffers: {
             AudioConferencing: {
                 type: "AudioConferencing",
@@ -234,135 +251,46 @@ const dataOperators = [
             },
         },
     },
-    {
-        Operator: "SK Telecom",
-        FriendlyName: "SKT",
-        Website: "www.sktelecom.com",
-        State: "PrivatePreview",
-        AudioConference: "Unavailable",
-        Calling: "Available",
-        teamsOffers: {
-            AudioConferencing: {
-                type: "AudioConferencing",
-                status: "Blocked",
-                listType: "BlockedMarkets",
-                markets: "KR, JP",
-            },
-            Calling: {
-                type: "Calling",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "KR",
-            },
-        },
-    },
-    {
-        Operator: "BT Group",
-        FriendlyName: "BT",
-        Website: "www.bt.com",
-        State: "Active",
-        AudioConference: "Available",
-        Calling: "Unavailable",
-        teamsOffers: {
-            AudioConferencing: {
-                type: "AudioConferencing",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "UK",
-            },
-            Calling: {
-                type: "Calling",
-                status: "Inactive",
-                listType: "BlockedMarkets",
-                markets: "FR",
-            },
-        },
-    },
-    {
-        Operator: "KPN",
-        FriendlyName: "KPN",
-        Website: "www.kpn.com",
-        State: "Blocked",
-        AudioConference: "Unavailable",
-        Calling: "Unavailable",
-        teamsOffers: {
-            AudioConferencing: {
-                type: "AudioConferencing",
-                status: "Blocked",
-                listType: "BlockedMarkets",
-                markets: "NL, BE",
-            },
-            Calling: {
-                type: "Calling",
-                status: "Inactive",
-                listType: "BlockedMarkets",
-                markets: "LU",
-            },
-        },
-    },
-    {
-        Operator: "Telia",
-        FriendlyName: "Telia",
-        Website: "www.telia.com",
-        State: "Active",
-        AudioConference: "Available",
-        Calling: "Available",
-        teamsOffers: {
-            AudioConferencing: {
-                type: "AudioConferencing",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "SE, FI",
-            },
-            Calling: {
-                type: "Calling",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "NO",
-            },
-        },
-    },
-    {
-        Operator: "Sprint",
-        FriendlyName: "Sprint",
-        Website: "www.sprint.com",
-        State: "PrivatePreview",
-        AudioConference: "Available",
-        Calling: "Available",
-        teamsOffers: {
-            AudioConferencing: {
-                type: "AudioConferencing",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "US",
-            },
-            Calling: {
-                type: "Calling",
-                status: "Active",
-                listType: "AllowedMarkets",
-                markets: "CA",
-            },
-        },
-    },
 ];
 
 const actions = [
-    { label: "Add", onClick: () => console.log("Add clicked"), disabled: true },
-    { label: "Edit", onClick: () => console.log("Edit clicked") },
-    { label: "Delete", onClick: () => console.log("Delete clicked") },
+    {label: "Add", onClick: () => console.log("Add clicked"), disabled: true},
+    {label: "Edit", onClick: () => console.log("Edit clicked")},
+    {label: "Delete", onClick: () => console.log("Delete clicked")},
     // { label: "Row", onClick: () => console.log("Delete clicked") },
     // { label: "Tiles", onClick: () => console.log("Delete clicked") },
 ];
 
 const ContentSectionV2 = ({
-                                activeSubMenu,
-                                collapseAllTables,
-                                expandAllTables,
-                                togglePanelVisibility,
-                                activeTable,
-                                handleTableFocus,
-                                areTablesCollapsed,
-                            }) => {
+                              activeSubMenu,
+                              collapseAllTables,
+                              expandAllTables,
+                              togglePanelVisibility,
+                              activeTable,
+                              handleTableFocus,
+                              areTablesCollapsed,
+                          }) => {
+
+    const [selectedItem, setSelectedItem] = useState(dataOperators ? dataOperators[0] : null);
+    const [selectedTileType, setSelectedTileType] = useState(false);
+
+
+    useEffect(() => {
+        console.log("selectedItem", selectedItem);
+    }, [selectedItem]);
+
+    useEffect(() => {
+        console.log("selectedTileType", selectedTileType);
+    }, [selectedTileType]);
+
+    const handleRowSelect = (item) => {
+        setSelectedItem(item); // Сохраняем выбранный элемент
+    };
+
+    const handleTypeSelect = (type) => {
+        setSelectedTileType(type); // Переключаем тип тайла
+    }
+
     return (
         <div className="content-wrapper content-wrapper-v2">
             <ContentHeaderV2
@@ -370,8 +298,9 @@ const ContentSectionV2 = ({
                 collapseAllTables={collapseAllTables}
                 expandAllTables={expandAllTables}
                 togglePanelVisibility={togglePanelVisibility}
+                handleRowSelect={handleRowSelect}
             />
-            <KeyContactsTableV2
+            <TableContentV2
                 title="Operators"
                 columns={columnsOperators}
                 data={dataOperators}
@@ -380,6 +309,9 @@ const ContentSectionV2 = ({
                 onTableFocus={() => handleTableFocus(1)}
                 areTablesCollapsed={areTablesCollapsed}
                 isSearchable={true}
+                onRowSelect={handleRowSelect}
+                handleTypeSelect={handleTypeSelect}
+                selectedTileType={selectedTileType}
             />
         </div>
     );

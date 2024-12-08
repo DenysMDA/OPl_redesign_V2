@@ -1,20 +1,25 @@
 import React, {useState, useEffect} from "react";
 import {FaChevronDown, FaChevronUp} from "react-icons/fa";
-import "./KeyContactsTableV2.scss";
+import "./TableContentV2.scss";
 import TableWrapper from "../../../cmps/shared/TableWrapper/TableWrapper";
 import ActionButtons from "../../../cmps/shared/ActionButtons/ActionButtons";
 import ActionButtonsV2 from "../ActionButtonsV2/ActionButtonsV2";
+import TileWrapper from "../../../cmps/shared/TileWrapper/TileWrapper";
+import TableWrapperV2 from "../TableWrapper/TableWrapperV2";
 
-const KeyContactsTableV2 = ({
-                                title,
-                                columns,
-                                data,
-                                actions,
-                                isActive,
-                                onTableFocus,
-                                areTablesCollapsed,
-                                isSearchable,
-                            }) => {
+const TableContentV2 = ({
+                            title,
+                            columns,
+                            data,
+                            actions,
+                            isActive,
+                            onTableFocus,
+                            areTablesCollapsed,
+                            isSearchable,
+                            onRowSelect,
+                            handleTypeSelect,
+                            selectedTileType
+                        }) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
     const [filteredData, setFilteredData] = useState(data); // Состояние для фильтрованных данных
@@ -24,9 +29,17 @@ const KeyContactsTableV2 = ({
         setIsCollapsed((prev) => !prev);
     };
 
-    const handleRowClick = (rowIndex) => {
-        onTableFocus();
-        setSelectedRow(rowIndex);
+    // const handleRowClick = (rowIndex) => {
+    //     onTableFocus();
+    //     setSelectedRow(rowIndex);
+    // };
+
+    const handleRowClick = (rowData) => {
+        onTableFocus(); // Фокус на таблице
+        setSelectedRow(rowData); // Сохраняем выделенную строку
+        if (onRowSelect) {
+            onRowSelect(rowData); // Передаём выбранные данные в родительский компонент
+        }
     };
 
     const handleFilter = (state) => {
@@ -54,7 +67,7 @@ const KeyContactsTableV2 = ({
     }, [areTablesCollapsed]);
 
     return (
-        <div className="table">
+        <div className="table table-v2">
             <div className="table-header-wrapper">
                 <div className="table-header">
                     <div className="header-title">
@@ -65,27 +78,27 @@ const KeyContactsTableV2 = ({
                         <div
                             className="icon-container"
                             onClick={toggleCollapse}
-                            style={{ cursor: "pointer" }}
+                            style={{cursor: "pointer"}}
                         >
-                            {isCollapsed ? <FaChevronDown /> : <FaChevronUp />}
+                            {isCollapsed ? <FaChevronDown/> : <FaChevronUp/>}
                         </div>
                     </div>
                 </div>
 
                 {!isCollapsed && (
-                    <ActionButtonsV2 actions={actions} isSearchable={isSearchable} />
+                    <ActionButtonsV2 actions={actions} isSearchable={isSearchable} handleTypeSelect={handleTypeSelect}/>
                 )}
             </div>
 
             {!isCollapsed && (
-                <>
+                <div className='table-content'>
                     {/* Панель фильтров */}
                     <div className="table-filter-panel">
                         <button
                             onClick={() => handleFilter("All")}
                             className={`filter-btn ${activeFilter === "All" ? "active" : ""}`}
                         >
-                            All
+                            <span>All</span>
                             <div className="filter-count">{getCountByState("All")}</div>
                         </button>
                         <button
@@ -94,7 +107,7 @@ const KeyContactsTableV2 = ({
                                 activeFilter === "Active" ? "active" : ""
                             }`}
                         >
-                            Active
+                         <span>Active</span>
                             <div className="filter-count">{getCountByState("Active")}</div>
                         </button>
                         <button
@@ -103,7 +116,7 @@ const KeyContactsTableV2 = ({
                                 activeFilter === "PrivatePreview" ? "active" : ""
                             }`}
                         >
-                            PrivatePreview
+                            <span>Private</span>
                             <div className="filter-count">
                                 {getCountByState("PrivatePreview")}
                             </div>
@@ -114,7 +127,7 @@ const KeyContactsTableV2 = ({
                                 activeFilter === "Blocked" ? "active" : ""
                             }`}
                         >
-                            Blocked
+                            <span>Blocked</span>
                             <div className="filter-count">{getCountByState("Blocked")}</div>
                         </button>
                         <button
@@ -123,7 +136,7 @@ const KeyContactsTableV2 = ({
                                 activeFilter === "PublicPreview" ? "active" : ""
                             }`}
                         >
-                            PublicPreview
+                            <span>Public</span>
                             <div className="filter-count">
                                 {getCountByState("PublicPreview")}
                             </div>
@@ -132,101 +145,34 @@ const KeyContactsTableV2 = ({
 
                     {/* Проверка на пустой массив */}
                     {filteredData.length === 0 ? (
-                        <div className="no-data">No Data</div>
+                        <div className="table-no-data">No Data</div>
                     ) : (
-                        <TableWrapper
-                            columns={columns}
-                            data={filteredData} // Передаем отфильтрованные данные
-                            onRowClick={handleRowClick}
-                            selectedRow={selectedRow}
-                            isActive={isActive}
-                        />
+                        selectedTileType ? (
+                            <TileWrapper
+                                columns={columns}
+                                data={filteredData} // Передаем отфильтрованные данные
+                                onTileClick={(item, index) => {
+                                    handleRowClick(item); // Обновляем выбранный элемент
+                                    setSelectedRow(index); // Устанавливаем индекс выбранной плитки
+                                }}
+                                selectedTile={selectedRow} // Индекс выбранной плитки
+                                isActive={isActive}
+                            />
+                        ) : (
+                            <TableWrapperV2
+                                columns={columns}
+                                data={filteredData} // Передаем отфильтрованные данные
+                                onRowClick={handleRowClick}
+                                selectedRow={selectedRow}
+                                isActive={isActive}
+                            />
+                        )
                     )}
-                </>
+                </div>
             )}
         </div>
     );
 };
 
-export default KeyContactsTableV2;
+export default TableContentV2;
 
-// const KeyContactsTableV2 = ({
-//                               title,
-//                               columns,
-//                               data,
-//                               actions,
-//                               isActive,
-//                               onTableFocus,
-//                               areTablesCollapsed,
-//                               isSearchable,
-//                           }) => {
-//     const [isCollapsed, setIsCollapsed] = useState(false);
-//     const [selectedRow, setSelectedRow] = useState(null);
-//
-//     const toggleCollapse = () => {
-//         setIsCollapsed((prev) => !prev);
-//     };
-//
-//     const handleRowClick = (rowIndex) => {
-//         onTableFocus();
-//         setSelectedRow(rowIndex);
-//     };
-//
-//     useEffect(() => {
-//         if (!isActive) {
-//             setSelectedRow(null);
-//         }
-//     }, [isActive]);
-//
-//     useEffect(() => {
-//         setIsCollapsed(areTablesCollapsed);
-//     }, [areTablesCollapsed]);
-//
-//     return (
-//         <div className="table">
-//             <div className="table-header-wrapper">
-//                 <div className="table-header">
-//                     <div className="header-title">
-//                         <div className="header-title-separator"></div>
-//                         <h2>{title}</h2>
-//                     </div>
-//
-//                     <div className="icon-container-wrapper">
-//                         {/*<div>Items: {data.length}</div>*/}
-//                         <div
-//                             className="icon-container"
-//                             onClick={toggleCollapse}
-//                             style={{ cursor: "pointer" }}
-//                         >
-//                             {isCollapsed ? <FaChevronDown /> : <FaChevronUp />}
-//                         </div>
-//                     </div>
-//                 </div>
-//
-//                 {!isCollapsed && (
-//                     <ActionButtonsV2 actions={actions} isSearchable={isSearchable} />
-//                 )}
-//             </div>
-//
-//             {!isCollapsed && (
-//                 <>
-//                     <div className='table-filter-panel'>
-//
-//                     </div>
-//                     <TableWrapper
-//                         columns={columns}
-//                         data={data}
-//                         onRowClick={handleRowClick}
-//                         selectedRow={selectedRow}
-//                         isActive={isActive}
-//                     />
-//                 </>
-//
-//             )}
-//         </div>
-//     );
-// };
-//
-// export default KeyContactsTableV2;
-//
-//

@@ -1,0 +1,40 @@
+.tile-wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.tile-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tile-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tile-item.selected-tile {
+  border-color: #007bff;
+  background-color: #e6f7ff;
+}
+
+.tile-row {
+  margin-bottom: 0.5rem;
+}
+
+.tile-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.tile-value {
+  margin-left: 0.5rem;
+  color: #555;
+}

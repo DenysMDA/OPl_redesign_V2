@@ -1,17 +1,27 @@
 @import "../../../../../theme";
 
-.action-buttons {
-  //padding: 10px 0;
+/* Основные стили */
+.action-buttonsv2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   margin-top: 10px;
-  border-top: 2px solid var(--color-func-offv2);
-  border-bottom: 2px solid var(--color-func-offv2);
   padding: 0;
-  //border: 1px solid red;
+  background-color: #fff;
+  border-radius: var(--primary-radius);
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  border: 1px solid var(--border-color-light-gray); /* Контур для акцента */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+  /* Эффект подъема при наведении */
+  //&:hover {
+  //  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Увеличенная тень */
+  //  transform: translateY(-2px); /* Легкий подъем */
+  //}
+
+
+  /* Левая секция иконок */
   .action-icon-block {
     display: flex;
     align-items: center;
@@ -21,7 +31,6 @@
       display: flex;
       align-items: center;
       width: 100%;
-      //border: 2px solid var(--border-color-light-gray);
       border-radius: var(--primary-radius);
       box-sizing: border-box;
       height: 30px;
@@ -33,7 +42,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        box-sizing: border-box;
 
         .icon {
           color: var(--text-light-gray);
@@ -50,33 +58,35 @@
     }
   }
 
+  /* Правая секция иконок */
   .action-icon-block-right {
-
     display: flex;
     align-items: center;
     gap: 7px;
     box-sizing: border-box;
     margin-left: 5px;
 
-    .action-icon-wrapper{
+    /* Обертка для кнопок */
+    .action-icon-wrapper {
       button {
         color: var(--color-func-on);
-        //border: 1px solid var(--color-func-on);
 
-        .action-icon{
+        .action-icon {
           color: inherit;
         }
       }
     }
 
+    /* Стили для отключенных кнопок */
     .disabled {
       border: none;
 
-      button{
+      button {
         border: none;
       }
     }
 
+    /* Кнопки */
     button {
       background: var(--background-light-color);
       cursor: pointer;
@@ -86,12 +96,12 @@
       gap: 5px;
       transition: 0.3s;
       border-radius: $border-primary-radius;
-      color: var(--text-light-gray)!important;
+      color: var(--text-light-gray) !important;
       box-sizing: border-box;
       border: 1px solid transparent;
 
       &:hover {
-        color: var(--color-func-onv2)!important;
+        color: var(--color-func-onv2) !important;
         border-bottom: 1px solid var(--color-func-onv2);
       }
 
@@ -99,11 +109,10 @@
         font-size: 16px;
         box-sizing: border-box;
       }
-
     }
 
-    .visualiser-btn{
-      //border: 1px solid var(--color-func-off);
+    /* Кнопка визуализатора */
+    .visualiser-btn {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -115,22 +124,24 @@
       background-color: transparent;
 
       &:hover {
-        box-shadow: 0 0 8px rgba(144, 205, 244, 0.8);
+        //box-shadow: 0 0 8px rgba(144, 205, 244, 0.8);
       }
 
-      .action-icon-visualiser{
+      .action-icon-visualiser {
         font-size: 25px;
-        transition: .3s;
+        transition: 0.3s;
         color: var(--text-light-gray);
 
-        &:hover{
-            color: var(--color-func-onv2);
+        &:hover {
+          color: var(--color-func-onv2);
+          transform: scale(1.1);
         }
       }
     }
 
-    .visualiser-separator{
-      width: 2px;
+    /* Разделитель в визуализаторе */
+    .visualiser-separator {
+      width: 1px;
       height: 25px;
       background: var(--color-func-off);
       margin: 0 10px;
@@ -138,14 +149,14 @@
   }
 }
 
-.action-icon-wrapper.disabled button{
+/* Стили для отключенных кнопок */
+.action-icon-wrapper.disabled button {
   opacity: 0.5;
   pointer-events: none;
-  color: var(--color-func-off)!important;
-  border: none!important;
+  color: var(--color-func-off) !important;
+  border: none !important;
 }
 
 button:disabled {
   cursor: not-allowed;
 }
-

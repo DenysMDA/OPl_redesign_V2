@@ -1,0 +1,165 @@
+@import "../../../../../theme";
+
+.table-wrapper-v2 {
+  padding: 0 !important;
+  margin: 0;
+  border: 1px solid var(--border-color-light-gray);
+  border-top: none;
+
+  /* Таблица */
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  /* Заголовок таблицы */
+  thead {
+    border-bottom: 1px solid var(--color-func-off);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--background-table-header);
+
+    th {
+      background-color: transparent;
+      text-align: left;
+      font-size: 14px;
+      padding: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:first-child {
+        padding-left: 50px;
+      }
+    }
+  }
+
+  /* Тело таблицы */
+  tbody {
+    tr {
+      height: 32px;
+      font-size: 14px;
+      transition: 0.3s;
+
+      &:last-child {
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        background: none;
+        cursor: pointer;
+        border: 1px solid var(--border-color-light-gray);
+      }
+
+      &.selected-row {
+        background-color: #f0f8ff;
+        border: 1px solid var(--border-color-light-gray);
+      }
+    }
+
+    td {
+      padding: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Стили для Audio Conference */
+    .audio-conference-false {
+      box-sizing: border-box;
+      padding: 3px 6px;
+      border-radius: var(--primary-radius);
+      background: var(--color-bg-errorv2);
+      color: var(--color-errorv2);
+    }
+
+    .audio-conference-true {
+      box-sizing: border-box;
+      padding: 3px 14px;
+      border-radius: var(--primary-radius);
+      background: var(--color-bg-status-activev2);
+      color: var(--color-status-activev2);
+    }
+
+    /* Стили для State */
+    .operator-status-active {
+      color: var(--color-status-activev2);
+      font-weight: bold;
+    }
+
+    .operator-status-privatepreview {
+      /* Добавьте стили, если потребуется */
+    }
+
+    .operator-status-blocked {
+      color: var(--color-errorv2);
+      font-weight: bold;
+    }
+  }
+
+  /* Заголовок */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h2 {
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .icon-container-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        padding: 3px;
+        border-radius: var(--primary-radius);
+      }
+    }
+  }
+
+  /* Радиокнопки */
+  .radio-cell,
+  .radio-cell-header {
+    width: 25px;
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* Разделитель */
+  .separator {
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    margin-bottom: 10px;
+  }
+
+  /* Ресайзер */
+  .resizer {
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    cursor: col-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    user-select: none;
+    touch-action: none;
+  }
+}

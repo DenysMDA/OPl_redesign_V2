@@ -7,9 +7,9 @@ import {TiEdit} from "react-icons/ti";
 import {RiDeleteBin6Line} from "react-icons/ri";
 import {MdLibraryAdd} from "react-icons/md"; // Подключаем стили для компонента
 import {CgMenuGridR} from "react-icons/cg";
-import { GiHamburgerMenu } from "react-icons/gi";
+import {GiHamburgerMenu} from "react-icons/gi";
 
-const ActionButtonsV2 = ({actions, isSearchable}) => {
+const ActionButtonsV2 = ({actions, isSearchable, handleTypeSelect}) => {
     const iconMap = {
         Add: MdLibraryAdd,
         Edit: TiEdit,
@@ -19,7 +19,7 @@ const ActionButtonsV2 = ({actions, isSearchable}) => {
     };
 
     return (
-        <div className="action-buttons">
+        <div className="action-buttonsv2">
             <div className="action-icon-block">
                 {isSearchable && (
                     <div className="search">
@@ -50,11 +50,11 @@ const ActionButtonsV2 = ({actions, isSearchable}) => {
                 })}
 
                 <div className="visualiser-separator"/>
-                <div className='visualiser-btn'>
+                <div className='visualiser-btn' onClick={() => handleTypeSelect(true)}>
                     <CgMenuGridR className="action-icon-visualiser"/>
                 </div>
 
-                <div className='visualiser-btn'>
+                <div className='visualiser-btn' onClick={() => handleTypeSelect(false)}>
                     <GiHamburgerMenu className="action-icon-visualiser"/>
                 </div>
 

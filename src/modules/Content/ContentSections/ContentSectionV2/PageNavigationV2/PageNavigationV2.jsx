@@ -12,6 +12,7 @@ const PageNavigationV2 = ({
   collapseAllTables,
   expandAllTables,
   togglePanelVisibility,
+                            handleRowSelect
 }) => {
   const buttons = [
     {

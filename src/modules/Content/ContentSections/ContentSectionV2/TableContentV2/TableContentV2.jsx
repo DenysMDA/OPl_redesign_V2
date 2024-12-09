@@ -98,7 +98,7 @@ const TableContentV2 = ({
                 </div>
 
                 {!isCollapsed && (
-                    <ActionButtonsV2 actions={actions} isSearchable={isSearchable} handleTypeSelect={handleTypeSelect}/>
+                    <ActionButtonsV2 actions={actions} selectedTileType={selectedTileType} isSearchable={isSearchable} handleTypeSelect={handleTypeSelect}/>
                 )}
             </div>
 

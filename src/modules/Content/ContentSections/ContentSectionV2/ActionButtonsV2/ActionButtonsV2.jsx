@@ -9,7 +9,7 @@ import {MdLibraryAdd} from "react-icons/md"; // Подключаем стили 
 import {CgMenuGridR} from "react-icons/cg";
 import {GiHamburgerMenu} from "react-icons/gi";
 
-const ActionButtonsV2 = ({actions, isSearchable, handleTypeSelect}) => {
+const ActionButtonsV2 = ({actions, isSearchable, handleTypeSelect, selectedTileType}) => {
     const iconMap = {
         Add: MdLibraryAdd,
         Edit: TiEdit,
@@ -50,12 +50,13 @@ const ActionButtonsV2 = ({actions, isSearchable, handleTypeSelect}) => {
                 })}
 
                 <div className="visualiser-separator"/>
+
                 <div className='visualiser-btn' onClick={() => handleTypeSelect(true)}>
-                    <CgMenuGridR className="action-icon-visualiser"/>
+                    <CgMenuGridR className={`action-icon-visualiser ${selectedTileType ? 'action-icon-visualiser-active' : '' }`}/>
                 </div>
 
                 <div className='visualiser-btn' onClick={() => handleTypeSelect(false)}>
-                    <GiHamburgerMenu className="action-icon-visualiser"/>
+                    <GiHamburgerMenu className={`action-icon-visualiser ${!selectedTileType ? 'action-icon-visualiser-active' : '' }`}/>
                 </div>
 
             </div>
@@ -64,50 +65,3 @@ const ActionButtonsV2 = ({actions, isSearchable, handleTypeSelect}) => {
 };
 
 export default ActionButtonsV2;
-// const ActionButtonsV2 = ({ actions, isSearchable }) => {
-//     return (
-//         <div className="action-buttons">
-//             <div className="action-icon-block">
-//                 {actions.map((action, index) => {
-//                     let Icon;
-//                     switch (action.label) {
-//                         case "Add":
-//                             Icon = MdLibraryAdd;
-//                             break;
-//                         case "Edit":
-//                             Icon = TiEdit;
-//                             break;
-//                         case "Delete":
-//                             Icon = RiDeleteBin6Line;
-//                             break;
-//                         default:
-//                             Icon = null;
-//                     }
-//                     return (
-//                         <div key={index} className="action-icon-wrapper">
-//                             <button onClick={action.onClick} >
-//                                 {Icon && <Icon className="action-icon" />} {action.label}
-//                             </button>
-//                             {/*<div className="action-buttons-separator"></div>*/}
-//                         </div>
-//                     );
-//                 })}
-//             </div>
-//             <div className="action-icon-block-right">
-//                 {isSearchable && (
-//                     <div className="search">
-//                         <div className="search-icon">
-//                             <LuSearch className="icon" />
-//                         </div>
-//                         <input placeholder="Search" type="text" className="search-input" />
-//                     </div>
-//                 )}
-//                 <div className="table-setting">
-//                     <FiSettings />
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-//
-// export default ActionButtonsV2;

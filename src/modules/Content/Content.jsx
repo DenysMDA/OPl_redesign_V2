@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Content.scss";
 import Panel from "./cmps/Panel/Panel";
 import IconNavBlock from "./cmps/Navigation/IconNavBlock";

@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: auto 1fr; /* Первый элемент занимает свою ширину, второй занимает оставшееся пространство */
   width: 100%;
+  padding-bottom: 20px;
   //   height: 100vh; /* Высота на весь экран */
 
   .main-content {

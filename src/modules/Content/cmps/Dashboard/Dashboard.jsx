@@ -12,7 +12,6 @@ import { IoIosWarning } from "react-icons/io";
 import { IoMdAdd } from "react-icons/io";
 
 import image1 from "../../../../assest/1.png";
-import image2 from "../../../../assest/2.png";
 import image3 from "../../../../assest/3.png";
 import image4 from "../../../../assest/4.png";
 import image5 from "../../../../assest/5.png";

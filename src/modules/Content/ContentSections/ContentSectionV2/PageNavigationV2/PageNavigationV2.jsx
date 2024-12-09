@@ -1,57 +1,88 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./PageNavigationV2.scss";
-import { MdOutlineCloudUpload } from "react-icons/md";
-
-import { VscCollapseAll } from "react-icons/vsc";
-import { VscExpandAll } from "react-icons/vsc";
-import { FiSettings } from "react-icons/fi";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaRegSquareCheck } from "react-icons/fa6";
+import {FaRegSquare} from "react-icons/fa";
+
 
 const PageNavigationV2 = ({
-  onButtonClick,
-  collapseAllTables,
-  expandAllTables,
-  togglePanelVisibility,
-                            handleRowSelect
-}) => {
-  const buttons = [
-    {
-      label: "Upload New Number",
-      // icon: <MdOutlineCloudUpload className="icon" />,
-      action: () => onButtonClick("Upload New Number"),
-    },
-    // {
-    //   label: "Collapse All",
-    //   // icon: <VscCollapseAll className="icon" />,
-    //   action: collapseAllTables,
-    // },
-    // {
-    //   label: "Expand All",
-    //   // icon: <VscExpandAll className="icon" />,
-    //   action: expandAllTables,
-    // },
-    // {
-    //   label: "",
-    //   icon: <BsThreeDotsVertical className="icon icon-config" />,
-    //   action: () => togglePanelVisibility(),
-    // },
-  ];
+                              onButtonClick,
+                              allComponents, // Список всех компонентов
+                              selectedComponents, // Выбранные компоненты
+                              toggleComponent, // Функция управления выбором
+                          }) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
-  return (
-      <nav className="page-navigation">
-        {buttons.map((button, index) => (
-            <React.Fragment key={index}>
-              <button className="nav-button" onClick={button.action}>
-                {button.icon && button.icon}
-                {button.label}
-              </button>
-            </React.Fragment>
-        ))}
-        <button className="nav-button nav-button-config" >
-          <BsThreeDotsVertical className="icon icon-config" />
-        </button>
-      </nav>
-  );
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
+    const closeDropdown = (e) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+            setIsDropdownOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        if (isDropdownOpen) {
+            document.addEventListener("mousedown", closeDropdown);
+        } else {
+            document.removeEventListener("mousedown", closeDropdown);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", closeDropdown);
+        };
+    }, [isDropdownOpen]);
+
+    const buttons = [
+        {
+            label: "Upload New Number",
+            action: () => onButtonClick("Upload New Number"),
+        },
+    ];
+
+    return (
+        <nav className="page-navigation">
+            {buttons.map((button, index) => (
+                <button key={index} className="nav-button" onClick={button.action}>
+                    {button.label}
+                </button>
+            ))}
+            <div className="dropdown-container" ref={dropdownRef}>
+                <button
+                    className="nav-button nav-button-config"
+                    onClick={toggleDropdown}
+                >
+                    <BsThreeDotsVertical className={`icon icon-config ${isDropdownOpen ? 'icon-config-active' : ''}`} />
+                </button>
+                {isDropdownOpen && (
+                    <div className="dropdown-menu">
+                        <div className="dropdown-menu-header">Configuration</div>
+                        {allComponents.map((comp) => (
+                            <label key={comp.id} className="dropdown-item">
+                                <input
+                                    type="checkbox"
+                                    checked={selectedComponents.includes(comp.id)}
+                                    onChange={() => toggleComponent(comp.id)}
+                                    className="hidden-input"
+                                />
+                                {selectedComponents.includes(comp.id) ? (
+                                    <FaRegSquareCheck className="dropdown-icon active" />
+                                ) : (
+                                    <FaRegSquare className="dropdown-icon" />
+                                )}
+                                <span className={`dropdown-label ${selectedComponents.includes(comp.id) ? 'dropdown-label-active' : ''}`}>
+                  {comp.label}
+                </span>
+                            </label>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </nav>
+    );
 };
 
 export default PageNavigationV2;

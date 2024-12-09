@@ -18,7 +18,8 @@ const TableContentV2 = ({
                             isSearchable,
                             onRowSelect,
                             handleTypeSelect,
-                            selectedTileType
+                            selectedTileType,
+                            selectedItem
                         }) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -69,6 +70,7 @@ const TableContentV2 = ({
     return (
         <div className="table table-v2">
             <div className="table-header-wrapper">
+
                 <div className="table-header">
                     <div className="header-title">
                         <h2>{title}</h2>
@@ -82,6 +84,16 @@ const TableContentV2 = ({
                         >
                             {isCollapsed ? <FaChevronDown/> : <FaChevronUp/>}
                         </div>
+                    </div>
+                </div>
+
+                <div className='selected-item-info'>
+                    <div className='selected-item-desc'>
+
+                    </div>
+
+                    <div className='selected-item-map'>
+
                     </div>
                 </div>
 
@@ -157,6 +169,7 @@ const TableContentV2 = ({
                                 }}
                                 selectedTile={selectedRow} // Индекс выбранной плитки
                                 isActive={isActive}
+                                selectedItem={selectedItem}
                             />
                         ) : (
                             <TableWrapperV2

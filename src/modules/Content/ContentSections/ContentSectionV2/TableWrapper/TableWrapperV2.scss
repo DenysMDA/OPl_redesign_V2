@@ -11,11 +11,16 @@
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+
+    th{
+      border: none
+    }
   }
+
 
   /* Заголовок таблицы */
   thead {
-    border-bottom: 1px solid var(--color-func-off);
+    //border-bottom: 1px solid var(--color-func-off);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: var(--background-table-header);
 
@@ -40,6 +45,7 @@
       height: 32px;
       font-size: 14px;
       transition: 0.3s;
+      background: var(--background-light-color);
 
       &:last-child {
         margin-bottom: 10px;
@@ -67,31 +73,40 @@
     /* Стили для Audio Conference */
     .audio-conference-false {
       box-sizing: border-box;
-      padding: 3px 6px;
-      border-radius: var(--primary-radius);
-      background: var(--color-bg-errorv2);
+      //padding: 3px 6px;
+      //border-radius: var(--primary-radius);
+      //background: var(--color-bg-errorv2);
       color: var(--color-errorv2);
     }
 
     .audio-conference-true {
       box-sizing: border-box;
-      padding: 3px 14px;
-      border-radius: var(--primary-radius);
-      background: var(--color-bg-status-activev2);
+      //padding: 3px 14px;
+      //border-radius: var(--primary-radius);
+      //background: var(--color-bg-status-activev2);
       color: var(--color-status-activev2);
     }
 
     /* Стили для State */
     .operator-status-active {
+      //padding: 3px 14px;
       color: var(--color-status-activev2);
+      //border-radius: var(--primary-radius);
+      //background: var(--color-bg-status-activev2);
       font-weight: bold;
     }
 
     .operator-status-privatepreview {
-      /* Добавьте стили, если потребуется */
+      //padding: 3px 6px;
+      //border-radius: var(--primary-radius);
+      //background: var(--color-bg-warningv2);
+      color: var(--color-warningv2);
     }
 
     .operator-status-blocked {
+      //padding: 3px 8px;
+      //border-radius: var(--primary-radius);
+      //background: var(--color-bg-errorv2);
       color: var(--color-errorv2);
       font-weight: bold;
     }
@@ -162,4 +177,8 @@
     user-select: none;
     touch-action: none;
   }
+}
+
+.table-v2{
+  background: var(--background-main-color);
 }

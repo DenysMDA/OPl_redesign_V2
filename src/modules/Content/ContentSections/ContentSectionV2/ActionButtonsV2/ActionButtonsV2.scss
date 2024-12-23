@@ -7,19 +7,19 @@
   align-items: center;
   gap: 10px;
   margin-top: 10px;
-  padding: 0;
-  background-color: #fff;
+  padding: 0 10px;
+  // background-color: #fff;
   border-radius: var(--primary-radius);
   //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
   border: 1px solid var(--border-color-light-gray); /* Контур для акцента */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--background-light-color-btn);
 
   /* Эффект подъема при наведении */
   //&:hover {
   //  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Увеличенная тень */
   //  transform: translateY(-2px); /* Легкий подъем */
   //}
-
 
   /* Левая секция иконок */
   .action-icon-block {
@@ -44,7 +44,7 @@
         align-items: center;
 
         .icon {
-          color: var(--text-light-gray);
+          color: var(--text-light-gray-darkmode);
         }
       }
 
@@ -52,8 +52,13 @@
         border-radius: var(--border-primary-radius);
         border: none;
         outline: none;
-        color: var(--text-light-gray);
+        color: var(--text-light-gray-darkmode);
         height: auto;
+        background: transparent;
+
+        &::placeholder {
+          color: var(--text-light-gray-darkmode);
+        }
       }
     }
   }
@@ -88,7 +93,7 @@
 
     /* Кнопки */
     button {
-      background: var(--background-light-color);
+      background: var(--background-light-color-btn);
       cursor: pointer;
       padding: 5px 8px;
       display: flex;
@@ -97,6 +102,7 @@
       transition: 0.3s;
       border-radius: $border-primary-radius;
       color: var(--text-light-gray) !important;
+
       box-sizing: border-box;
       border: 1px solid transparent;
 
@@ -118,10 +124,9 @@
       align-items: center;
       cursor: pointer;
       padding: 1px;
-      width: 40px;
+      width: 30px;
       height: 40px;
       border-radius: var(--primary-radius);
-      background-color: transparent;
 
       &:hover {
         //box-shadow: 0 0 8px rgba(144, 205, 244, 0.8);
@@ -130,7 +135,7 @@
       .action-icon-visualiser {
         font-size: 25px;
         transition: 0.3s;
-        color: var(--text-light-gray);
+        color: var(--color-func-offv2);
 
         &:hover {
           color: var(--color-func-onv2);
@@ -138,7 +143,7 @@
         }
       }
 
-      .action-icon-visualiser-active{
+      .action-icon-visualiser-active {
         color: var(--color-func-onv2);
         transform: scale(1.1);
       }

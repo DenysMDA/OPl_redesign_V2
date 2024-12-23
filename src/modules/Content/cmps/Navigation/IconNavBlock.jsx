@@ -219,7 +219,7 @@ const IconNavBlock = ({ isShowMenu, toggleShowMenu, setActiveSubMenu }) => {
                           onClick={() => handleSubMenuClick(subItem.title)}
                         >
                           <div
-                            className={`sub-menu-item ${
+                            className={`sub-menu-item hover-sub-menu-item ${
                               activeSubMenuItem === subItem.title
                                 ? "active"
                                 : ""

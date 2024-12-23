@@ -26,7 +26,8 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --line-color-light-gray: #ddd;
 
   --border-color-light-gray: #4e52d921;
-
+  --border-color-block-light-gray: #4e52d921;
+  --border-color-super-light-gray: #f0f0f08c;
   --text-blue-color: #007eab;
   --text-color: #111926;
   --text-color-opposite: #ffffff;
@@ -51,6 +52,7 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 [data-theme="lightV2"] {
   --primary-color: #19191a;
+  --primary-color-opposite: #fff;
   --dark-gray-color: #424244;
   --light-gray-color: #a2a0aa;
 
@@ -58,21 +60,32 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --background-light-dark-color: #424244;
   --background-light-gray-color: #595965;
   --background-main-color: #fafbfd;
+  --background-under-main-color: #fafbfd;
   --background-middle-color: #f3f4f6;
   --background-light-color: #ffffff;
+  --background-light-color-btn: #ffffff;
+  // --background-color-light-gray: #e2e8ee;
 
   --background-light-gray: #f0f0f0;
   --background-table-header: #6ea6f717;
   --line-color-light-gray: #ddd;
 
   --border-color-light-gray: #e2e8ee;
+  --border-block-color-light-gray: #e2e8ee;
+  --border-block-color-light-gray-active: #e2e8ee;
+  --border-color-block-light-gray: #e2e8ee;
   --border-color-super-light-gray: #f0f0f08c;
+  --border-color-super-light-gray-darkmode: #f0f0f08c;
 
   --text-blue-color: #007eab;
   --text-color: #111926;
   --text-color-opposite: #ffffff;
+  --text-color-opposite-darkmode: #ffffff;
   --text-light-gray: #626975;
+  --text-light-gray-darkmode: #626975;
+
   --text-inactive: #00000052;
+  --text-white-color: #ffffff;
 
   --color-func-off: #b7b7b7f5;
   --color-func-on: #5c5fc9;
@@ -101,37 +114,71 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 // Темная тема
 [data-theme="dark"] {
-  --primary-color: #ffffff;
-  --dark-gray-color: #e6e6e8;
-  --light-gray-color: #8a8a8b;
+  --primary-color: #a2a0aa;
+  --primary-color-opposite: #a2a0aa;
+  --dark-gray-color: #6a6a6a;
+  --light-gray-color: #19191a;
 
-  --background-dark-color: #e6e6e8;
+  --background-dark-color: #111926;
   --background-light-dark-color: #424244;
-  --background-light-gray-color: #a9a9af;
-  --background-main-color: #18171c;
-  --background-middle-color: dark;
-  --background-light-color: green;
+  --background-light-gray-color: #595965;
+  --background-main-color: #171717;
+  --background-under-main-color: #2c2c2c;
+  --background-middle-color: #f3f4f6;
+  --background-light-color: #2c2c2c;
+  --background-light-color-btn: #424141;
 
   --background-light-gray: #f0f0f0;
+  --background-table-header: #6ea6f717;
   --line-color-light-gray: #ddd;
 
-  --border-color-light-gray: #e2e8ee;
-  --text-blue-color: #007eab;
+  --border-color-light-gray: #2c2c2c;
+  --border-block-color-light-gray: #545353;
+  --border-block-color-light-gray-active: #252525;
+  --border-color-block-light-gray: #404040;
+  --border-color-super-light-gray: #f0f0f08c;
+  --border-color-super-light-gray-darkmode: #424141;
 
+  --text-blue-color: #007eab;
   --text-color: #ffffff;
   --text-color-opposite: #111926;
-  --text-light-gray: #626975;
+  --text-color-opposite-darkmode: #ffffff;
+  --text-light-gray: #b7b7b7;
+  --text-light-gray-darkmode: #575757;
+
   --text-inactive: #00000052;
+  --text-white-color: #ffffff;
 
   --color-func-off: #b7b7b7f5;
   --color-func-on: #5c5fc9;
+  --color-status-active: #208a38;
   --color-warning: #f5a623;
   --color-error: #d32f2f;
 
-  --light-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  --color-func-offv2: #7c7b7bf5;
+  --color-func-onv2: #b7b7b7;
+  --color-status-activev2: #7eb263;
+  // --color-bg-status-activev2: #eaf3e7;
+  --color-bg-status-activev2: #2c2c2c;
+  --color-warningv2: #e9b264;
+  // --color-bg-warningv2: #f8efe2;
+  --color-bg-warningv2: #2c2c2c;
+  --color-errorv2: #ca625d;
+  // --color-bg-errorv2: #f6e6e6;
+  --color-bg-errorv2: #2c2c2c;
+
+  --light-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --tob-gap: 15px;
-  --primary-radius: 5px;
+  --primary-radius: 3px;
   --primary-th-background: #c9b2ff38;
+
+  --scrol-bar-background: #f1f1f1;
+  --scrol-bar-scroll: #d8d1ff8a;
+  --scrol-bar-hover: #847ad9;
 }
 
 $background-blue-color: #f9f9f9;
+
+$background-dark-color: #252525;
+$background-light-dark-color: #2c2c2c;
+$background-super-light-dark-color: #424141;

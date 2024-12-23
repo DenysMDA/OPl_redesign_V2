@@ -1,10 +1,9 @@
 @import "../../../../../theme";
 
-.content-wrapper-v2{
-
+.content-wrapper-v2 {
   .content-header {
     width: 100%;
-    background: var(--background-main-color);
+    background: var(--background-under-main-color);
     box-sizing: border-box;
     //padding: 5px 10px;
     padding: 0;
@@ -32,5 +31,4 @@
     //   justify-self: start;
     // }
   }
-
 }

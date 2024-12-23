@@ -6,7 +6,7 @@
   padding: 5px;
 
   .tile-item {
-    border: 1px solid var(--border-color-light-gray);
+    border: 1px solid var(--border-color-block-light-gray);
     border-radius: var(--primary-radius);
     //padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
   }
 
   .tile-item.selected-tile {
-    border-color: #007bff;
+    border-color: var(--color-func-onv2);
     //background-color: #e6f7ff;
   }
 
@@ -70,33 +70,33 @@
     padding: 0.5rem 1rem;
     border-top: 1px solid var(--color-func-offv2);
     background: var(--border-color-super-light-gray);
+    background: var(--border-color-super-light-gray-darkmode);
+
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     color: var(--color-func-offv2);
-    transition: .3s;
+    transition: 0.3s;
 
     .to-operator-block {
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: .3s;
+      transition: 0.3s;
 
       .to-operator {
         margin-left: 10px;
         font-weight: bold;
         font-size: 10px;
-
       }
 
       &:hover {
         color: var(--color-func-onv2);
       }
-
     }
 
     .tile-settings {
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         color: var(--color-func-onv2);
@@ -105,7 +105,7 @@
     }
   }
 
-  .tile-title{
+  .tile-title {
     font-size: 18px;
     font-weight: bold;
     color: var(--text-light-gray);
@@ -132,5 +132,4 @@
       text-decoration: underline;
     }
   }
-
 }

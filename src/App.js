@@ -3,10 +3,9 @@ import Header from './modules/Header/Header.jsx';
 import Content from "./modules/Content/Content";
 import React, {useEffect, useState} from "react";
 
-
-
 function App() {
-    const [theme, setTheme] = useState('lightV2');
+    // const [theme, setTheme] = useState('lightV2');
+    const [theme, setTheme] = useState('dark');
 
 
     useEffect(() => {
@@ -14,17 +13,20 @@ function App() {
     }, [theme]);
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
+        const newTheme = theme === 'lightV2' ? 'dark' : 'lightV2';
         setTheme(newTheme);
         document.documentElement.setAttribute('data-theme', newTheme);
     };
 
   return (
       <div className="App">
-          {/*<button onClick={toggleTheme}>*/}
+          {/* <button onClick={toggleTheme}>*/}
           {/*    Switch to {theme === 'light' ? 'dark' : 'light'} theme*/}
-          {/*</button>*/}
-          <button style={{display: "none"}} onClick={toggleTheme}></button>
+          {/*</button> */}
+          <button onClick={toggleTheme}>
+            {theme === 'lightV2' ? 'dark' : 'light'} 
+          </button> 
+          {/* <button style={{display: "none"}} onClick={toggleTheme}></button> */}
           <Header/>
           <Content/>
       </div>

@@ -12,11 +12,10 @@
     table-layout: fixed;
     width: 100%;
 
-    th{
-      border: none
+    th {
+      border: none;
     }
   }
-
 
   /* Заголовок таблицы */
   thead {
@@ -47,6 +46,7 @@
       font-size: 14px;
       transition: 0.3s;
       background: var(--background-light-color);
+      border: 1px solid transparent;
 
       &:last-child {
         margin-bottom: 10px;
@@ -60,7 +60,7 @@
 
       &.selected-row {
         background-color: #f0f8ff;
-        border: 1px solid var(--border-color-light-gray);
+        // border: 1px solid var(--border-color-light-gray);
       }
     }
 
@@ -168,6 +168,6 @@
   }
 }
 
-.table-v2{
-  background: var(--background-main-color);
+.table-v2 {
+  background: var(--background-under-main-color);
 }

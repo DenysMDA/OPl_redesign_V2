@@ -44,7 +44,7 @@
         align-items: center;
 
         .icon {
-          color: var(--text-light-gray-darkmode);
+          color: var(--text-light-gray);
         }
       }
 
@@ -52,12 +52,12 @@
         border-radius: var(--border-primary-radius);
         border: none;
         outline: none;
-        color: var(--text-light-gray-darkmode);
+        color: var(--text-light-gray);
         height: auto;
         background: transparent;
 
         &::placeholder {
-          color: var(--text-light-gray-darkmode);
+          color: var(--text-light-gray);
         }
       }
     }

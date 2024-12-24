@@ -27,6 +27,7 @@
     font-size: 12px;
     transition: 0.3s;
     box-sizing: border-box;
+    color: var(--primary-color-darkmode);
 
     &:last-child {
       padding-left: 0;
@@ -34,9 +35,12 @@
 
     &:hover {
       //background: var(--background-light-gray);
-      color: var(--color-func-on);
-      border: 2px solid var(--background-light-color);
+      // color: var(--color-func-on);
+      // border-bottom: 1px solid var(--primary-color-darkmode) !important;
+
+      text-decoration: underline;
       //border-bottom: 1px solid var(--color-func-on);
+      // color: red !important;
     }
 
     .icon {

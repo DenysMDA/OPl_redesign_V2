@@ -15,12 +15,12 @@
     box-sizing: border-box;
     margin-left: 5px;
 
-    .action-icon-wrapper{
+    .action-icon-wrapper {
       button {
-        color: var(--color-func-on);
-        border: 1px solid var(--color-func-on);
+        color: var(--color-func-on-darkmode);
+        border: 1px solid var(--color-func-on-darkmode);
 
-        .action-icon{
+        .action-icon {
           color: inherit;
         }
       }
@@ -47,15 +47,14 @@
     box-sizing: border-box;
 
     &:hover {
-      border: 1px solid var(--color-func-on);
-      background: var(--color-func-on);
-      color: white!important;
+      border: 1px solid var(--color-func-on-darkmode);
+      background: var(--color-func-on-darkmode);
+      color: white !important;
     }
 
     .action-icon {
       font-size: 16px;
       box-sizing: border-box;
-
     }
   }
 
@@ -68,7 +67,7 @@
       display: flex;
       align-items: center;
       width: 200px;
-      border: 2px solid var(--border-color-light-gray);
+      border: 1px solid var(--border-color-block-light-gray);
       border-radius: var(--primary-radius);
       box-sizing: border-box;
       height: 30px;
@@ -93,36 +92,35 @@
         outline: none;
         color: var(--text-light-gray);
         height: auto;
+        background: transparent;
       }
     }
 
     .table-setting {
-      border: 2px solid var(--border-color-light-gray);
+      // border: 2px solid var(--border-color-light-gray);
       padding: 5px;
       display: flex;
       align-items: center;
       border-radius: $border-primary-radius;
-      color: var(--text-light-gray);
+      color: var(--primary-color-darkmode);
       cursor: pointer;
-      transition: .3s;
 
-      &:hover {
-        color: var(--text-color-opposite);
-        background: var(--color-func-on);
+      svg {
+        transition: 0.3s;
 
-        //svg{
-        //  transform: rotate(45deg);
-        //}
+        &:hover {
+          transform: rotate(90deg);
+        }
       }
     }
   }
 }
 
-.action-icon-wrapper.disabled button{
+.action-icon-wrapper.disabled button {
   opacity: 0.5; /* Пример стилизации для неактивной кнопки */
   pointer-events: none; /* Отключение кликов */
-  color: var(--color-func-off)!important;
-  border: 1px solid var(--color-func-off)!important;
+  color: var(--color-func-off) !important;
+  border: 1px solid var(--color-func-off) !important;
 }
 
 button:disabled {

@@ -52,9 +52,11 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 [data-theme="lightV2"] {
   --primary-color: #19191a;
+  --primary-color-darkmode: #424244;
   --primary-color-opposite: #fff;
   --dark-gray-color: #424244;
   --light-gray-color: #a2a0aa;
+  --light-gray-color-darkmode: #a2a0aa;
 
   --background-dark-color: #111926;
   --background-light-dark-color: #424244;
@@ -71,11 +73,12 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --line-color-light-gray: #ddd;
 
   --border-color-light-gray: #e2e8ee;
+  --border-color-light-gray-darkmode: #424244;
   --border-block-color-light-gray: #e2e8ee;
   --border-block-color-light-gray-active: #e2e8ee;
   --border-color-block-light-gray: #e2e8ee;
   --border-color-super-light-gray: #f0f0f08c;
-  --border-color-super-light-gray-darkmode: #f0f0f08c;
+  --border-color-super-light-gray-darkmode: #e2e2e28c;
 
   --text-blue-color: #007eab;
   --text-color: #111926;
@@ -88,7 +91,9 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-white-color: #ffffff;
 
   --color-func-off: #b7b7b7f5;
+  --color-func-off-darkmode: #b7b7b7f5;
   --color-func-on: #5c5fc9;
+  --color-func-on-darkmode: #5c5fc9;
   --color-status-active: #208a38;
   --color-warning: #f5a623;
   --color-error: #d32f2f;
@@ -115,16 +120,18 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 // Темная тема
 [data-theme="dark"] {
   --primary-color: #a2a0aa;
+  --primary-color-darkmode: #a2a0aa;
   --primary-color-opposite: #a2a0aa;
   --dark-gray-color: #6a6a6a;
   --light-gray-color: #19191a;
+  --light-gray-color-darkmode: #6a6a6a;
 
   --background-dark-color: #111926;
   --background-light-dark-color: #424244;
   --background-light-gray-color: #595965;
   --background-main-color: #171717;
   --background-under-main-color: #2c2c2c;
-  --background-middle-color: #f3f4f6;
+  --background-middle-color: #404040;
   --background-light-color: #2c2c2c;
   --background-light-color-btn: #424141;
 
@@ -133,6 +140,7 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --line-color-light-gray: #ddd;
 
   --border-color-light-gray: #2c2c2c;
+  --border-color-light-gray-darkmode: #e2e8ee;
   --border-block-color-light-gray: #545353;
   --border-block-color-light-gray-active: #252525;
   --border-color-block-light-gray: #404040;
@@ -146,11 +154,13 @@ $thin-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-light-gray: #b7b7b7;
   --text-light-gray-darkmode: #575757;
 
-  --text-inactive: #00000052;
+  --text-inactive: #96969652;
   --text-white-color: #ffffff;
 
   --color-func-off: #b7b7b7f5;
+  --color-func-off-darkmode: #2c2c2c;
   --color-func-on: #5c5fc9;
+  --color-func-on-darkmode: #a2a0aa;
   --color-status-active: #208a38;
   --color-warning: #f5a623;
   --color-error: #d32f2f;

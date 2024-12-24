@@ -21,9 +21,9 @@ function App() {
 
   return (
       <div className="App">
-          {/* <button onClick={toggleTheme}>
+          <button onClick={toggleTheme}>
             {theme === 'lightV2' ? 'dark' : 'light'} 
-          </button>  */}
+          </button> 
           <Header/>
           <Content/>
       </div>

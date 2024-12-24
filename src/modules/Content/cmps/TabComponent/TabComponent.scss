@@ -10,7 +10,6 @@
   background: var(--background-main-color);
   border-top: none;
 
-
   .tabs {
     position: relative; // Оставляем position: relative, чтобы вкладки не исчезали
     //display: flex;
@@ -35,7 +34,6 @@
     border-bottom: none;
     margin-bottom: -1px;
 
-
     &.active {
       background-color: var(--background-light-color);
       color: var(--primary-color);
@@ -57,9 +55,10 @@
 
   .tab-content {
     padding: 20px;
-    background-color: white;
+    background-color: var(--background-under-main-color);
     border-top-right-radius: $border-primary-radius; // Задайте нужный радиус
     border: 1px solid var(--border-color-light-gray);
+    padding-right: 10px;
 
     .content {
       h3 {
@@ -67,7 +66,7 @@
       }
     }
 
-    .action-buttons{
+    .action-buttons {
       margin-top: 0;
       padding-top: 0;
     }

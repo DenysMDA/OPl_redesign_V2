@@ -6,8 +6,8 @@
   width: auto;
 }
 
-.radio-button-group{
-  border: 2px solid var(--border-color-light-gray);
+.radio-button-group {
+  border: 2px solid var(--border-color-block-light-gray);
   display: flex;
   gap: 5px;
   border-radius: var(--primary-radius);
@@ -17,7 +17,7 @@
 
 .radio-button {
   padding: 10px 20px;
-  background-color: var(--background-light-gray);
+  background: var(--background-light-color-btn);
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -26,24 +26,22 @@
 
   &:hover {
     //background-color: var(--color-func-on);
-    border: 2px solid var(--color-func-on);
-    color: var(--color-func-on);
+    border: 2px solid var(--color-func-on-darkmode);
+    color: var(--color-func-on-darkmode);
   }
 
   &.active {
-    background-color: var(--color-func-on);
-    color: white;
-    border-color: var(--color-func-on);
+    // background-color: var(--color-func-on);
+    color: var(--color-func-on-darkmode);
+    border-color: var(--color-func-on-darkmode);
   }
-
 }
-.sc-row{
-
-  .status{
+.sc-row {
+  .status {
     font-weight: bold;
     color: var(--color-status-active);
   }
-  .value{
+  .value {
     color: var(--text-light-gray);
   }
 }

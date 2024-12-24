@@ -21,7 +21,7 @@
   thead {
     //border-bottom: 1px solid var(--color-func-off);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: var(--background-table-header);
+    background: var(--primary-th-background);
 
     th {
       background-color: transparent;
@@ -55,11 +55,13 @@
       &:hover {
         background: none;
         cursor: pointer;
-        border: 1px solid var(--border-color-light-gray);
+        border-top: 1px solid var(--light-gray-color-darkmode);
+        border-bottom: 1px solid var(--light-gray-color-darkmode);
       }
 
       &.selected-row {
-        background-color: #f0f8ff;
+        // background-color: #f0f8ff;
+        background: var(--primary-th-background);
         // border: 1px solid var(--border-color-light-gray);
       }
     }

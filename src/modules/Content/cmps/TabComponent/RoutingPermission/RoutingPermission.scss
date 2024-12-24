@@ -4,24 +4,25 @@
   display: flex;
   flex-direction: column;
 
-  .routing-permission-row{
+  .routing-permission-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     width: 300px;
+    color: var(--primary-color-darkmode);
 
     .switch {
       width: 58px;
       height: 25px;
       background-color: var(--border-color-light-gray);
+      background-color: var(--border-color-super-light-gray-darkmode);
       border-radius: var(--primary-radius);
       cursor: pointer;
       position: relative;
       transition: background-color 0.3s;
       padding-top: 1px;
       padding-bottom: 1px;
-
 
       .slider {
         width: 28px;
@@ -45,13 +46,13 @@
 
         &.off {
           left: 3px;
-          background-color: var(--color-func-off); // Красный для "OFF"
+          background-color: var(--color-func-off-darkmode); // Красный для "OFF"
           box-sizing: border-box;
         }
       }
     }
 
-    p{
+    p {
       margin: 10px;
       margin-left: 0;
       padding-left: 0;
@@ -62,8 +63,6 @@
     height: 2px;
     width: 305px;
     margin-left: 5px;
-    background-color: var(--border-color-light-gray);
+    background-color: var(--light-gray-color-darkmode);
   }
 }
-
-

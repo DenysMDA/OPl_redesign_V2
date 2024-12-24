@@ -25,6 +25,7 @@
 
   .selected-row {
     background-color: #f0f8ff;
+    background-color: var(--primary-th-background);
     border-top: 1px solid var(--border-color-light-gray);
     border-bottom: 1px solid var(--border-color-light-gray);
     box-sizing: border-box;
@@ -34,12 +35,15 @@
     height: 32px;
     font-size: 14px;
     box-sizing: border-box;
-    transition: 0.3s;
+    // transition: 0.3s;
+    border-top: 1px solid transparent;
   }
 
   tbody tr:hover {
-    background-color: #f0f8ff;
+    // background-color: #f0f8ff;
     cursor: pointer;
+    border-top: 1px solid var(--light-gray-color-darkmode);
+    border-bottom: 1px solid var(--light-gray-color-darkmode);
   }
 
   /* Заголовки колонок */
@@ -50,12 +54,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 14px;
-    border-bottom: 1px solid lightgrey;
-    border-top: 1px solid lightgrey;
+    // border-bottom: 1px solid var(--background-light-gray-color) !important;
+    // border-top: 1px solid var(--background-light-gray-color) !important;
     background: var(--primary-th-background);
-    min-width: 150px!important;
+    min-width: 150px !important;
 
-    &:first-child{
+    &:first-child {
       padding-left: 50px;
     }
   }
@@ -69,68 +73,6 @@
   }
 
   /* Обертка таблицы */
-  .table-wrapper {
-    overflow: auto;
-    padding-left: 5px;
-  }
-
-  /* React Table */
-  .react-table {
-    border-collapse: collapse;
-    table-layout: auto; /* Автоматическое распределение ширины колонок */
-  }
-
-  /* Стили для ресайзера */
-  .resizer {
-    display: inline-block;
-    width: 5px;
-    height: 100%;
-    background-color: transparent;
-    cursor: col-resize;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    user-select: none;
-    touch-action: none;
-  }
-
-  /* Стили для заголовка таблицы */
-  .table-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .header-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      h2 {
-        font-size: 16px;
-        border-bottom: 2px solid var(--background-light-dark-color);
-      }
-    }
-
-    .icon-container-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 14px;
-
-      .icon-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 22px;
-        height: 22px;
-        padding: 3px;
-        border-radius: $border-primary-radius;
-        box-sizing: border-box;
-        font-size: 13px;
-      }
-    }
-  }
 
   /* Разделитель */
   .separator {
@@ -147,5 +89,89 @@
     text-align: center;
     border-right: 1px solid transparent;
     padding: 8px !important;
+  }
+}
+
+// TODO understand tis styles ->
+.table-wrapper {
+  overflow: auto;
+  padding-left: 5px;
+
+  /* Стилизация скроллбара */
+  &::-webkit-scrollbar {
+    width: 5px; /* Ширина полосы прокрутки */
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-th-background); /* Цвет бегунка */
+    border-radius: 5px; /* Скругление углов бегунка */
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    // background: #cebbf838; /* Цвет бегунка при наведении */
+  }
+
+  &:-webkit-scrollbar-track {
+    background: red !important; /* Цвет фона полосы прокрутки */
+  }
+}
+
+/* React Table */
+.react-table {
+  border-collapse: collapse;
+  table-layout: auto; /* Автоматическое распределение ширины колонок */
+}
+
+/* Стили для ресайзера */
+.resizer {
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  background-color: black;
+  cursor: col-resize;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  user-select: none;
+  touch-action: none;
+}
+
+/* Стили для заголовка таблицы */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h2 {
+      font-size: 16px;
+      border-bottom: 2px solid var(--background-light-dark-color);
+    }
+  }
+
+  .icon-container-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 22px;
+      height: 22px;
+      padding: 3px;
+      border-radius: $border-primary-radius;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
   }
 }

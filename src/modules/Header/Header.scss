@@ -130,4 +130,28 @@
       }
     }
   }
+
+  .mode {
+    .switch {
+      background: var(--text-light-gray);
+      width: 70px;
+
+      .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 10px 20px !important;
+      }
+
+      .off {
+        background: var(--background-main-color);
+        color: var(--primary-color);
+      }
+
+      .on {
+        background: var(--background-main-color);
+      }
+    }
+  }
 }

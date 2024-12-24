@@ -7,8 +7,6 @@ function App() {
     const [theme, setTheme] = useState('lightV2');
     // const [theme, setTheme] = useState('dark');
 
-
-
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
@@ -21,10 +19,7 @@ function App() {
 
   return (
       <div className="App">
-          <button onClick={toggleTheme}>
-            {theme === 'lightV2' ? 'dark' : 'light'} 
-          </button> 
-          <Header/>
+          <Header theme={theme} toggleTheme={toggleTheme} />
           <Content/>
       </div>
   );

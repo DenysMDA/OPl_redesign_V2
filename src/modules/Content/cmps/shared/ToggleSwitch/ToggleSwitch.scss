@@ -5,6 +5,7 @@
   width: 58px;
   height: 25px;
   background-color: var(--border-color-light-gray);
+  background-color: var(--border-color-super-light-gray-darkmode);
   border-radius: var(--primary-radius);
   cursor: pointer;
   position: relative;
@@ -34,7 +35,8 @@
 
     &.off {
       left: 3px;
-      background-color: var(--color-func-off); // Красный для "OFF"
+      background-color: var(--color-func-off-darkmode); // Красный для "OFF"
+      box-sizing: border-box;
     }
   }
 }

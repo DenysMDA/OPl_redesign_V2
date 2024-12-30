@@ -1,4 +1,3 @@
-// ToggleSwitch.jsx
 import React from "react";
 import "./ToggleSwitch.scss";
 

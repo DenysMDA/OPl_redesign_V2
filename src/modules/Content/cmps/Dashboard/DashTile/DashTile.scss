@@ -14,7 +14,7 @@
 
   .tile-header {
     //background-color: var(--color-func-on);
-    color: var(--text-color);
+    color: var(--primary-color-darkmode);
     padding: 10px;
     font-weight: bold;
     text-align: center;
@@ -94,6 +94,7 @@
 
           span {
             font-weight: bold;
+            color: var(--primary-color-darkmode);
           }
         }
       }
@@ -198,7 +199,7 @@
   height: $button-primary-height;
 
   .search-icon {
-    border: 2px solid var(--border-color-light-gray);
+    border: 2px solid var(--primary-color-darkmode);
     height: $button-primary-height;
     width: $button-primary-height;
     display: flex;
@@ -220,12 +221,13 @@
     height: $button-primary-height;
     border-bottom-right-radius: $border-primary-radius;
     border-top-right-radius: $border-primary-radius;
-    border: 2px solid var(--border-color-light-gray);
+    border: 2px solid var(--primary-color-darkmode);
     width: 220px;
     border-left: none;
     box-sizing: border-box;
     outline: none;
     color: var(--text-light-gray);
+    background: transparent;
   }
 }
 

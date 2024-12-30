@@ -5,7 +5,6 @@ import React, {useEffect, useState} from "react";
 
 function App() {
     const [theme, setTheme] = useState('lightV2');
-    // const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);

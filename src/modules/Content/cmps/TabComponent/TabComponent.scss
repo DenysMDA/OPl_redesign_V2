@@ -59,6 +59,7 @@
     border-top-right-radius: $border-primary-radius; // Задайте нужный радиус
     border: 1px solid var(--border-color-light-gray);
     padding-right: 10px;
+    background: var(--background-light-color);
 
     .content {
       h3 {

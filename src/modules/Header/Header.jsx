@@ -34,8 +34,8 @@ const Header = ({ theme, toggleTheme }) => {
             <ToggleSwitch
               isOn={theme === "dark"}
               handleToggle={toggleTheme}
-              on="Dark"
-              off="Light"
+              on="Light"
+              off="Dark"
             />
           </div>
         </div>
